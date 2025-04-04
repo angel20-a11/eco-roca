@@ -1,166 +1,57 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoRoca - Tienda de Piedras Decorativas</title>
-  <style>
-    :root {
-      --verde-oscuro: #2e7d32;
-      --verde-medio: #4caf50;
-      --verde-claro: #81c784;
-      --gris-fondo: #f9f9f9;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--gris-fondo);
-      color: #333;
-    }
-    header {
-      background: var(--verde-oscuro);
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background: var(--verde-medio);
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      padding: 5px 10px;
-    }
-    nav a:hover {
-      background: var(--verde-claro);
-      border-radius: 5px;
-    }
-    section {
-      padding: 30px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .producto {
-      background: white;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .producto img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    .contacto {
-      background: var(--verde-oscuro);
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    .boton {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: var(--verde-medio);
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    footer {
-      background: #1b5e20;
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoRoca - Canto Rodado Natural</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <h1>EcoRoca</h1>
-    <p>Tienda de piedra canto rodado - Venta por kilo y metro cúbico</p>
+    <div class="logo">EcoRoca</div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#presentacion">Presentación</a>
+      <a href="#usos">Usos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#presentacion">Presentación</a>
-    <a href="#usos">Usos del Canto Rodado</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-
-  <section id="inicio">
-    <h2>Catálogo de Productos</h2>
-    <div class="productos">
-      <div class="producto">
-        <img src="https://via.placeholder.com/300x200?text=Piedra+1/2" alt="Piedra 1/2">
-        <h3>Piedra canto rodado 1/2 pulgada</h3>
-        <p>20 kg - S/ 45<br>40 kg - S/ 60</p>
-        <a class="boton" href="mailto:rnina8652@gmail.com?subject=Cotización piedra 1/2">Cotizar por metro cúbico</a>
-      </div>
-      <div class="producto">
-        <img src="https://via.placeholder.com/300x200?text=Piedra+2/3" alt="Piedra 2/3">
-        <h3>Piedra canto rodado 2/3 pulgada</h3>
-        <p>20 kg - S/ 30<br>40 kg - S/ 50</p>
-        <a class="boton" href="mailto:rnina8652@gmail.com?subject=Cotización piedra 2/3">Cotizar por metro cúbico</a>
-      </div>
-      <div class="producto">
-        <img src="https://via.placeholder.com/300x200?text=Piedra+3/5" alt="Piedra 3/5">
-        <h3>Piedra canto rodado 3/5 pulgada</h3>
-        <p>20 kg - S/ 15<br>40 kg - S/ 30</p>
-        <a class="boton" href="mailto:rnina8652@gmail.com?subject=Cotización piedra 3/5">Cotizar por metro cúbico</a>
-      </div>
-      <div class="producto">
-        <img src="https://via.placeholder.com/300x200?text=Piedra+Gris" alt="Piedra gris">
-        <h3>Piedra gris</h3>
-        <p>Precio según cantidad. Contáctanos para cotización.</p>
-        <a class="boton" href="mailto:rnina8652@gmail.com?subject=Cotización piedra gris">Cotizar ahora</a>
-      </div>
-      <div class="producto">
-        <img src="https://via.placeholder.com/300x200?text=Piedra+Color" alt="Piedra de color">
-        <h3>Piedra de color</h3>
-        <p>Precio según cantidad. Contáctanos para cotización.</p>
-        <a class="boton" href="mailto:rnina8652@gmail.com?subject=Cotización piedra de color">Cotizar ahora</a>
-      </div>
-    </div>
+  <section id="inicio" class="hero">
+    <h1>Piedra Canto Rodado Natural</h1>
+    <p>Decoración, paisajismo y construcción sostenible</p>
+    <img src="img/piedra-hero.jpg" alt="Piedra canto rodado" class="hero-img"/>
   </section>
 
   <section id="presentacion">
-    <h2>Presentación de EcoRoca</h2>
-    <p>En <strong>EcoRoca</strong> nos especializamos en la venta de piedras decorativas de canto rodado, ideales para proyectos de jardinería, construcción y decoración. Ofrecemos productos de alta calidad en distintos tamaños y colores, con precios accesibles por kilo y metro cúbico.</p>
-    <p>Nuestra misión es brindar un servicio confiable y productos que embellezcan tus espacios naturales o arquitectónicos.</p>
+    <h2>Sobre EcoRoca</h2>
+    <p>Somos una tienda dedicada a la venta de piedra canto rodado en diversos tamaños y colores, perfecta para decoración y construcción. Vendemos por kilo y metro cúbico.</p>
+    <div class="catalogo">
+      <div class="item"><img src="img/piedra1.jpg"/><p>1/2 pulgada - 20kg S/45 · 40kg S/60</p></div>
+      <div class="item"><img src="img/piedra2.jpg"/><p>2/3 pulgadas - 20kg S/30 · 40kg S/50</p></div>
+      <div class="item"><img src="img/piedra3.jpg"/><p>3/5 pulgadas - 20kg S/15 · 40kg S/30</p></div>
+    </div>
   </section>
 
   <section id="usos">
-    <h2>Posibles Usos del Canto Rodado</h2>
+    <h2>Usos del canto rodado</h2>
     <ul>
-      <li>Decoración de jardines, parques y exteriores.</li>
-      <li>Diseño de caminos y senderos.</li>
-      <li>Proyectos de paisajismo.</li>
-      <li>Muros de contención o fachadas decorativas.</li>
-      <li>Diseños interiores modernos (pisos, paredes, fuentes).</li>
+      <li>Decoración de jardines y exteriores</li>
+      <li>Senderos, fuentes y maceteros</li>
+      <li>Obras de ingeniería, drenaje y construcción</li>
     </ul>
   </section>
 
-  <section id="contacto" class="contacto">
-    <h2>Contáctanos</h2>
-    <p>WhatsApp: <a class="boton" href="https://wa.me/51917285203" target="_blank">Escríbenos</a></p>
-    <p>Email: <a href="mailto:rnina8652@gmail.com" style="color:white;">rnina8652@gmail.com</a></p>
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>📞 WhatsApp: <a href="https://wa.me/51917285203">917285203</a><br/>
+    📧 Correo: <a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 EcoRoca. Todos los derechos reservados.</p>
+    <p>&copy; 2025 EcoRoca - Todos los derechos reservados</p>
   </footer>
 </body>
 </html>
