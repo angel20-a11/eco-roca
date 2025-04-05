@@ -70,6 +70,15 @@ button {
   border-radius: 5px;
 }
 
+.imagen-piedra {
+  width: 300px;     /* O cambia a 250px, 350px según tu gusto */
+  height: auto;     /* Mantiene la proporción natural de la imagen */
+  border-radius: 8px; /* Opcional: bordes redondeados */
+  margin: 10px 0;   /* Espaciado arriba y abajo */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Opcional: sombra suave */
+}
+
+
 /* Footer */
 footer {
   padding: 10px;
