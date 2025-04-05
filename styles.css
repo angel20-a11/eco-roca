@@ -153,3 +153,28 @@ footer {
   background: #2e2e2e;
   font-size: 0.9em;
 }
+
+.producto input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.producto button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #25D366; /* color de WhatsApp */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+
+.producto button:hover {
+  background-color: #128C7E;
+}
+
