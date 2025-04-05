@@ -1,136 +1,73 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoRoca - Tienda de Piedra Canto Rodado</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <img src="img/logo_ecoroca.png" alt="EcoRoca Logo" class="logo">
-    <h1>EcoRoca</h1>
-    <p>La mejor selección de piedras canto rodado para tus proyectos.</p>
-  </header>
-  <section class="presentacion">
-    <h2>¿Quiénes somos?</h2>
-    <p>En <strong>EcoRoca</strong> nos especializamos en la venta de piedra canto rodado natural en diferentes tamaños. Nuestra misión es embellecer tus espacios con materiales sostenibles y de alta calidad.</p>
-  </section>
-  <section class="tarjetas">
-    <div class="tarjeta" onclick="location.href='piedra12.html'">
-      <img src="img/piedra1.jpg" alt="Piedra 1/2 pulgada">
-      <h3>Piedra 1/2"</h3>
-      <p>Perfecta para decoraciones finas y acabados.</p>
-      <button>Ver más</button>
-    </div>
-    <div class="tarjeta" onclick="location.href='piedra23.html'">
-      <img src="img/piedra2.jpg" alt="Piedra 2/3 pulgada">
-      <h3>Piedra 2/3"</h3>
-      <p>Ideal para jardines y caminerías naturales.</p>
-      <button>Ver más</button>
-    </div>
-    <div class="tarjeta" onclick="location.href='piedra35.html'">
-      <img src="img/piedra3.jpg" alt="Piedra 3/5 pulgada">
-      <h3>Piedra 3/5"</h3>
-      <p>Excelente para drenaje o decoración rústica.</p>
-      <button>Ver más</button>
-    </div>
-  </section>
-  <footer>
-    <p>Contacto: WhatsApp 917285203 | Email: rnina8652@gmail.com</p>
-  </footer>
-</body>
-</html>
+/* General */
+body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+header, footer { text-align: center; background: #2e2e2e; color: white; padding: 1em 0; }
+h1, h2, h3 { margin: 0.5em 0; }
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piedra 1/2 pulgada</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header><h1>Piedra 1/2 pulgada</h1></header>
-  <main>
-    <img src="img/piedra1.jpg" alt="Piedra 1/2 pulgada" class="imagen-grande">
-    <p>La piedra 1/2'' es ideal para acabados decorativos y detalles delicados.</p>
-    <h3>Usos comunes:</h3>
-    <ul>
-      <li>Decoración de interiores</li>
-      <li>Macetas</li>
-      <li>Caminos Zen</li>
-    </ul>
-    <h3>Precios:</h3>
-    <ul>
-      <li>20 kg = S/ 45</li>
-      <li>40 kg = S/ 60</li>
-      <li>1 m³ ≈ S/ 350</li>
-    </ul>
-    <p class="creativo">✨ Idea creativa: Utilízala para crear jardines zen o como decoración en espacios de meditación.</p>
-    <a href="index.html">← Volver al inicio</a>
-  </main>
-</body>
-</html>
+/* Menú de navegación */
+nav {
+  background: #4CAF50;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piedra 2/3 pulgada</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header><h1>Piedra 2/3 pulgada</h1></header>
-  <main>
-    <img src="img/piedra2.jpg" alt="Piedra 2/3 pulgada" class="imagen-grande">
-    <p>La piedra 2/3'' es perfecta para caminos y jardines exteriores.</p>
-    <h3>Usos comunes:</h3>
-    <ul>
-      <li>Jardineras</li>
-      <li>Caminos de jardín</li>
-      <li>Pavimentación</li>
-    </ul>
-    <h3>Precios:</h3>
-    <ul>
-      <li>20 kg = S/ 30</li>
-      <li>40 kg = S/ 50</li>
-      <li>1 m³ ≈ S/ 250</li>
-    </ul>
-    <p class="creativo">✨ Idea creativa: Úsala para caminos rústicos o como base para plantas.</p>
-    <a href="index.html">← Volver al inicio</a>
-  </main>
-</body>
-</html>
+/* Secciones */
+.seccion { padding: 40px 20px; }
+.seccion#inicio { background: #e0f7fa; }
+.seccion#productos { background: #ffffff; }
+.seccion#contacto { background: #eeeeee; }
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piedra 3/5 pulgada</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header><h1>Piedra 3/5 pulgada</h1></header>
-  <main>
-    <img src="img/piedra3.jpg" alt="Piedra 3/5 pulgada" class="imagen-grande">
-    <p>La piedra 3/5'' es ideal para drenaje y estructuras resistentes.</p>
-    <h3>Usos comunes:</h3>
-    <ul>
-      <li>Fundaciones</li>
-      <li>Drenaje</li>
-      <li>Decoración exterior</li>
-    </ul>
-    <h3>Precios:</h3>
-    <ul>
-      <li>20 kg = S/ 15</li>
-      <li>40 kg = S/ 30</li>
-      <li>1 m³ ≈ S/ 200</li>
-    </ul>
-    <p class="creativo">✨ Idea creativa: Utilízala para paisajismo y estabilización de suelos.</p>
-    <a href="index.html">← Volver al inicio</a>
-  </main>
-</body>
-</html>
+.presentacion { margin-bottom: 20px; }
+.tarjetas { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+.tarjeta {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 250px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.tarjeta:hover { transform: scale(1.03); }
+
+.tarjeta img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; }
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  padding: 10px;
+  background: #2e2e2e;
+  font-size: 0.9em;
+  color: white;
+}
+footer p { margin: 0; }
+
+a {
+  color: #4CAF50;
+  text-decoration: none;
+}
