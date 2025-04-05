@@ -78,17 +78,29 @@ button {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para el contador de pedidos */
 input[type="number"] {
-  width: 60px;
-  padding: 5px;
-  margin: 5px 10px 10px 0;
+  width: 70px;
+  padding: 6px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 h4 span {
   color: green;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
+
+
 
 /* Footer */
 footer {
