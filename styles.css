@@ -71,7 +71,7 @@ button {
 }
 
 .sub pagina imagen-piedra {
-  width: 550px;     /* O cambia a 250px, 350px según tu gusto */
+  width: 300px;     /* O cambia a 250px, 350px según tu gusto */
   height: auto;     /* Mantiene la proporción natural de la imagen */
   border-radius: 8px; /* Opcional: bordes redondeados */
   margin: 10px 0;   /* Espaciado arriba y abajo */
