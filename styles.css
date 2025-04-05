@@ -78,7 +78,17 @@ button {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  margin: 5px 10px 10px 0;
+}
 
+h4 span {
+  color: green;
+  font-weight: bold;
+  font-size: 1.2em;
+}
 
 /* Footer */
 footer {
