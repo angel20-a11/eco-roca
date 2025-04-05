@@ -4,7 +4,7 @@ header, footer { text-align: center; background: #2e2e2e; color: white; padding:
 h1, h2, h3 { margin: 0.5em 0; }
 
 .logo {
-  height: 100px; /* Puedes cambiarlo a 60px o 50px si lo quieres más pequeño */
+  height: 200px; /* Puedes cambiarlo a 60px o 50px si lo quieres más pequeño */
   width: auto; /* Esto mantiene la proporción del logo */
   margin-bottom: 10px; /* Espacio debajo del logo */
 }
