@@ -25,17 +25,16 @@
       <li>40 kg - S/ 60</li>
     </ul>
 
-    <!-- Contador de pedidos -->
-    <div class="pedido">
-      <h3>Haz tu pedido</h3>
-      <label for="cantidad20">Bolsas de 20 kg:</label>
-      <input type="number" id="cantidad20" value="0" min="0">
+    <h3>Haz tu pedido:</h3>
+    <label for="bolsas20">Bolsas de 20 kg:</label>
+    <input type="number" id="bolsas20" value="0" min="0"><br>
 
-      <label for="cantidad40">Bolsas de 40 kg:</label>
-      <input type="number" id="cantidad40" value="0" min="0">
+    <label for="bolsas40">Bolsas de 40 kg:</label>
+    <input type="number" id="bolsas40" value="0" min="0"><br>
 
-      <h4>Total: S/ <span id="total">0</span></h4>
-    </div>
+    <p>Total: <strong id="totalPrecio">S/ 0</strong></p>
+
+    <button onclick="enviarPedido()">Realizar pedido por WhatsApp</button>
   </section>
 
   <footer>
@@ -43,19 +42,37 @@
   </footer>
 
   <script>
-    const input20 = document.getElementById('cantidad20');
-    const input40 = document.getElementById('cantidad40');
-    const totalSpan = document.getElementById('total');
+    const precio20 = 45;
+    const precio40 = 60;
+    const bolsas20 = document.getElementById("bolsas20");
+    const bolsas40 = document.getElementById("bolsas40");
+    const total = document.getElementById("totalPrecio");
 
-    function calcularTotal() {
-      const cantidad20 = parseInt(input20.value) || 0;
-      const cantidad40 = parseInt(input40.value) || 0;
-      const total = (cantidad20 * 45) + (cantidad40 * 60);
-      totalSpan.textContent = total;
+    function actualizarTotal() {
+      const totalCalc = (parseInt(bolsas20.value) || 0) * precio20 + (parseInt(bolsas40.value) || 0) * precio40;
+      total.textContent = `S/ ${totalCalc}`;
     }
 
-    input20.addEventListener('input', calcularTotal);
-    input40.addEventListener('input', calcularTotal);
+    function enviarPedido() {
+      const cantidad20 = parseInt(bolsas20.value) || 0;
+      const cantidad40 = parseInt(bolsas40.value) || 0;
+      const totalFinal = cantidad20 * precio20 + cantidad40 * precio40;
+
+      const mensaje = `Hola, quiero hacer un pedido de Piedra 1/2":
+- ${cantidad20} bolsa(s) de 20 kg
+- ${cantidad40} bolsa(s) de 40 kg
+Total: S/ ${totalFinal}
+
+¿Podrías confirmarme la disponibilidad?`;
+
+      const numero = "51917285203"; // Código de país +51 para Perú
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+      window.open(url, "_blank");
+    }
+
+    bolsas20.addEventListener("input", actualizarTotal);
+    bolsas40.addEventListener("input", actualizarTotal);
   </script>
 </body>
 </html>
