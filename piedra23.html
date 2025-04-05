@@ -18,7 +18,7 @@
   <section class="producto">
     <h2>Piedra 2/3"</h2>
     <img src="img/piedra2.jpg" alt="Piedra 2/3 pulgada" class="imagen-piedra">
-    <p>Ideal para jardines, caminerías y decoración de exteriores con un toque natural.</p>
+    <p>La piedra canto rodado de 2/3 pulgada es ideal para jardines y caminerías naturales, ofreciendo un acabado elegante y duradero.</p>
     <h3>Precios:</h3>
     <ul>
       <li>20 kg - S/ 30</li>
@@ -33,6 +33,8 @@
     <input type="number" id="bolsas40" value="0" min="0"><br>
 
     <p>Total: <strong id="totalPrecio">S/ 0</strong></p>
+
+    <button onclick="enviarPedido()">Realizar pedido por WhatsApp</button>
   </section>
 
   <footer>
@@ -49,6 +51,24 @@
     function actualizarTotal() {
       const totalCalc = (parseInt(bolsas20.value) || 0) * precio20 + (parseInt(bolsas40.value) || 0) * precio40;
       total.textContent = `S/ ${totalCalc}`;
+    }
+
+    function enviarPedido() {
+      const cantidad20 = parseInt(bolsas20.value) || 0;
+      const cantidad40 = parseInt(bolsas40.value) || 0;
+      const totalFinal = cantidad20 * precio20 + cantidad40 * precio40;
+
+      const mensaje = `Hola, quiero hacer un pedido de Piedra 2/3":
+- ${cantidad20} bolsa(s) de 20 kg
+- ${cantidad40} bolsa(s) de 40 kg
+Total: S/ ${totalFinal}
+
+¿Podrías confirmarme la disponibilidad?`;
+
+      const numero = "51917285203"; // Código de país +51 para Perú
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+      window.open(url, "_blank");
     }
 
     bolsas20.addEventListener("input", actualizarTotal);
