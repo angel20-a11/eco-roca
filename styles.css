@@ -1,14 +1,28 @@
 /* General */
-body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-header, footer { text-align: center; background: #2e2e2e; color: white; padding: 1em 0; }
-h1, h2, h3 { margin: 0.5em 0; }
-
-.logo {
-  height: 200px; /* Puedes cambiarlo a 60px o 50px si lo quieres más pequeño */
-  width: auto; /* Esto mantiene la proporción del logo */
-  margin-bottom: 10px; /* Espacio debajo del logo */
+body { 
+  font-family: 'Segoe UI', sans-serif; 
+  margin: 0; 
+  padding: 0; 
+  background: #f9f9f9; 
+  color: #333; 
 }
 
+header, footer { 
+  text-align: center; 
+  background: #2e2e2e; 
+  color: white; 
+  padding: 1em 0; 
+}
+
+h1, h2, h3 { 
+  margin: 0.5em 0; 
+}
+
+.logo {
+  height: 200px;
+  width: auto;
+  margin-bottom: 10px;
+}
 
 /* Menú de navegación */
 nav {
@@ -18,15 +32,18 @@ nav {
   top: 0;
   z-index: 100;
 }
+
 nav ul {
   list-style: none;
   padding: 0;
   text-align: center;
 }
+
 nav ul li {
   display: inline-block;
   margin-right: 20px;
 }
+
 nav ul li a {
   color: white;
   text-decoration: none;
@@ -34,13 +51,32 @@ nav ul li a {
 }
 
 /* Secciones */
-.seccion { padding: 40px 20px; }
-.seccion#inicio { background: #e0f7fa; }
-.seccion#productos { background: #ffffff; }
-.seccion#contacto { background: #eeeeee; }
+.seccion { 
+  padding: 40px 20px; 
+}
 
-.presentacion { margin-bottom: 20px; }
-.tarjetas { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.seccion#inicio { 
+  background: #e0f7fa; 
+}
+
+.seccion#productos { 
+  background: #ffffff; 
+}
+
+.seccion#contacto { 
+  background: #eeeeee; 
+}
+
+.presentacion { 
+  margin-bottom: 20px; 
+}
+
+.tarjetas { 
+  display: flex; 
+  gap: 20px; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+}
 
 .tarjeta {
   background: white;
@@ -52,11 +88,14 @@ nav ul li a {
   cursor: pointer;
   transition: 0.3s;
 }
-.tarjeta:hover { transform: scale(1.03); }
+
+.tarjeta:hover { 
+  transform: scale(1.03); 
+}
 
 .tarjeta img {
   width: 100%;
-  height: 120px;  /* Reducción de tamaño de la imagen */
+  height: 120px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -71,39 +110,46 @@ button {
 }
 
 .imagen-piedra {
-  width: 350px;      /* Ajusta según tu preferencia */
+  width: 350px;
   height: auto;
   border-radius: 8px;
   margin: 10px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para el contador de pedidos */
-input[type="number"] {
-  width: 70px;
-  padding: 6px;
-  margin: 8px 0;
+/* Pedido */
+.pedido {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.pedido label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.pedido input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 1em;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1em;
 }
 
-label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
+.pedido h4 {
+  margin-top: 15px;
+  color: #4CAF50;
+  font-size: 1.2em;
 }
-
-h4 span {
-  color: green;
-  font-weight: bold;
-  font-size: 1.3em;
-}
-
-
 
 /* Footer */
 footer {
   padding: 10px;
   background: #2e2e2e;
   font-size: 0.9em;
+}
