@@ -24,10 +24,38 @@
       <li>20 kg - S/ 45</li>
       <li>40 kg - S/ 60</li>
     </ul>
+
+    <!-- Contador de pedidos -->
+    <div class="pedido">
+      <h3>Haz tu pedido</h3>
+      <label for="cantidad20">Bolsas de 20 kg:</label>
+      <input type="number" id="cantidad20" value="0" min="0">
+
+      <label for="cantidad40">Bolsas de 40 kg:</label>
+      <input type="number" id="cantidad40" value="0" min="0">
+
+      <h4>Total: S/ <span id="total">0</span></h4>
+    </div>
   </section>
 
   <footer>
     <p>&copy; 2025 EcoRoca</p>
   </footer>
+
+  <script>
+    const input20 = document.getElementById('cantidad20');
+    const input40 = document.getElementById('cantidad40');
+    const totalSpan = document.getElementById('total');
+
+    function calcularTotal() {
+      const cantidad20 = parseInt(input20.value) || 0;
+      const cantidad40 = parseInt(input40.value) || 0;
+      const total = (cantidad20 * 45) + (cantidad40 * 60);
+      totalSpan.textContent = total;
+    }
+
+    input20.addEventListener('input', calcularTotal);
+    input40.addEventListener('input', calcularTotal);
+  </script>
 </body>
 </html>
