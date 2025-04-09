@@ -1,4 +1,4 @@
- /* General */
+/* General */
 body { 
   font-family: 'Segoe UI', sans-serif; 
   margin: 0; 
@@ -7,6 +7,7 @@ body {
   color: #333; 
 }
 
+/* Header y Footer */
 header, footer { 
   text-align: center; 
   background: #2e2e2e; 
@@ -18,15 +19,16 @@ h1, h2, h3 {
   margin: 0.5em 0; 
 }
 
+/* Estilo del logo */
 .logo {
-  height: 200px;
+  height: 150px; /* Tamaño ajustado del logo */
   width: auto;
   margin-bottom: 10px;
 }
 
 /* Menú de navegación */
 nav {
-  background: #4CAF50;
+  background: #4CAF50; /* Color de fondo verde */
   padding: 10px;
   position: sticky;
   top: 0;
@@ -67,10 +69,12 @@ nav ul li a {
   background: #eeeeee; 
 }
 
+/* Presentación */
 .presentacion { 
   margin-bottom: 20px; 
 }
 
+/* Tarjetas de productos */
 .tarjetas { 
   display: flex; 
   gap: 20px; 
@@ -82,24 +86,25 @@ nav ul li a {
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  width: 150px;
+  width: 200px; /* Aumento el tamaño de las tarjetas */
   text-align: center;
-  padding: 10px;
+  padding: 15px; /* Aumento el padding */
   cursor: pointer;
   transition: 0.3s;
 }
 
 .tarjeta:hover { 
-  transform: scale(1.03); 
+  transform: scale(1.05); /* Mejora el efecto de hover */
 }
 
 .tarjeta img {
   width: 100%;
-  height: 120px;
+  height: 100px; /* Tamaño ajustado de las imágenes */
   object-fit: cover;
   border-radius: 10px;
 }
 
+/* Estilo de botones */
 button {
   margin-top: 10px;
   padding: 10px;
@@ -107,17 +112,19 @@ button {
   color: white;
   border: none;
   border-radius: 5px;
+  font-size: 1em;
 }
 
+/* Estilo de imágenes de producto */
 .imagen-piedra {
-  width: 350px;
+  width: 300px; /* Imágenes más pequeñas */
   height: auto;
   border-radius: 8px;
   margin: 10px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Pedido */
+/* Estilo de pedido */
 .pedido {
   margin-top: 30px;
   background-color: #fff;
@@ -147,13 +154,14 @@ button {
   font-size: 1.2em;
 }
 
-/* Footer */
+/* Estilo para footer */
 footer {
   padding: 10px;
   background: #2e2e2e;
   font-size: 0.9em;
 }
 
+/* Estilo de inputs de número en productos */
 .producto input[type="number"] {
   width: 60px;
   padding: 5px;
@@ -161,6 +169,7 @@ footer {
   font-size: 1em;
 }
 
+/* Estilo de botón de realizar pedido */
 .producto button {
   margin-top: 10px;
   padding: 10px 15px;
@@ -176,4 +185,5 @@ footer {
 
 .producto button:hover {
   background-color: #128C7E;
-}    
+}
+
