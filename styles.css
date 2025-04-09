@@ -1,180 +1,106 @@
-/* General */
-body { 
-  font-family: 'Segoe UI', sans-serif; 
-  margin: 0; 
-  padding: 0; 
-  background: #f9f9f9; 
-  color: #333; 
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoRoca - Tienda de Piedra Canto Rodado</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Menú de navegación -->
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
 
-header, footer { 
-  text-align: center; 
-  background: #2e2e2e; 
-  color: white; 
-  padding: 1em 0; 
-}
+  <!-- Sección de Inicio -->
+  <section id="inicio" class="seccion">
+    <header>
+      <img src="img/logo_ecoroca.png" alt="EcoRoca Logo" class="logo">
+      <h1>EcoRoca</h1>
+      <p>La mejor selección de piedras canto rodado para tus proyectos.</p>
+    </header>
+    <div class="presentacion">
+      <h2>¿Quiénes somos?</h2>
+      <p>En <strong>EcoRoca</strong> nos especializamos en la venta de piedra canto rodado natural en diferentes tamaños. Nuestra misión es embellecer tus espacios con materiales sostenibles y de alta calidad.</p>
+    </div>
+  </section>
 
-h1, h2, h3 { 
-  margin: 0.5em 0; 
-}
+  <!-- Sección de Productos -->
+  <section id="productos" class="seccion">
+    <h2>Nuestros Productos</h2>
+    <p>Explora nuestras opciones de piedra canto rodado según tus necesidades:</p>
+    <div class="tarjetas">
+      <div class="tarjeta" onclick="location.href='piedra12.html'">
+        <img src="img/piedra1.jpg" alt="Piedra 1/2 pulgada">
+        <h3>Piedra 1/2"</h3>
+        <p>Perfecta para decoraciones finas y acabados.</p>
+        <button>Ver más</button>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedra23.html'">
+        <img src="img/piedra2.jpg" alt="Piedra 2/3 pulgada">
+        <h3>Piedra 2/3"</h3>
+        <p>Ideal para jardines y caminerías naturales.</p>
+        <button>Ver más</button>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedra35.html'">
+        <img src="img/piedra3.jpg" alt="Piedra 3/5 pulgada">
+        <h3>Piedra 3/5"</h3>
+        <p>Excelente para drenaje o decoración rústica.</p>
+        <button>Ver más</button>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedra_mixta.html'">
+        <img src="img/mixta.jpg" alt="Piedra canto rodado mixta">
+        <h3>Color Mixta</h3>
+        <p>Combinación ideal para arreglos ornamentales.</p>
+        <button>Ver más</button>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedra_beige.html'">
+        <img src="img/beige.jpg" alt="Piedra canto rodado beige">
+        <h3>Color Beige</h3>
+        <p>Aporta calidez y elegancia a tus espacios.</p>
+        <button>Ver más</button>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedra_rojo.html'">
+        <img src="img/rojo.jpg" alt="Piedra canto rodado roja">
+        <h3>Color Rojo</h3>
+        <p>Vibrante, ideal para decoraciones llamativas.</p>
+        <button>Ver más</button>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedra_blanca.html'">
+        <img src="img/blanca.jpg" alt="Piedra canto rodado blanca">
+        <h3>Color Blanca</h3>
+        <p>Ilumina jardines, caminos y ambientes Zen.</p>
+        <button>Ver más</button>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedra_lunar.html'">
+        <img src="img/lunar.jpg" alt="Piedra canto rodado lunar">
+        <h3>Color Lunar</h3>
+        <p>Textura especial para paisajismo moderno.</p>
+        <button>Ver más</button>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedra_pulida.html'">
+        <img src="img/pulida.jpg" alt="Piedra canto rodado pulida - masaje">
+        <h3>Piedra Pulida - Masaje</h3>
+        <p>Uso terapéutico y decorativo con acabado suave.</p>
+        <button>Ver más</button>
+      </div>
+    </div>
+  </section>
 
-.logo {
-  height: 200px;
-  width: auto;
-  margin-bottom: 10px;
-}
+  <!-- Sección de Contacto -->
+  <section id="contacto" class="seccion">
+    <h2>Contacto</h2>
+    <p>¿Tienes preguntas o necesitas más información? Contáctanos:</p>
+    <p>WhatsApp: <a href="https://wa.me/917285203">917285203</a></p>
+    <p>Email: <a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></p>
+  </section>
 
-/* Menú de navegación */
-nav {
-  background: #4CAF50;
-  padding: 10px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-
-nav ul li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2em;
-}
-
-/* Secciones */
-.seccion { 
-  padding: 40px 20px; 
-}
-
-.seccion#inicio { 
-  background: #e0f7fa; 
-}
-
-.seccion#productos { 
-  background: #ffffff; 
-}
-
-.seccion#contacto { 
-  background: #eeeeee; 
-}
-
-.presentacion { 
-  margin-bottom: 20px; 
-}
-
-.tarjetas { 
-  display: flex; 
-  gap: 20px; 
-  justify-content: center; 
-  flex-wrap: wrap; 
-}
-
-.tarjeta {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  width: 150px;
-  text-align: center;
-  padding: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.tarjeta:hover { 
-  transform: scale(1.03); 
-}
-
-.tarjeta img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-button {
-  margin-top: 10px;
-  padding: 10px;
-  background: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-}
-
-.imagen-piedra {
-  width: 350px;
-  height: auto;
-  border-radius: 8px;
-  margin: 10px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Pedido */
-.pedido {
-  margin-top: 30px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-}
-
-.pedido label {
-  display: block;
-  margin: 10px 0 5px;
-  font-weight: bold;
-}
-
-.pedido input[type="number"] {
-  width: 100%;
-  padding: 8px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.pedido h4 {
-  margin-top: 15px;
-  color: #4CAF50;
-  font-size: 1.2em;
-}
-
-/* Footer */
-footer {
-  padding: 10px;
-  background: #2e2e2e;
-  font-size: 0.9em;
-}
-
-.producto input[type="number"] {
-  width: 60px;
-  padding: 5px;
-  margin: 5px 0;
-  font-size: 1em;
-}
-
-.producto button {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #25D366; /* color de WhatsApp */
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background 0.3s;
-}
-
-.producto button:hover {
-  background-color: #128C7E;
-}
-
+  <footer>
+    <p>&copy; 2025 EcoRoca - Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
