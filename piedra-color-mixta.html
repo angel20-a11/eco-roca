@@ -1,5 +1,3 @@
-<!-- PLANTILLA PARA SUBPÁGINAS DE PIEDRAS - ECOROCA -->
-<!-- Este código HTML puede ser copiado y modificado para cada tipo de piedra -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,23 +17,14 @@
 
   <section class="producto">
     <h2>Piedra Canto Rodado Color Mixta</h2>
-    <!-- Imagen referencial -->
-    <img src="img/piedra-mixta.jpg" alt="Piedra Color Mixta" class="imagen-piedra">
-    
-    <!-- Descripción del producto -->
-    <p>
-      La piedra canto rodado color mixta combina una variedad de tonalidades naturales,
-      ideal para jardinería, decoración de interiores y exteriores, y paisajismo personalizado.
-    </p>
-
-    <!-- Precios referenciales -->
+    <img src="img/piedra_mixta.jpg" alt="Piedra Canto Rodado Color Mixta" class="imagen-piedra">
+    <p>La piedra canto rodado color mixta ofrece una combinación vibrante de tonos naturales, ideal para agregar un toque único a tu jardín, caminos y proyectos de decoración exterior.</p>
     <h3>Precios:</h3>
     <ul>
       <li>20 kg - S/ 50</li>
       <li>40 kg - S/ 80</li>
     </ul>
 
-    <!-- Sección de pedido interactivo -->
     <h3>Haz tu pedido:</h3>
     <label for="bolsas20">Bolsas de 20 kg:</label>
     <input type="number" id="bolsas20" value="0" min="0"><br>
@@ -45,7 +34,6 @@
 
     <p>Total: <strong id="totalPrecio">S/ 0</strong></p>
 
-    <!-- Botón para enviar pedido por WhatsApp -->
     <button onclick="enviarPedido()">Realizar pedido por WhatsApp</button>
   </section>
 
@@ -54,35 +42,35 @@
   </footer>
 
   <script>
-    // Precios por bolsa
-    const precio20 = 50; // Precio para bolsa de 20 kg
-    const precio40 = 80; // Precio para bolsa de 40 kg
-
-    // Elementos del DOM
+    const precio20 = 50;
+    const precio40 = 80;
     const bolsas20 = document.getElementById("bolsas20");
     const bolsas40 = document.getElementById("bolsas40");
     const total = document.getElementById("totalPrecio");
 
-    // Actualiza el total cuando cambian los inputs
     function actualizarTotal() {
       const totalCalc = (parseInt(bolsas20.value) || 0) * precio20 + (parseInt(bolsas40.value) || 0) * precio40;
       total.textContent = `S/ ${totalCalc}`;
     }
 
-    // Enviar pedido por WhatsApp
     function enviarPedido() {
       const cantidad20 = parseInt(bolsas20.value) || 0;
       const cantidad40 = parseInt(bolsas40.value) || 0;
       const totalFinal = cantidad20 * precio20 + cantidad40 * precio40;
 
-      const mensaje = `Hola, quiero hacer un pedido de Piedra Canto Rodado Color Mixta:\n- ${cantidad20} bolsa(s) de 20 kg\n- ${cantidad40} bolsa(s) de 40 kg\nTotal: S/ ${totalFinal}\n\n¿Podrías confirmarme la disponibilidad?`;
+      const mensaje = `Hola, quiero hacer un pedido de Piedra Canto Rodado Color Mixta:
+- ${cantidad20} bolsa(s) de 20 kg
+- ${cantidad40} bolsa(s) de 40 kg
+Total: S/ ${totalFinal}
 
-      const numero = "51917285203"; // Número de contacto WhatsApp de EcoRoca (Perú)
+¿Podrías confirmarme la disponibilidad?`;
+
+      const numero = "51917285203"; // Código de país +51 para Perú
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
       window.open(url, "_blank");
     }
 
-    // Eventos
     bolsas20.addEventListener("input", actualizarTotal);
     bolsas40.addEventListener("input", actualizarTotal);
   </script>
