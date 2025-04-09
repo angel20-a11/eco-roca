@@ -52,40 +52,40 @@
         <p>Excelente para drenaje o decoración rústica.</p>
         <button>Ver más</button>
       </div>
-      <div class="tarjeta" onclick="location.href='piedra_mixta.html'">
-        <img src="img/mixta.jpg" alt="Piedra canto rodado mixta">
+      <div class="tarjeta" onclick="location.href='mixta.html'">
+        <img src="img/mixta.jpg" alt="Piedra canto rodado color mixta">
         <h3>Color Mixta</h3>
-        <p>Combinación ideal para arreglos ornamentales.</p>
+        <p>Una mezcla vibrante para decoración variada.</p>
         <button>Ver más</button>
       </div>
-      <div class="tarjeta" onclick="location.href='piedra_beige.html'">
-        <img src="img/beige.jpg" alt="Piedra canto rodado beige">
+      <div class="tarjeta" onclick="location.href='beige.html'">
+        <img src="img/beige.jpg" alt="Piedra canto rodado color beige">
         <h3>Color Beige</h3>
-        <p>Aporta calidez y elegancia a tus espacios.</p>
+        <p>Perfecta para dar calidez a tus espacios.</p>
         <button>Ver más</button>
       </div>
-      <div class="tarjeta" onclick="location.href='piedra_rojo.html'">
-        <img src="img/rojo.jpg" alt="Piedra canto rodado roja">
+      <div class="tarjeta" onclick="location.href='rojo.html'">
+        <img src="img/rojo.jpg" alt="Piedra canto rodado color rojo">
         <h3>Color Rojo</h3>
-        <p>Vibrante, ideal para decoraciones llamativas.</p>
+        <p>Ideal para detalles impactantes y modernos.</p>
         <button>Ver más</button>
       </div>
-      <div class="tarjeta" onclick="location.href='piedra_blanca.html'">
-        <img src="img/blanca.jpg" alt="Piedra canto rodado blanca">
+      <div class="tarjeta" onclick="location.href='blanca.html'">
+        <img src="img/blanca.jpg" alt="Piedra canto rodado color blanca">
         <h3>Color Blanca</h3>
-        <p>Ilumina jardines, caminos y ambientes Zen.</p>
+        <p>Pureza y limpieza para todo tipo de espacios.</p>
         <button>Ver más</button>
       </div>
-      <div class="tarjeta" onclick="location.href='piedra_lunar.html'">
+      <div class="tarjeta" onclick="location.href='lunar.html'">
         <img src="img/lunar.jpg" alt="Piedra canto rodado lunar">
-        <h3>Color Lunar</h3>
-        <p>Textura especial para paisajismo moderno.</p>
+        <h3>Piedra Lunar</h3>
+        <p>Texturas naturales únicas para ambientes especiales.</p>
         <button>Ver más</button>
       </div>
-      <div class="tarjeta" onclick="location.href='piedra_pulida.html'">
+      <div class="tarjeta" onclick="location.href='pulida.html'">
         <img src="img/pulida.jpg" alt="Piedra canto rodado pulida - masaje">
-        <h3>Piedra Pulida - Masaje</h3>
-        <p>Uso terapéutico y decorativo con acabado suave.</p>
+        <h3>Piedra Pulida</h3>
+        <p>Ideal para masajes y terapias relajantes.</p>
         <button>Ver más</button>
       </div>
     </div>
