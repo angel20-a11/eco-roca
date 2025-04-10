@@ -188,11 +188,3 @@ footer {
 }
 
 
-/* Alineación izquierda del contenido de la sección de inicio */
-.alineacion-izquierda {
-  text-align: left;           /* Alinea texto a la izquierda */
-  padding-left: 40px;         /* Ajusta espacio desde el borde izquierdo */
-  padding-right: 20px;        /* Opcional: margen derecho más pequeño */
-  max-width: 800px;           /* Opcional: para que no ocupe todo el ancho */
-  margin: 0 auto;             /* Centra el bloque horizontalmente si tiene max-width */
-}
