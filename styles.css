@@ -9,7 +9,7 @@ body {
 
 /* Header y Footer */
 header, footer { 
-  text-align: center; 
+  text-align: left; 
   background: #2e2e2e; 
   color: white; 
   padding: 1em 0; 
