@@ -208,6 +208,6 @@ footer {
 .video-fondo .presentacion {
   position: relative;
   z-index: 2;
-  color: black; /* para que el texto resalte */
+  color: white; /* para que el texto resalte */
   text-shadow: 1px 1px 4px black;
 }
