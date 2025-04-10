@@ -199,8 +199,10 @@ footer {
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
-  object-fit: contain; /* Ajusta el video sin recortar */
+  object-fit: cover;
+  opacity: 1; /* Asegúrate de que la opacidad esté en 1 */
 }
+
 
 
 
