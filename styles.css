@@ -58,20 +58,20 @@ nav ul li a {
 }
 
 .seccion#inicio { 
-  background: #e0f7fa; 
+  background: #e0f7fa; /* Fondo para la sección de inicio */
 }
 
 .seccion#productos { 
-  background: #ffffff; 
+  background: #ffffff; /* Fondo para la sección de productos */
 }
 
 .seccion#contacto { 
-  background: #eeeeee; 
+  background: #eeeeee; /* Fondo para la sección de contacto */
 }
 
 /* Presentación */
 .presentacion { 
-  margin-bottom: 20px; 
+  margin-bottom: 20px; /* Espaciado entre secciones */
 }
 
 /* Tarjetas de productos */
@@ -173,7 +173,7 @@ footer {
 .producto button {
   margin-top: 10px;
   padding: 10px 15px;
-  background-color: #25D366; /* color de WhatsApp */
+  background-color: #25D366; /* Color de WhatsApp */
   color: white;
   font-weight: bold;
   border: none;
@@ -184,6 +184,5 @@ footer {
 }
 
 .producto button:hover {
-  background-color: #128C7E;
+  background-color: #128C7E; /* Color de hover de WhatsApp */
 }
-
