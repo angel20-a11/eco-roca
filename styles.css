@@ -187,4 +187,20 @@ footer {
   background-color: #128C7E;
 }
 
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.video-fondo header, 
+.video-fondo .presentacion {
+  position: relative;
+  z-index: 2;
+  color: white; /* para que el texto resalte */
+  text-shadow: 1px 1px 4px black;
 
