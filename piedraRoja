@@ -18,7 +18,7 @@
  <section class="seccion" id="piedra-roja">
   <h2 class="titulo-seccion">🔴 Piedra Canto Rodado Roja</h2>
 
-  <img class="imagen-piedra" src="ruta-de-tu-imagen/piedra-roja.jpg" alt="Piedra canto rodado roja">
+  <img src="img/piedraRoja.jpg" alt="Piedra Roja " class="imagen-piedra">
 
   <p class="descripcion-seccion">
     La piedra canto rodado roja destaca por su tonalidad cálida y natural, ideal para crear ambientes rústicos, vibrantes y llenos de carácter. Su color terroso la convierte en una excelente opción para resaltar áreas exteriores con personalidad y armonía visual.
