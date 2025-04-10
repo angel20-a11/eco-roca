@@ -15,10 +15,43 @@
     </ul>
   </nav>
 
-  <section class="producto">
-    <h2>Piedra Canto Rodado beige </h2>
-   <img src="img/piedraRoja.jpg" alt="Piedra Roja" class="imagen-piedra">
-    <p>La piedra canto rodado Roja es ideal para crear ambientes naturales, jardines decorativos y caminos con un toque de color.</p>
+ <section class="seccion" id="piedra-roja">
+  <h2 class="titulo-seccion">🔴 Piedra Canto Rodado Roja</h2>
+
+  <img class="imagen-piedra" src="ruta-de-tu-imagen/piedra-roja.jpg" alt="Piedra canto rodado roja">
+
+  <p class="descripcion-seccion">
+    La piedra canto rodado roja destaca por su tonalidad cálida y natural, ideal para crear ambientes rústicos, vibrantes y llenos de carácter. Su color terroso la convierte en una excelente opción para resaltar áreas exteriores con personalidad y armonía visual.
+  </p>
+
+  <h3>Usos recomendados:</h3>
+  <ul>
+    <li>🌿 <strong>Caminerías y senderos de jardín:</strong> Proporciona un contraste atractivo con el verde del césped.</li>
+    <li>🔥 <strong>Zonas de parrilla o fogatas:</strong> Resistente al calor y aporta un aire acogedor.</li>
+    <li>🏠 <strong>Decoración de patios rústicos:</strong> Aporta autenticidad a espacios al aire libre.</li>
+    <li>🪨 <strong>Muros y jardineras de piedra:</strong> Ideal para combinar con elementos naturales como madera o ladrillo.</li>
+    <li>🪴 <strong>Complemento en macetas grandes:</strong> Resalta las plantas con colores vivos.</li>
+  </ul>
+
+  <h3>Beneficios:</h3>
+  <ul>
+    <li>Alta durabilidad frente al clima y uso constante.</li>
+    <li>Color natural que no se decolora con facilidad.</li>
+    <li>Fácil mantenimiento y limpieza.</li>
+    <li>Añade calidez y un toque orgánico a cualquier espacio.</li>
+  </ul>
+
+  <h3>Presentaciones disponibles:</h3>
+  <ul>
+    <li>Bolsa de 20 kg</li>
+    <li>Bolsa de 40 kg</li>
+    <li>Venta por metro cúbico</li>
+  </ul>
+
+
+  <p><em>Haz tu pedido hoy y transforma tu espacio con estilo y naturaleza.</em></p>
+</section>
+
     <h3>Precios:</h3>
     <ul>
       <li>20 kg - S/ 30</li>
