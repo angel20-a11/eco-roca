@@ -199,8 +199,9 @@ footer {
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
-  object-fit: cover;
+  object-fit: contain; /* Ajusta el video sin recortar */
 }
+
 
 
 .video-fondo header, 
