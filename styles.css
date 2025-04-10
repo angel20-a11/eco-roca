@@ -190,7 +190,9 @@ footer {
 .video-fondo {
   position: relative;
   overflow: hidden;
+  min-height: 100vh; /* Asegúrate de que el contenedor tenga suficiente altura */
 }
+
 
 .video-bg {
   position: absolute;
