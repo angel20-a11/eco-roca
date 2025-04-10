@@ -201,14 +201,14 @@ footer {
   left: 0;
   min-width: 100%;
   min-height: 100%;
-  z-index: -1;
   object-fit: cover;
+  z-index: 0; /* Aseguramos que esté detrás del contenido pero visible */
 }
 
 .video-fondo header, 
 .video-fondo .presentacion {
   position: relative;
-  z-index: 2;
+  z-index: 1; /* Asegura que el contenido está encima del video */
   color: white; /* para que el texto resalte */
   text-shadow: 1px 1px 4px black;
 }
