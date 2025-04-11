@@ -58,7 +58,11 @@ nav ul li a {
 }
 
 .seccion#inicio { 
-  background: #e0f7fa; /* Fondo para la sección de inicio */
+  background: url('https://i.imgur.com/UNlfT1M.jpg') no-repeat center center; 
+  background-size: cover;
+  color: white; 
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7); 
+  padding: 60px 20px;
 }
 
 .seccion#productos { 
@@ -182,8 +186,3 @@ footer {
   font-size: 1em;
   transition: background 0.3s;
 }
-
-.producto button:hover {
-  background-color: #128C7E; /* Color de hover de WhatsApp */
-}
-
