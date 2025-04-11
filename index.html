@@ -1,169 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoRoca</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 1rem;
       display: flex;
-      background-color: #f9f9f9;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .sidebar {
-      width: 250px;
-      background-color: #2e3b4e;
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    #menu-button {
+      background-color: #1b5e20;
       color: white;
-      height: 100vh;
-      position: fixed;
-      left: -250px;
-      transition: left 0.3s ease;
-      padding-top: 60px;
-    }
-
-    .sidebar a {
-      display: block;
-      color: white;
-      padding: 15px;
-      text-decoration: none;
-    }
-
-    .sidebar a:hover {
-      background-color: #3e4e63;
-    }
-
-    .toggle-btn {
-      position: absolute;
-      left: 10px;
-      top: 10px;
-      background-color: #2e3b4e;
-      color: white;
-      padding: 10px;
+      border: none;
+      padding: 0.5rem 1rem;
       cursor: pointer;
-      z-index: 2;
+      font-size: 16px;
     }
 
-    .main-content {
-      margin-left: 0;
-      padding: 20px;
-      flex-grow: 1;
-      transition: margin-left 0.3s ease;
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: #c8e6c9;
+      padding: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2e7d32;
+      padding: 0.5rem 0;
+    }
+
+    .container {
+      padding: 2rem;
+    }
+
+    .hidden {
+      display: none;
     }
 
     .card-container {
-      display: none;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
     }
 
     .card {
       background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      width: 250px;
-      overflow: hidden;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       cursor: pointer;
-      text-align: center;
-      transition: transform 0.2s;
+      transition: transform 0.2s ease-in-out;
     }
 
     .card:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
     .card img {
       width: 100%;
-      height: 160px;
+      border-radius: 8px;
+      height: 150px;
       object-fit: cover;
     }
 
-    .card h3 {
-      margin: 10px 0;
-      font-size: 18px;
+    .card p {
+      margin-top: 0.5rem;
+      font-size: 14px;
     }
   </style>
 </head>
-
 <body>
-  <div class="toggle-btn" onclick="toggleMenu()">☰ Menú</div>
 
-  <div class="sidebar" id="sidebar">
-    <a href="#" onclick="mostrarProductos()">Productos</a>
-    <a href="#">Nosotros</a>
-    <a href="#">Contacto</a>
-  </div>
+  <header>
+    <h1>EcoRoca</h1>
+    <button id="menu-button">Menú</button>
+  </header>
 
-  <div class="main-content">
-    <h1>Bienvenido a EcoRoca</h1>
-    <p>Tu tienda confiable de piedras decorativas y de construcción.</p>
+  <nav id="menu">
+    <a href="#" onclick="mostrarSeccion('inicio')">Inicio</a>
+    <a href="#" onclick="mostrarSeccion('productos')">Productos</a>
+    <a href="#" onclick="mostrarSeccion('nosotros')">Nosotros</a>
+    <a href="#" onclick="mostrarSeccion('contacto')">Contacto</a>
+  </nav>
 
-    <div class="card-container" id="productos">
-      <div class="card" onclick="irAPagina('piedra12.html')">
-        <img src="img/piedra12.jpg" alt="Piedra 1/2">
-        <h3>Piedra 1/2"</h3>
+  <div class="container">
+    <section id="inicio">
+      <h2>Bienvenidos a EcoRoca</h2>
+      <p>EcoRoca es una tienda especializada en la venta de piedras canto rodado, piedra gris, piedra de color y otros tipos de piedra decorativa. Ofrecemos productos en diferentes tamaños y presentaciones para tus proyectos de jardinería, decoración y construcción.</p>
+    </section>
+
+    <section id="productos" class="hidden">
+      <h2>Nuestros Productos</h2>
+      <div class="card-container">
+        <div class="card" onclick="location.href='piedra-12.html'">
+          <img src="imagenes/piedra12.jpg" alt="Piedra 1/2">
+          <p>Piedra canto rodado 1/2" - Ideal para jardinería y decoración.</p>
+        </div>
+        <div class="card" onclick="location.href='piedra-23.html'">
+          <img src="imagenes/piedra23.jpg" alt="Piedra 2/3">
+          <p>Piedra canto rodado 2/3" - Perfecta para caminos y relleno.</p>
+        </div>
+        <div class="card" onclick="location.href='piedra-35.html'">
+          <img src="imagenes/piedra35.jpg" alt="Piedra 3/5">
+          <p>Piedra canto rodado 3/5" - Muy usada en jardineras grandes.</p>
+        </div>
+        <div class="card" onclick="location.href='piedra-mixta.html'">
+          <img src="imagenes/piedra-mixta.jpg" alt="Piedra Mixta">
+          <p>Piedra color mixta - Mezcla de tonos para decoraciones creativas.</p>
+        </div>
+        <div class="card" onclick="location.href='piedra-beige.html'">
+          <img src="imagenes/piedra-beige.jpg" alt="Piedra Beige">
+          <p>Piedra color beige - Aporta calidez y elegancia a tus espacios.</p>
+        </div>
+        <div class="card" onclick="location.href='piedra-roja.html'">
+          <img src="imagenes/piedra-roja.jpg" alt="Piedra Roja">
+          <p>Piedra color roja - Tonalidad viva y fuerte para contrastes llamativos.</p>
+        </div>
+        <div class="card" onclick="location.href='piedra-blanca.html'">
+          <img src="imagenes/piedra-blanca.jpg" alt="Piedra Blanca">
+          <p>Piedra color blanca - Luminosidad y limpieza en jardines modernos.</p>
+        </div>
+        <div class="card" onclick="location.href='piedra-lunar.html'">
+          <img src="imagenes/piedra-lunar.jpg" alt="Piedra Lunar">
+          <p>Piedra lunar - Ideal para espacios rústicos o con diseño zen.</p>
+        </div>
+        <div class="card" onclick="location.href='piedra-pulida.html'">
+          <img src="imagenes/piedra-pulida.jpg" alt="Piedra Pulida">
+          <p>Piedra pulida para masajes - Perfecta para relajación y spa.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="card" onclick="irAPagina('piedra23.html')">
-        <img src="img/piedra23.jpg" alt="Piedra 2/3">
-        <h3>Piedra 2/3"</h3>
-      </div>
+    <section id="nosotros" class="hidden">
+      <h2>Sobre Nosotros</h2>
+      <p>EcoRoca nace con la misión de ofrecer productos naturales de alta calidad para el embellecimiento de espacios interiores y exteriores. Nos especializamos en la venta de piedras decorativas al por mayor y menor.</p>
+    </section>
 
-      <div class="card" onclick="irAPagina('piedra35.html')">
-        <img src="img/piedra35.jpg" alt="Piedra 3/5">
-        <h3>Piedra 3/5"</h3>
-      </div>
-
-      <div class="card" onclick="irAPagina('piedraColorMixta.html')">
-        <img src="img/piedraColorMixta.jpg" alt="Piedra Color Mixta">
-        <h3>Piedra Color Mixta</h3>
-      </div>
-
-      <div class="card" onclick="irAPagina('piedraBeige.html')">
-        <img src="img/piedraBeige.jpg" alt="Piedra Beige">
-        <h3>Piedra Beige</h3>
-      </div>
-
-      <div class="card" onclick="irAPagina('piedraRoja.html')">
-        <img src="img/piedraRoja.jpg" alt="Piedra Roja">
-        <h3>Piedra Roja</h3>
-      </div>
-
-      <div class="card" onclick="irAPagina('piedraBlanca.html')">
-        <img src="img/piedraBlanca.jpg" alt="Piedra Blanca">
-        <h3>Piedra Blanca</h3>
-      </div>
-
-      <div class="card" onclick="irAPagina('piedraLunar.html')">
-        <img src="img/piedraLunar.jpg" alt="Piedra Lunar">
-        <h3>Piedra Lunar</h3>
-      </div>
-
-      <div class="card" onclick="irAPagina('piedraPulidaMasaje.html')">
-        <img src="img/piedraPulidaMasaje.jpg" alt="Piedra Pulida - Masaje">
-        <h3>Piedra Pulida - Masaje</h3>
-      </div>
-    </div>
+    <section id="contacto" class="hidden">
+      <h2>Contacto</h2>
+      <p>📞 WhatsApp: <a href="https://wa.me/51917285203" target="_blank">917285203</a><br>
+      📧 Correo: <a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></p>
+    </section>
   </div>
 
   <script>
-    function toggleMenu() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
-    }
+    const menu = document.getElementById('menu');
+    const menuButton = document.getElementById('menu-button');
 
-    function mostrarProductos() {
-      document.getElementById("productos").style.display = "flex";
-    }
+    menuButton.addEventListener('click', () => {
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    });
 
-    function irAPagina(pagina) {
-      window.location.href = pagina;
+    function mostrarSeccion(id) {
+      const secciones = document.querySelectorAll('.container > section');
+      secciones.forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
     }
   </script>
-</body>
 
+</body>
 </html>
