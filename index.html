@@ -162,11 +162,45 @@
       <p class="descripcion-seccion">Nos especializamos en ofrecer piedra canto rodado natural para tus espacios.</p>
     </section>
 
-    <section id="productos">
-      <h2 class="titulo-seccion">Nuestros Productos</h2>
-      <p class="descripcion-seccion">Aquí se mostrarán todas las variedades disponibles.</p>
-      <!-- Aquí luego se agregan las tarjetas -->
-    </section>
+  <section id="productos">
+  <h2 class="titulo-seccion">Nuestros Productos</h2>
+  <p class="descripcion-seccion">Selecciona la cantidad que deseas y haz tu pedido directamente por WhatsApp.</p>
+
+  <div id="productos-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; padding: 1rem;">
+    
+    <!-- Producto 1 -->
+    <div style="background: #fff; padding: 1rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
+      <h3>Piedra 1/2"</h3>
+      <p>Ideal para decoración de jardines y caminos.</p>
+      <p><strong>Precios:</strong><br>20 kg = S/ 45<br>40 kg = S/ 60</p>
+      <label>Bolsas de 20 kg: <input type="number" min="0" value="0" id="piedra12_20" style="width: 60px;"></label><br><br>
+      <label>Bolsas de 40 kg: <input type="number" min="0" value="0" id="piedra12_40" style="width: 60px;"></label><br><br>
+      <button onclick="enviarPedido('Piedra 1/2', 45, 60, 'piedra12_20', 'piedra12_40')">Pedir por WhatsApp</button>
+    </div>
+
+    <!-- Producto 2 -->
+    <div style="background: #fff; padding: 1rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
+      <h3>Piedra 2/3"</h3>
+      <p>Perfecta para caminos y bases decorativas.</p>
+      <p><strong>Precios:</strong><br>20 kg = S/ 30<br>40 kg = S/ 50</p>
+      <label>Bolsas de 20 kg: <input type="number" min="0" value="0" id="piedra23_20" style="width: 60px;"></label><br><br>
+      <label>Bolsas de 40 kg: <input type="number" min="0" value="0" id="piedra23_40" style="width: 60px;"></label><br><br>
+      <button onclick="enviarPedido('Piedra 2/3', 30, 50, 'piedra23_20', 'piedra23_40')">Pedir por WhatsApp</button>
+    </div>
+
+    <!-- Producto 3 -->
+    <div style="background: #fff; padding: 1rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
+      <h3>Piedra 3/5"</h3>
+      <p>Recomendada para paisajismo y decoración rústica.</p>
+      <p><strong>Precios:</strong><br>20 kg = S/ 15<br>40 kg = S/ 30</p>
+      <label>Bolsas de 20 kg: <input type="number" min="0" value="0" id="piedra35_20" style="width: 60px;"></label><br><br>
+      <label>Bolsas de 40 kg: <input type="number" min="0" value="0" id="piedra35_40" style="width: 60px;"></label><br><br>
+      <button onclick="enviarPedido('Piedra 3/5', 15, 30, 'piedra35_20', 'piedra35_40')">Pedir por WhatsApp</button>
+    </div>
+
+  </div>
+</section>
+
 
     <section id="contacto">
       <h2 class="titulo-seccion">Contacto</h2>
@@ -202,6 +236,26 @@
       toggleMenu();
     }
   </script>
+<script>
+  function enviarPedido(nombreProducto, precio20, precio40, id20, id40) {
+    const cantidad20 = parseInt(document.getElementById(id20).value) || 0;
+    const cantidad40 = parseInt(document.getElementById(id40).value) || 0;
+
+    if (cantidad20 === 0 && cantidad40 === 0) {
+      alert("Por favor, selecciona al menos una cantidad.");
+      return;
+    }
+
+    const total = (cantidad20 * precio20) + (cantidad40 * precio40);
+    const mensaje = `Hola, deseo realizar un pedido de ${nombreProducto}:\n` +
+                    `- ${cantidad20} bolsa(s) de 20 kg\n` +
+                    `- ${cantidad40} bolsa(s) de 40 kg\n` +
+                    `Total: S/ ${total}`;
+
+    const url = `https://wa.me/51917285203?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+  }
+</script>
 
 </body>
 </html>
