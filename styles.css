@@ -57,14 +57,17 @@ nav ul li a {
   padding: 40px 20px; 
 }
 
+/* Sección inicio */
 .seccion#inicio { 
-  background: url('https://raw.githubusercontent.com/tu_usuario/tu_repositorio/main/imagenes/playa_piedras.jpg') no-repeat center center;
+  background: url('https://raw.githubusercontent.com/tu_usuario/tu_repositorio/main/imagenes/playa_piedras.jpg') no-repeat center center; 
   background-size: cover;
+  background-attachment: fixed; /* Fija la imagen de fondo al hacer scroll */
   color: white;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
   padding: 60px 20px;
   min-height: 400px; /* Altura mínima para ver el fondo */
 }
+
 
 .titulo-seccion {
   font-size: 2.5em;
