@@ -19,46 +19,48 @@
       color: var(--secundario);
     }
 
+    /* Menú lateral */
+    .menu-toggle {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background-color: var(--acento);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
     .sidebar {
-      height: 100vh;
-      width: 0;
+      height: 100%;
+      width: 250px;
       position: fixed;
-      z-index: 1000;
       top: 0;
-      left: 0;
-      background-color: #fff;
-      overflow-x: hidden;
+      left: -250px;
+      background-color: white;
+      padding-top: 4rem;
       transition: 0.3s;
-      box-shadow: 2px 0 10px rgba(0,0,0,0.2);
-      padding-top: 60px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .sidebar.active {
+      left: 0;
     }
 
     .sidebar a {
-      padding: 15px 25px;
-      text-decoration: none;
-      font-size: 18px;
-      color: var(--secundario);
+      padding: 1rem;
       display: block;
-      transition: 0.3s;
+      color: var(--secundario);
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .sidebar a:hover {
       background-color: var(--acento);
       color: white;
-    }
-
-    .openbtn {
-      font-size: 20px;
-      cursor: pointer;
-      background-color: var(--acento);
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 1001;
-      border-radius: 5px;
     }
 
     header {
@@ -85,15 +87,10 @@
       margin-top: 0.5rem;
     }
 
-    .seccion {
-      display: none;
+    section {
       padding: 4rem 2rem;
       max-width: 1200px;
       margin: auto;
-    }
-
-    .activo {
-      display: block;
     }
 
     .titulo-seccion {
@@ -109,7 +106,7 @@
 
     .tarjetas {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
 
@@ -119,23 +116,23 @@
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       text-align: center;
-      transition: transform 0.3s ease;
       cursor: pointer;
+      transition: transform 0.3s ease;
     }
 
     .tarjeta:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
 
     .imagen-tarjeta {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
     }
 
     .titulo-tarjeta {
-      font-size: 1.2rem;
-      margin: 1rem 0 0.5rem;
+      font-size: 1.1rem;
+      margin: 1rem 0;
     }
 
     .footer {
@@ -147,11 +144,12 @@
   </style>
 </head>
 <body>
-  <button class="openbtn" onclick="abrirMenu()">☰ Menú</button>
-  <div id="sidebar" class="sidebar">
-    <a href="#" onclick="mostrarSeccion('inicio')">Inicio</a>
-    <a href="#" onclick="mostrarSeccion('productos')">Productos</a>
-    <a href="#" onclick="mostrarSeccion('contacto')">Contacto</a>
+
+  <button class="menu-toggle" onclick="toggleMenu()">Menú</button>
+  <div class="sidebar" id="sidebar">
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#contacto">Contacto</a>
   </div>
 
   <header>
@@ -160,14 +158,14 @@
     <p class="subtitulo-principal">La mejor selección de piedras canto rodado para tus proyectos.</p>
   </header>
 
-  <section id="inicio" class="seccion activo">
+  <section id="inicio">
     <h2 class="titulo-seccion">Bienvenido a EcoRoca</h2>
     <p class="descripcion-seccion">En EcoRoca nos especializamos en ofrecer piedra canto rodado natural para tus espacios.</p>
   </section>
 
-  <section id="productos" class="seccion">
+  <section id="productos">
     <h2 class="titulo-seccion">Nuestros Productos</h2>
-    <p class="descripcion-seccion">Haz clic en un producto para ver más detalles:</p>
+    <p class="descripcion-seccion">Haz clic en una categoría para más información:</p>
     <div class="tarjetas">
       <div class="tarjeta" onclick="location.href='piedra12.html'">
         <img src="img/piedra1.jpg" alt="Piedra 1/2 pulgada" class="imagen-tarjeta">
@@ -182,15 +180,35 @@
         <h3 class="titulo-tarjeta">Piedra 3/5"</h3>
       </div>
       <div class="tarjeta" onclick="location.href='piedraMixta.html'">
-        <img src="img/piedraMixta.jpg" alt="Piedra Mixta" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra Mixta</h3>
+        <img src="img/piedraMixta.jpg" alt="Piedra Color Mixta" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra Color Mixta</h3>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedraBeige.html'">
+        <img src="img/piedrabeige.jpg" alt="Piedra Color Beige" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra Color Beige</h3>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedraRoja.html'">
+        <img src="img/piedraRoja.jpg" alt="Piedra Color Roja" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra Color Roja</h3>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedraBlanca.html'">
+        <img src="img/piedraBlanca.jpg" alt="Piedra Color Blanca" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra Color Blanca</h3>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedraLunar.html'">
+        <img src="img/piedra_lunar.jpg" alt="Piedra Lunar" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra Lunar</h3>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedraPulida.html'">
+        <img src="img/piedra_pulida.jpg" alt="Piedra Pulida" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra Pulida - Masaje</h3>
       </div>
     </div>
   </section>
 
-  <section id="contacto" class="seccion">
+  <section id="contacto">
     <h2 class="titulo-seccion">Contacto</h2>
-    <p class="descripcion-seccion">¿Tienes preguntas o necesitas más información? Contáctanos:</p>
+    <p class="descripcion-seccion">¿Tienes preguntas? Contáctanos:</p>
     <p style="text-align:center">WhatsApp: <a href="https://wa.me/917285203">917285203</a></p>
     <p style="text-align:center">Email: <a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></p>
   </section>
@@ -200,16 +218,10 @@
   </footer>
 
   <script>
-    function abrirMenu() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
-    }
-
-    function mostrarSeccion(id) {
-      document.querySelectorAll('.seccion').forEach(sec => sec.classList.remove('activo'));
-      document.getElementById(id).classList.add('activo');
-      document.getElementById("sidebar").style.width = "0";
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('active');
     }
   </script>
+
 </body>
 </html>
