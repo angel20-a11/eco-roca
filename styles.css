@@ -1,203 +1,139 @@
-/* General */
-body { 
-  font-family: 'Segoe UI', sans-serif; 
-  margin: 0; 
-  padding: 0; 
-  background: #f9f9f9; 
-  color: #333; 
+:root {
+  --primario: #f4f4f4;
+  --secundario: #222;
+  --acento: #00A896;
 }
 
-/* Header y Footer */
-header, footer { 
-  text-align: center; 
-  background: #2e2e2e; 
-  color: white; 
-  padding: 1em 0; 
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--primario);
+  color: var(--secundario);
 }
 
-h1, h2, h3 { 
-  margin: 0.5em 0; 
-}
-
-/* Estilo del logo */
-.logo {
-  height: 170px; /* Tamaño ajustado del logo */
-  width: auto;
-  margin-bottom: 10px;
-}
-
-/* Menú de navegación */
-nav {
-  background: #4CAF50; /* Color de fondo verde */
-  padding: 10px;
-  position: sticky;
+.sidebar {
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
   top: 0;
-  z-index: 100;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.3s;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  padding-top: 60px;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-
-nav ul li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-nav ul li a {
-  color: white;
+.sidebar a {
+  padding: 15px 25px;
   text-decoration: none;
-  font-size: 1.2em;
-}
-
-/* Secciones */
-.seccion { 
-  padding: 40px 20px; 
-}
-
-/* Sección inicio */
-.seccion#inicio header {
-  text-align: center;
-  padding: 4rem 1rem;
-  background-image: url('img/playa_piedras.jpg');
-  background-size: cover;
-  background-position: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo temporal para probar */
-  color: white;
-}
-
-
-.titulo-seccion {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.descripcion-seccion {
-  font-size: 1.2em;
-}
-
-
-
-.seccion#productos { 
-  background: #ffffff; /* Fondo para la sección de productos */
-}
-
-.seccion#contacto { 
-  background: #eeeeee; /* Fondo para la sección de contacto */
-}
-
-/* Presentación */
-.presentacion { 
-  margin-bottom: 20px; /* Espaciado entre secciones */
-}
-
-/* Tarjetas de productos */
-.tarjetas { 
-  display: flex; 
-  gap: 20px; 
-  justify-content: center; 
-  flex-wrap: wrap; 
-}
-
-.tarjeta {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  width: 200px; /* Aumento el tamaño de las tarjetas */
-  text-align: center;
-  padding: 15px; /* Aumento el padding */
-  cursor: pointer;
+  font-size: 18px;
+  color: var(--secundario);
+  display: block;
   transition: 0.3s;
 }
 
-.tarjeta:hover { 
-  transform: scale(1.05); /* Mejora el efecto de hover */
-}
-
-.tarjeta img {
-  width: 100%;
-  height: 100px; /* Tamaño ajustado de las imágenes */
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* Estilo de botones */
-button {
-  margin-top: 10px;
-  padding: 10px;
-  background: #4CAF50;
+.sidebar a:hover {
+  background-color: var(--acento);
   color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
 }
 
-/* Estilo de imágenes de producto */
-.imagen-piedra {
-  width: 300px; /* Imágenes más pequeñas */
-  height: auto;
-  border-radius: 8px;
-  margin: 10px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo de pedido */
-.pedido {
-  margin-top: 30px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-}
-
-.pedido label {
-  display: block;
-  margin: 10px 0 5px;
-  font-weight: bold;
-}
-
-.pedido input[type="number"] {
-  width: 100%;
-  padding: 8px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.pedido h4 {
-  margin-top: 15px;
-  color: #4CAF50;
-  font-size: 1.2em;
-}
-
-/* Estilo para footer */
-footer {
-  padding: 10px;
-  background: #2e2e2e;
-  font-size: 0.9em;
-}
-
-/* Estilo de inputs de número en productos */
-.producto input[type="number"] {
-  width: 60px;
-  padding: 5px;
-  margin: 5px 0;
-  font-size: 1em;
-}
-
-/* Estilo de botón de realizar pedido */
-.producto button {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #25D366; /* Color de WhatsApp */
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
+.openbtn {
+  font-size: 20px;
   cursor: pointer;
-  font-size: 1em;
-  transition: background 0.3s;
+  background-color: var(--acento);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  border-radius: 5px;
+}
+
+/* Modificación aquí para la imagen de fondo */
+header {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-image: url('img/playa_piedras.jpg');  /* Usamos la imagen 'playa_piedras.jpg' */
+  background-size: cover;  /* Hace que la imagen cubra todo el fondo */
+  background-position: center;  /* Centra la imagen en el fondo */
+  color: white;  /* Color de texto para que contraste con el fondo */
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.titulo-principal {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.subtitulo-principal {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.seccion {
+  display: none;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.activo {
+  display: block;
+}
+
+.titulo-seccion {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.descripcion-seccion {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.tarjeta {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.tarjeta:hover {
+  transform: scale(1.02);
+}
+
+.imagen-tarjeta {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.titulo-tarjeta {
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
 }
