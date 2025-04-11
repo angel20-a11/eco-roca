@@ -1,12 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Piedra 3/5" - EcoRoca</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .seccion {
+      padding: 2rem;
+      background-color: #fff;
+      margin: 2rem auto;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .titulo-seccion {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .imagen-piedra {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin: 0.5rem 0;
+    }
+
+    h3 {
+      color: #444;
+      margin-top: 1.5rem;
+    }
+
+    input[type="number"] {
+      padding: 0.3rem;
+      margin-bottom: 1rem;
+      width: 80px;
+    }
+
+    button {
+      padding: 0.7rem 1.2rem;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
+
   <nav>
     <ul>
       <li><a href="index.html#inicio">Inicio</a></li>
@@ -16,65 +110,63 @@
   </nav>
 
   <section class="seccion" id="piedra-3-5">
-  <h2 class="titulo-seccion">🪨 Piedra Canto Rodado 3" a 5"</h2>
+    <h2 class="titulo-seccion">🪨 Piedra Canto Rodado 3" a 5"</h2>
+    <img src="img/piedra3.jpg" alt="Piedra 3/5 pulgada" class="imagen-piedra" />
 
- <img src="img/piedra3.jpg" alt="Piedra 3/5 pulgada" class="imagen-piedra">
+    <p class="descripcion-seccion">
+      La piedra canto rodado de <strong>3 a 5 pulgadas</strong> ofrece un impacto visual imponente y una estética natural inigualable. Es perfecta para espacios que necesitan peso, presencia y durabilidad sin sacrificar la belleza.
+    </p>
 
-  <p class="descripcion-seccion">
-    La piedra canto rodado de 3 a 5 pulgadas es la opción ideal para quienes buscan una presencia más fuerte y natural en sus espacios. Este tipo de piedra se caracteriza por su gran tamaño, superficie redondeada y textura robusta, lo que la convierte en un elemento decorativo y funcional en exteriores amplios o zonas con mucho tránsito.
-  </p>
-
-  <h3>Usos recomendados:</h3>
-  <ul>
-    <li>🌿 <strong>Diseño de jardines secos (xeropaisajismo):</strong> Muy utilizada en jardines sin césped para retener humedad y decorar con estilo rústico.</li>
-    <li>🏖️ <strong>Decoración de márgenes de estanques:</strong> Añade un borde natural a lagunas o fuentes exteriores.</li>
-    <li>🚧 <strong>Creación de muros secos o bordes de contención:</strong> Se puede apilar para formar pequeñas barreras ornamentales sin cemento.</li>
-    <li>🚶‍♂️ <strong>Áreas de tránsito o descanso:</strong> Útil en zonas que requieren peso y estabilidad sin necesidad de concreto.</li>
-    <li>🧱 <strong>Protección de estructuras:</strong> Ideal como base decorativa para columnas, postes o monumentos de jardín.</li>
-  </ul>
-
-  <h3>Beneficios:</h3>
-  <ul>
-    <li>Estética natural y rústica que combina con todo tipo de materiales.</li>
-    <li>Muy resistente al paso del tiempo y a la erosión.</li>
-    <li>Funciona como elemento de drenaje natural.</li>
-    <li>Versatilidad para diseños de gran escala o con relieve.</li>
-  </ul>
-
-  <h3>Presentaciones disponibles:</h3>
-  <ul>
-    <li>Bolsa de 20 kg</li>
-    <li>Bolsa de 40 kg</li>
-    <li>Precio por metro cúbico</li>
-  </ul>
-
-  <p><strong>Colores disponibles:</strong><br>
-    ⚪ Blanco | 🔴 Rojo | ⚫ Gris | 🟤 Mix Natural | 🟡 Beige | 🌕 Amarillo lunar
-  </p>
-
-  <p><em>Solicita tu pedido por WhatsApp o consulta sobre disponibilidad por tipo de piedra.</em></p>
-</section>
-
-    <h3>Precios:</h3>
+    <h3>🌱 Usos recomendados:</h3>
     <ul>
-      <li>20 kg - S/ 15</li>
-      <li>40 kg - S/ 30</li>
+      <li>🌿 <strong>Xeropaisajismo:</strong> Ideal para jardines secos, creando texturas y relieve.</li>
+      <li>🏞️ <strong>Orillas de estanques:</strong> Aporta un borde rústico y natural al agua.</li>
+      <li>🧱 <strong>Muros y bordes de contención:</strong> Se apilan sin cemento como decoración estructural.</li>
+      <li>🚶 <strong>Senderos y zonas de paso:</strong> Proporciona firmeza y carácter visual.</li>
+      <li>🪵 <strong>Decoración de columnas o bases:</strong> Protege y embellece estructuras de jardín.</li>
     </ul>
 
-    <h3>Haz tu pedido:</h3>
+    <h3>💎 Beneficios:</h3>
+    <ul>
+      <li>Aspecto natural que se adapta a cualquier entorno.</li>
+      <li>Alta durabilidad frente al clima y desgaste.</li>
+      <li>Funciona como drenaje y cobertura decorativa.</li>
+      <li>Ideal para proyectos paisajísticos a gran escala.</li>
+    </ul>
+
+    <h3>📦 Presentaciones:</h3>
+    <ul>
+      <li>👜 Bolsa de 20 kg</li>
+      <li>🎒 Bolsa de 40 kg</li>
+      <li>🚛 Precio por metro cúbico</li>
+    </ul>
+
+    <p><strong>🎨 Colores disponibles:</strong><br>
+      ⚪ Blanca | 🔴 Roja | ⚫ Gris | 🟤 Mixta | 🟡 Beige | 🌕 Lunar
+    </p>
+
+    <p><em>📲 Haz tu pedido fácilmente por WhatsApp o consulta disponibilidad.</em></p>
+
+    <h3>💰 Precios:</h3>
+    <ul>
+      <li>20 kg - <strong>S/ 15</strong></li>
+      <li>40 kg - <strong>S/ 30</strong></li>
+    </ul>
+
+    <h3>🛒 Haz tu pedido:</h3>
     <label for="bolsas20">Bolsas de 20 kg:</label>
-    <input type="number" id="bolsas20" value="0" min="0"><br>
+    <input type="number" id="bolsas20" value="0" min="0"><br />
 
     <label for="bolsas40">Bolsas de 40 kg:</label>
-    <input type="number" id="bolsas40" value="0" min="0"><br>
+    <input type="number" id="bolsas40" value="0" min="0"><br />
 
-    <p>Total: <strong id="totalPrecio">S/ 0</strong></p>
+    <p>🧾 Total: <strong id="totalPrecio">S/ 0</strong></p>
 
-    <button onclick="enviarPedido()">Realizar pedido por WhatsApp</button>
+    <button onclick="enviarPedido()">📩 Realizar pedido por WhatsApp</button>
   </section>
 
   <footer>
-    <p>&copy; 2025 EcoRoca</p>
+    <p>&copy; 2025 EcoRoca | Todos los derechos reservados</p>
   </footer>
 
   <script>
@@ -101,9 +193,8 @@ Total: S/ ${totalFinal}
 
 ¿Podrías confirmarme la disponibilidad?`;
 
-      const numero = "51917285203"; // Código de país +51 para Perú
+      const numero = "51917285203";
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-
       window.open(url, "_blank");
     }
 
