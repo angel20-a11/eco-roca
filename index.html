@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoRoca - Tienda de Piedra Canto Rodado</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -19,79 +19,46 @@
       color: var(--secundario);
     }
 
-    /* Botón del menú */
-    .menu-button {
-      position: fixed;
-      top: 1rem;
-      left: 1rem;
-      background-color: var(--acento);
-      color: white;
-      border: none;
-      padding: 0.8rem 1.2rem;
-      font-size: 1.2rem;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 1100;
-    }
-
-    /* Menú lateral */
     .sidebar {
+      height: 100vh;
+      width: 0;
       position: fixed;
-      left: -250px;
-      top: 0;
-      width: 250px;
-      height: 100%;
-      background-color: white;
-      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-      transition: left 0.3s ease;
-      padding-top: 4rem;
       z-index: 1000;
-    }
-
-    .sidebar.open {
+      top: 0;
       left: 0;
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .sidebar li {
-      padding: 1rem 2rem;
-      border-bottom: 1px solid #eee;
+      background-color: #fff;
+      overflow-x: hidden;
+      transition: 0.3s;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+      padding-top: 60px;
     }
 
     .sidebar a {
+      padding: 15px 25px;
       text-decoration: none;
+      font-size: 18px;
       color: var(--secundario);
-      font-weight: bold;
       display: block;
+      transition: 0.3s;
     }
 
     .sidebar a:hover {
-      color: var(--acento);
+      background-color: var(--acento);
+      color: white;
     }
 
-    /* Contenido */
-    .contenido {
-      margin-left: 0;
-      padding: 2rem;
-      transition: margin-left 0.3s ease;
-    }
-
-    .contenido.shifted {
-      margin-left: 250px;
-    }
-
-    section {
-      display: none;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    section.active {
-      display: block;
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: var(--acento);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1001;
+      border-radius: 5px;
     }
 
     header {
@@ -118,6 +85,17 @@
       margin-top: 0.5rem;
     }
 
+    .seccion {
+      display: none;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .activo {
+      display: block;
+    }
+
     .titulo-seccion {
       font-size: 2rem;
       text-align: center;
@@ -129,134 +107,109 @@
       margin-bottom: 2rem;
     }
 
+    .tarjetas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .tarjeta {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .tarjeta:hover {
+      transform: scale(1.02);
+    }
+
+    .imagen-tarjeta {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .titulo-tarjeta {
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem;
+    }
+
     .footer {
       background-color: #111;
       color: white;
       text-align: center;
       padding: 2rem 1rem;
-      margin-top: 4rem;
     }
   </style>
 </head>
 <body>
-
-  <button class="menu-button" onclick="toggleMenu()">☰ Menú</button>
-
-  <nav class="sidebar" id="sidebar">
-    <ul>
-      <li><a href="#" onclick="mostrarSeccion('inicio')">Inicio</a></li>
-      <li><a href="#" onclick="mostrarSeccion('productos')">Productos</a></li>
-      <li><a href="#" onclick="mostrarSeccion('contacto')">Contacto</a></li>
-    </ul>
-  </nav>
-
-  <div class="contenido" id="contenido">
-
-    <section id="inicio" class="active">
-      <header>
-        <img src="img/logo_ecoroca.png" alt="EcoRoca Logo" class="logo">
-        <h1 class="titulo-principal">EcoRoca</h1>
-        <p class="subtitulo-principal">La mejor selección de piedras canto rodado para tus proyectos.</p>
-      </header>
-      <h2 class="titulo-seccion">Bienvenido a EcoRoca</h2>
-      <p class="descripcion-seccion">Nos especializamos en ofrecer piedra canto rodado natural para tus espacios.</p>
-    </section>
-
-   <section id="productos">
-  <h2 class="titulo-seccion">Nuestros Productos</h2>
-  <p class="descripcion-seccion">Selecciona la cantidad que deseas y haz tu pedido directamente por WhatsApp.</p>
-
-  <div id="productos-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; padding: 1rem;">
-    
-    <!-- Producto 1 -->
-    <div style="background: #fff; padding: 1rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
-      <h3>Piedra 1/2"</h3>
-      <p>Ideal para decoración de jardines y caminos.</p>
-      <p><strong>Precios:</strong><br>20 kg = S/ 45<br>40 kg = S/ 60</p>
-      <label>Bolsas de 20 kg: <input type="number" min="0" value="0" id="piedra12_20" style="width: 60px;"></label><br><br>
-      <label>Bolsas de 40 kg: <input type="number" min="0" value="0" id="piedra12_40" style="width: 60px;"></label><br><br>
-      <button onclick="enviarPedido('Piedra 1/2', 45, 60, 'piedra12_20', 'piedra12_40')">Pedir por WhatsApp</button>
-    </div>
-
-    <!-- Producto 2 -->
-    <div style="background: #fff; padding: 1rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
-      <h3>Piedra 2/3"</h3>
-      <p>Perfecta para caminos y bases decorativas.</p>
-      <p><strong>Precios:</strong><br>20 kg = S/ 30<br>40 kg = S/ 50</p>
-      <label>Bolsas de 20 kg: <input type="number" min="0" value="0" id="piedra23_20" style="width: 60px;"></label><br><br>
-      <label>Bolsas de 40 kg: <input type="number" min="0" value="0" id="piedra23_40" style="width: 60px;"></label><br><br>
-      <button onclick="enviarPedido('Piedra 2/3', 30, 50, 'piedra23_20', 'piedra23_40')">Pedir por WhatsApp</button>
-    </div>
-
-    <!-- Producto 3 -->
-    <div style="background: #fff; padding: 1rem; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center;">
-      <h3>Piedra 3/5"</h3>
-      <p>Recomendada para paisajismo y decoración rústica.</p>
-      <p><strong>Precios:</strong><br>20 kg = S/ 15<br>40 kg = S/ 30</p>
-      <label>Bolsas de 20 kg: <input type="number" min="0" value="0" id="piedra35_20" style="width: 60px;"></label><br><br>
-      <label>Bolsas de 40 kg: <input type="number" min="0" value="0" id="piedra35_40" style="width: 60px;"></label><br><br>
-      <button onclick="enviarPedido('Piedra 3/5', 15, 30, 'piedra35_20', 'piedra35_40')">Pedir por WhatsApp</button>
-    </div>
-
+  <button class="openbtn" onclick="abrirMenu()">☰ Menú</button>
+  <div id="sidebar" class="sidebar">
+    <a href="#" onclick="mostrarSeccion('inicio')">Inicio</a>
+    <a href="#" onclick="mostrarSeccion('productos')">Productos</a>
+    <a href="#" onclick="mostrarSeccion('contacto')">Contacto</a>
   </div>
-</section>
 
+  <header>
+    <img src="img/logo_ecoroca.png" alt="EcoRoca Logo" class="logo">
+    <h1 class="titulo-principal">EcoRoca</h1>
+    <p class="subtitulo-principal">La mejor selección de piedras canto rodado para tus proyectos.</p>
+  </header>
 
-    <section id="contacto">
-      <h2 class="titulo-seccion">Contacto</h2>
-      <p class="descripcion-seccion">¿Tienes preguntas o necesitas más información? Contáctanos:</p>
-      <p class="descripcion-seccion">WhatsApp: <a href="https://wa.me/917285203">917285203</a></p>
-      <p class="descripcion-seccion">Email: <a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></p>
-    </section>
+  <section id="inicio" class="seccion activo">
+    <h2 class="titulo-seccion">Bienvenido a EcoRoca</h2>
+    <p class="descripcion-seccion">En EcoRoca nos especializamos en ofrecer piedra canto rodado natural para tus espacios.</p>
+  </section>
 
-    <footer class="footer">
-      <p>&copy; 2025 EcoRoca - Todos los derechos reservados.</p>
-    </footer>
+  <section id="productos" class="seccion">
+    <h2 class="titulo-seccion">Nuestros Productos</h2>
+    <p class="descripcion-seccion">Haz clic en un producto para ver más detalles:</p>
+    <div class="tarjetas">
+      <div class="tarjeta" onclick="location.href='piedra12.html'">
+        <img src="img/piedra1.jpg" alt="Piedra 1/2 pulgada" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra 1/2"</h3>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedra23.html'">
+        <img src="img/piedra2.jpg" alt="Piedra 2/3 pulgada" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra 2/3"</h3>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedra35.html'">
+        <img src="img/piedra3.jpg" alt="Piedra 3/5 pulgada" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra 3/5"</h3>
+      </div>
+      <div class="tarjeta" onclick="location.href='piedraMixta.html'">
+        <img src="img/piedraMixta.jpg" alt="Piedra Mixta" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra Mixta</h3>
+      </div>
+    </div>
+  </section>
 
-  </div>
+  <section id="contacto" class="seccion">
+    <h2 class="titulo-seccion">Contacto</h2>
+    <p class="descripcion-seccion">¿Tienes preguntas o necesitas más información? Contáctanos:</p>
+    <p style="text-align:center">WhatsApp: <a href="https://wa.me/917285203">917285203</a></p>
+    <p style="text-align:center">Email: <a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></p>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 EcoRoca - Todos los derechos reservados.</p>
+  </footer>
 
   <script>
-    const sidebar = document.getElementById('sidebar');
-    const contenido = document.getElementById('contenido');
-
-    function toggleMenu() {
-      sidebar.classList.toggle('open');
-      contenido.classList.toggle('shifted');
+    function abrirMenu() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
     }
 
     function mostrarSeccion(id) {
-      const secciones = document.querySelectorAll('section');
-      secciones.forEach(sec => {
-        if (sec.id === id) {
-          sec.classList.add('active');
-        } else {
-          sec.classList.remove('active');
-        }
-      });
-      toggleMenu();
+      document.querySelectorAll('.seccion').forEach(sec => sec.classList.remove('activo'));
+      document.getElementById(id).classList.add('activo');
+      document.getElementById("sidebar").style.width = "0";
     }
   </script>
-  <script>
-  function enviarPedido(nombreProducto, precio20, precio40, id20, id40) {
-    const cantidad20 = parseInt(document.getElementById(id20).value) || 0;
-    const cantidad40 = parseInt(document.getElementById(id40).value) || 0;
-
-    if (cantidad20 === 0 && cantidad40 === 0) {
-      alert("Por favor, selecciona al menos una cantidad.");
-      return;
-    }
-
-    const total = (cantidad20 * precio20) + (cantidad40 * precio40);
-    const mensaje = `Hola, deseo realizar un pedido de ${nombreProducto}:\n` +
-                    `- ${cantidad20} bolsa(s) de 20 kg\n` +
-                    `- ${cantidad40} bolsa(s) de 40 kg\n` +
-                    `Total: S/ ${total}`;
-
-    const url = `https://wa.me/51917285203?text=${encodeURIComponent(mensaje)}`;
-    window.open(url, '_blank');
-  }
-</script>
-
-
 </body>
 </html>
