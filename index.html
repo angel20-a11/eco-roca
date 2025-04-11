@@ -19,6 +19,7 @@
       color: var(--secundario);
     }
 
+    /* Botón del menú */
     .menu-button {
       position: fixed;
       top: 1rem;
@@ -33,6 +34,7 @@
       z-index: 1100;
     }
 
+    /* Menú lateral */
     .sidebar {
       position: fixed;
       left: -250px;
@@ -71,6 +73,7 @@
       color: var(--acento);
     }
 
+    /* Contenido */
     .contenido {
       margin-left: 0;
       padding: 2rem;
@@ -126,36 +129,6 @@
       margin-bottom: 2rem;
     }
 
-    .productos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 1rem;
-    }
-
-    .producto-card {
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .producto-card:hover {
-      transform: scale(1.02);
-    }
-
-    .producto-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .producto-info {
-      padding: 1rem;
-    }
-
     .footer {
       background-color: #111;
       color: white;
@@ -188,87 +161,12 @@
       <h2 class="titulo-seccion">Bienvenido a EcoRoca</h2>
       <p class="descripcion-seccion">Nos especializamos en ofrecer piedra canto rodado natural para tus espacios.</p>
     </section>
-<!-- Sección de Productos -->
-<section id="productos" class="seccion productos-seccion">
-  <h2 class="titulo-seccion">Nuestros Productos</h2>
-  <p class="descripcion-seccion">Explora nuestras opciones de piedra canto rodado según tus necesidades:</p>
-  <div class="tarjetas" id="tarjetas-productos">
 
-    <!-- Piedra 1/2" -->
-    <div class="tarjeta" id="piedra12" onclick="location.href='piedra12.html'">
-      <img src="img/piedra1.jpg" alt="Piedra 1/2 pulgada" class="imagen-tarjeta">
-      <h3 class="titulo-tarjeta">Piedra 1/2"</h3>
-      <p class="descripcion-tarjeta">Perfecta para decoraciones finas y acabados.</p>
-      <button class="boton-tarjeta">Ver más</button>
-    </div>
-
-    <!-- Piedra 2/3" -->
-    <div class="tarjeta" id="piedra23" onclick="location.href='piedra23.html'">
-      <img src="img/piedra2.jpg" alt="Piedra 2/3 pulgada" class="imagen-tarjeta">
-      <h3 class="titulo-tarjeta">Piedra 2/3"</h3>
-      <p class="descripcion-tarjeta">Ideal para jardines y caminerías naturales.</p>
-      <button class="boton-tarjeta">Ver más</button>
-    </div>
-
-    <!-- Piedra 3/5" -->
-    <div class="tarjeta" id="piedra35" onclick="location.href='piedra35.html'">
-      <img src="img/piedra3.jpg" alt="Piedra 3/5 pulgada" class="imagen-tarjeta">
-      <h3 class="titulo-tarjeta">Piedra 3/5"</h3>
-      <p class="descripcion-tarjeta">Excelente para drenaje o decoración rústica.</p>
-      <button class="boton-tarjeta">Ver más</button>
-    </div>
-
-    <!-- Color Mixta -->
-    <div class="tarjeta" id="piedraMixta" onclick="location.href='piedraMixta.html'">
-      <img src="img/piedraMixta.jpg" alt="Piedra Canto Rodado Color Mixta" class="imagen-tarjeta">
-      <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Mixta</h3>
-      <p class="descripcion-tarjeta">Para un toque vibrante y natural en cualquier espacio.</p>
-      <button class="boton-tarjeta">Ver más</button>
-    </div>
-
-    <!-- Color Beige -->
-    <div class="tarjeta" id="piedraBeige" onclick="location.href='piedraBeige.html'">
-      <img src="img/piedrabeige.jpg" alt="Piedra Canto Rodado Color Beige" class="imagen-tarjeta">
-      <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Beige</h3>
-      <p class="descripcion-tarjeta">Ideal para ambientes suaves y tranquilos.</p>
-      <button class="boton-tarjeta">Ver más</button>
-    </div>
-
-    <!-- Color Roja -->
-    <div class="tarjeta" id="piedraRoja" onclick="location.href='piedraRoja.html'">
-      <img src="img/piedraRoja.jpg" alt="Piedra Canto Rodado Color Roja" class="imagen-tarjeta">
-      <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Roja</h3>
-      <p class="descripcion-tarjeta">Añade un toque de elegancia cálida a tu espacio.</p>
-      <button class="boton-tarjeta">Ver más</button>
-    </div>
-
-    <!-- Color Blanca -->
-    <div class="tarjeta" id="piedraBlanca" onclick="location.href='piedraBlanca.html'">
-      <img src="img/piedraBlanca.jpg" alt="Piedra Canto Rodado Color Blanca" class="imagen-tarjeta">
-      <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Blanca</h3>
-      <p class="descripcion-tarjeta">Perfecta para proyectos luminosos y frescos.</p>
-      <button class="boton-tarjeta">Ver más</button>
-    </div>
-
-    <!-- Lunar -->
-    <div class="tarjeta" id="piedraLunar" onclick="location.href='piedraLunar.html'">
-      <img src="img/piedra_lunar.jpg" alt="Piedra Canto Rodado Lunar" class="imagen-tarjeta">
-      <h3 class="titulo-tarjeta">Piedra Canto Rodado Lunar</h3>
-      <p class="descripcion-tarjeta">Agrega un toque único con patrones naturales.</p>
-      <button class="boton-tarjeta">Ver más</button>
-    </div>
-
-    <!-- Pulida - Masaje -->
-    <div class="tarjeta" id="piedraPulida" onclick="location.href='piedraPulida.html'">
-      <img src="img/piedra_pulida.jpg" alt="Piedra Canto Rodado Pulida - Masaje" class="imagen-tarjeta">
-      <h3 class="titulo-tarjeta">Piedra Canto Rodado Pulida - Masaje</h3>
-      <p class="descripcion-tarjeta">Para un acabado elegante y suave al tacto.</p>
-      <button class="boton-tarjeta">Ver más</button>
-    </div>
-
-  </div>
-</section>
-
+    <section id="productos">
+      <h2 class="titulo-seccion">Nuestros Productos</h2>
+      <p class="descripcion-seccion">Aquí se mostrarán todas las variedades disponibles.</p>
+      <!-- Aquí luego se agregan las tarjetas -->
+    </section>
 
     <section id="contacto">
       <h2 class="titulo-seccion">Contacto</h2>
@@ -302,7 +200,6 @@
         }
       });
       toggleMenu();
-      window.scrollTo(0, 0);
     }
   </script>
 
