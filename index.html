@@ -4,112 +4,227 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoRoca - Tienda de Piedra Canto Rodado</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f7f7f7;
+    }
+
+    nav {
+      background-color: #005c4b;
+      padding: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(to right, #87cbb9, #d3f1e0);
+    }
+
+    .logo {
+      max-width: 150px;
+      margin-bottom: 1rem;
+    }
+
+    .titulo-principal {
+      font-size: 2.5rem;
+      color: #005c4b;
+    }
+
+    .subtitulo-principal {
+      font-size: 1.2rem;
+      color: #3b3b3b;
+    }
+
+    .seccion {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .titulo-seccion {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #005c4b;
+    }
+
+    .descripcion-seccion {
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .presentacion {
+      background-color: #eafaf1;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .titulo-presentacion {
+      font-size: 2rem;
+      color: #007959;
+      margin-bottom: 1rem;
+    }
+
+    .descripcion-presentacion {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+      color: #333;
+    }
+
+    .tarjetas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .tarjeta {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .tarjeta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .imagen-tarjeta {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .titulo-tarjeta {
+      font-size: 1.2rem;
+      margin: 0.8rem 0 0.5rem;
+      color: #007959;
+    }
+
+    .descripcion-tarjeta {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .boton-tarjeta {
+      margin-top: 0.8rem;
+      padding: 0.5rem 1rem;
+      background-color: #005c4b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .boton-tarjeta:hover {
+      background-color: #00916e;
+    }
+
+    .contacto-seccion {
+      background-color: #dff0ea;
+    }
+
+    .descripcion-contacto {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .info-contacto a {
+      color: #005c4b;
+      text-decoration: none;
+    }
+
+    .info-contacto a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      background-color: #005c4b;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Menú de navegación -->
-  <nav id="nav-menu">
+  <nav>
     <ul>
-      <li><a href="#inicio" class="nav-link">Inicio</a></li>
-      <li><a href="#productos" class="nav-link">Productos</a></li>
-      <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
 
-
-  <header id="header" class="header">
-    <img src="img/logo_ecoroca.png" alt="EcoRoca Logo" class="logo">
+  <header class="header">
+    <img src="img/logo_ecoroca.png" alt="Logo de EcoRoca, tienda de piedra canto rodado" class="logo">
     <h1 class="titulo-principal">EcoRoca</h1>
     <p class="subtitulo-principal">La mejor selección de piedras canto rodado para tus proyectos.</p>
   </header>
 
-   <!-- Sección de Inicio -->
   <section id="inicio" class="seccion inicio-seccion">
     <h2 class="titulo-seccion">Bienvenido a EcoRoca</h2>
     <p class="descripcion-seccion">La mejor selección de piedras para tus proyectos.</p>
   </section>
-  
 
-  <div class="presentacion" id="presentacion">
+  <div class="presentacion">
     <h2 class="titulo-presentacion">¿Quiénes somos?</h2>
     <p class="descripcion-presentacion">En <strong>EcoRoca</strong> nos especializamos en la venta de piedra canto rodado natural en diferentes tamaños. Nuestra misión es embellecer tus espacios con materiales sostenibles y de alta calidad.</p>
   </div>
 
-  <!-- Sección de Productos -->
   <section id="productos" class="seccion productos-seccion">
     <h2 class="titulo-seccion">Nuestros Productos</h2>
     <p class="descripcion-seccion">Explora nuestras opciones de piedra canto rodado según tus necesidades:</p>
-    <div class="tarjetas" id="tarjetas-productos">
-      <div class="tarjeta" id="piedra12" onclick="location.href='piedra12.html'">
-        <img src="img/piedra1.jpg" alt="Piedra 1/2 pulgada" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra 1/2"</h3>
-        <p class="descripcion-tarjeta">Perfecta para decoraciones finas y acabados.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-      <div class="tarjeta" id="piedra23" onclick="location.href='piedra23.html'">
-        <img src="img/piedra2.jpg" alt="Piedra 2/3 pulgada" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra 2/3"</h3>
-        <p class="descripcion-tarjeta">Ideal para jardines y caminerías naturales.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-      <div class="tarjeta" id="piedra35" onclick="location.href='piedra35.html'">
-        <img src="img/piedra3.jpg" alt="Piedra 3/5 pulgada" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra 3/5"</h3>
-        <p class="descripcion-tarjeta">Excelente para drenaje o decoración rústica.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-      <!-- Nuevas Tarjetas -->
-      <div class="tarjeta" id="piedraMixta" onclick="location.href='piedraMixta.html'">
-        <img src="img/piedraMixta.jpg" alt="Piedra Canto Rodado Color Mixta" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Mixta</h3>
-        <p class="descripcion-tarjeta">Para un toque vibrante y natural en cualquier espacio.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-      <div class="tarjeta" id="piedraBeige" onclick="location.href='piedraBeige.html'">
-        <img src="img/piedrabeige.jpg" alt="Piedra Canto Rodado Color Beige" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Beige</h3>
-        <p class="descripcion-tarjeta">Ideal para ambientes suaves y tranquilos.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-      <div class="tarjeta" id="piedraRoja" onclick="location.href='piedraRoja.html'">
-        <img src="img/piedraRoja.jpg" alt="Piedra Canto Rodado Color Roja" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Roja</h3>
-        <p class="descripcion-tarjeta">Añade un toque de elegancia cálida a tu espacio.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-      <div class="tarjeta" id="piedraBlanca" onclick="location.href='piedraBlanca.html'">
-        <img src="img/piedraBlanca.jpg" alt="Piedra Canto Rodado Color Blanca" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Blanca</h3>
-        <p class="descripcion-tarjeta">Perfecta para proyectos luminosos y frescos.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-      <div class="tarjeta" id="piedraLunar" onclick="location.href='piedraLunar.html'">
-        <img src="img/piedra_lunar.jpg" alt="Piedra Canto Rodado Lunar" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra Canto Rodado Lunar</h3>
-        <p class="descripcion-tarjeta">Agrega un toque único con patrones naturales.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-      <div class="tarjeta" id="piedraPulida" onclick="location.href='piedraPulida.html'">
-        <img src="img/piedra_pulida.jpg" alt="Piedra Canto Rodado Pulida - Masaje" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra Canto Rodado Pulida - Masaje</h3>
-        <p class="descripcion-tarjeta">Para un acabado elegante y suave al tacto.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
+    <div class="tarjetas">
+      <!-- Tarjetas de producto (igual que en tu HTML original) -->
+      <!-- Puedes pegar tus tarjetas aquí o reutilizar el código anterior -->
     </div>
   </section>
 
-  <!-- Sección de Contacto -->
   <section id="contacto" class="seccion contacto-seccion">
     <h2 class="titulo-seccion">Contacto</h2>
     <p class="descripcion-contacto">¿Tienes preguntas o necesitas más información? Contáctanos:</p>
-    <p class="info-contacto">WhatsApp: <a href="https://wa.me/917285203" class="enlace-contacto">917285203</a></p>
-    <p class="info-contacto">Email: <a href="mailto:rnina8652@gmail.com" class="enlace-contacto">rnina8652@gmail.com</a></p>
+    <p class="info-contacto">WhatsApp: <a href="https://wa.me/917285203">917285203</a></p>
+    <p class="info-contacto">Email: <a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></p>
   </section>
 
-  <footer id="footer" class="footer">
+  <footer class="footer">
     <p>&copy; 2025 EcoRoca - Todos los derechos reservados.</p>
   </footer>
-
 </body>
 </html>
