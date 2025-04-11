@@ -58,7 +58,7 @@ nav ul li a {
 }
 
 .seccion#inicio { 
-  background: url('https://i.imgur.com/UNlfT1M.jpg') no-repeat center center; 
+  background: url('img/playa_piedras.jpg'); 
   background-size: cover;
   color: white; 
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7); 
