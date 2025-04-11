@@ -48,9 +48,42 @@
     <li>Venta por metro cúbico</li>
   </ul>
 
-  <p><strong>Colores relacionados:</strong><br>
-    🔴 Roja | ⚪ Blanca | 🟤 Mixta | 
-  </p>
+ <!-- Selector de Tamaños y Pesos con Precio Actualizable -->
+<div class="selector-tamanos">
+  <label for="tamanoPiedra"><strong>Tamaño de piedra:</strong></label>
+  <select id="tamanoPiedra" onchange="actualizarPrecio()">
+    <option value="1/2">1/2 pulgada</option>
+    <option value="2/3">2/3 pulgada</option>
+    <option value="3/5">3/5 pulgada</option>
+  </select>
+
+  <label for="pesoPiedra" style="margin-top: 10px;"><strong>Cantidad:</strong></label>
+  <select id="pesoPiedra" onchange="actualizarPrecio()">
+    <option value="20">20 kg</option>
+    <option value="40">40 kg</option>
+  </select>
+
+  <p style="margin-top: 10px;"><strong>Precio total:</strong> <span id="precioActual">S/ 45</span></p>
+</div>
+
+<script>
+  function actualizarPrecio() {
+    const tamano = document.getElementById("tamanoPiedra").value;
+    const peso = document.getElementById("pesoPiedra").value;
+    const precioSpan = document.getElementById("precioActual");
+
+    // Lista de precios según tamaño y peso
+    const precios = {
+      "1/2": { "20": 45, "40": 60 },
+      "2/3": { "20": 30, "40": 50 },
+      "3/5": { "20": 15, "40": 30 }
+    };
+
+    const precio = precios[tamano][peso];
+    precioSpan.textContent = `S/ ${precio}`;
+  }
+</script>
+
 
   <p><em>Dale un aire lunar y moderno a tu jardín o espacio decorativo con esta piedra única.</em></p>
 </section>
