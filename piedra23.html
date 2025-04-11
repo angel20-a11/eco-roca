@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Piedra 2/3" - EcoRoca</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <nav>
@@ -18,7 +18,7 @@
   <section class="seccion" id="piedra-2-3">
     <h2 class="titulo-seccion">🪨 Piedra Canto Rodado 2" a 3"</h2>
 
-    <img src="img/piedra2.jpg" alt="Piedra 2/3 pulgada" class="imagen-piedra">
+    <img src="img/piedra2.jpg" alt="Piedra canto rodado 2 a 3 pulgadas" class="imagen-piedra" />
 
     <p class="descripcion-seccion">
       La piedra canto rodado de 2 a 3 pulgadas es una piedra decorativa de mayor tamaño, ideal para proyectos que requieren impacto visual, control de erosión o delimitación de áreas. Su tamaño robusto y apariencia natural la hacen perfecta para destacar en jardines y estructuras de paisaje de gran escala.
@@ -26,19 +26,19 @@
 
     <h3>Usos recomendados:</h3>
     <ul>
-      <li>🛣️ <strong>Delimitación de caminos y senderos:</strong> Perfecta para bordes de caminos, entradas o zonas de transición en paisajes amplios.</li>
-      <li>🪨 <strong>Control de erosión:</strong> Se utiliza en laderas o terrenos inclinados para evitar el deslizamiento del suelo.</li>
-      <li>🌊 <strong>Decoración en fuentes o cascadas:</strong> Añade un elemento visual fuerte y natural cuando se mezcla con el flujo de agua.</li>
-      <li>🏞️ <strong>Proyectos paisajísticos de gran escala:</strong> Útil en parques, áreas públicas o jardines amplios donde se requiere mayor visibilidad.</li>
-      <li>🐾 <strong>Barreras naturales:</strong> Se puede usar como borde protector para áreas sensibles, jardines o zonas de mascotas.</li>
+      <li>🛣️ <strong>Delimitación de caminos y senderos:</strong> perfecta para bordes de caminos o zonas de transición.</li>
+      <li>🪨 <strong>Control de erosión:</strong> excelente para evitar el deslizamiento del suelo en laderas.</li>
+      <li>🌊 <strong>Decoración en fuentes o cascadas:</strong> su forma natural resalta en combinación con agua.</li>
+      <li>🏞️ <strong>Proyectos paisajísticos de gran escala:</strong> ideal para parques y jardines amplios.</li>
+      <li>🐾 <strong>Barreras naturales:</strong> útil como borde protector en zonas de mascotas o jardinería.</li>
     </ul>
 
     <h3>Beneficios:</h3>
     <ul>
-      <li>Gran impacto visual por su tamaño y forma natural.</li>
-      <li>Alta resistencia a condiciones climáticas extremas.</li>
-      <li>Bajo mantenimiento y larga duración.</li>
-      <li>Ideal para combinar con piedras más pequeñas y crear contraste decorativo.</li>
+      <li>Gran impacto visual por su tamaño.</li>
+      <li>Alta resistencia a condiciones extremas.</li>
+      <li>Bajo mantenimiento.</li>
+      <li>Se puede combinar con piedras pequeñas para contraste.</li>
     </ul>
 
     <h3>Presentaciones disponibles:</h3>
@@ -48,8 +48,11 @@
       <li>Precio por metro cúbico (para proyectos grandes)</li>
     </ul>
 
+    <p><strong>Colores disponibles:</strong><br/>
+      ⚪ Blanco | 🔴 Rojo | ⚫ Gris | 🟤 Mix Natural | 🟡 Beige | 🌕 Amarillo lunar
+    </p>
 
-    <p><em>Contáctanos para cotizaciones personalizadas y recomendaciones según el tipo de proyecto.</em></p>
+    <p><em>Contáctanos para cotizaciones personalizadas y recomendaciones según tu proyecto.</em></p>
 
     <h3>Precios:</h3>
     <ul>
@@ -59,10 +62,10 @@
 
     <h3>Haz tu pedido:</h3>
     <label for="bolsas20">Bolsas de 20 kg:</label>
-    <input type="number" id="bolsas20" value="0" min="0"><br>
+    <input type="number" id="bolsas20" value="0" min="0" /><br/>
 
     <label for="bolsas40">Bolsas de 40 kg:</label>
-    <input type="number" id="bolsas40" value="0" min="0"><br>
+    <input type="number" id="bolsas40" value="0" min="0" /><br/>
 
     <p>Total: <strong id="totalPrecio">S/ 0</strong></p>
 
@@ -76,12 +79,15 @@
   <script>
     const precio20 = 30;
     const precio40 = 50;
+
     const bolsas20 = document.getElementById("bolsas20");
     const bolsas40 = document.getElementById("bolsas40");
     const total = document.getElementById("totalPrecio");
 
     function actualizarTotal() {
-      const totalCalc = (parseInt(bolsas20.value) || 0) * precio20 + (parseInt(bolsas40.value) || 0) * precio40;
+      const cant20 = parseInt(bolsas20.value) || 0;
+      const cant40 = parseInt(bolsas40.value) || 0;
+      const totalCalc = cant20 * precio20 + cant40 * precio40;
       total.textContent = `S/ ${totalCalc}`;
     }
 
@@ -97,9 +103,8 @@ Total: S/ ${totalFinal}
 
 ¿Podrías confirmarme la disponibilidad?`;
 
-      const numero = "51917285203";
+      const numero = "51917285203"; // Código de país +51 para Perú
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-
       window.open(url, "_blank");
     }
 
