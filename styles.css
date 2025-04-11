@@ -57,13 +57,14 @@ nav ul li a {
   padding: 40px 20px; 
 }
 
-.seccion#inicio { 
-  background: url('img/playa_piedras.jpg'); 
+.seccion#inicio {
+  background: url('https://raw.githubusercontent.com/tu_usuario/tu_repositorio/main/imagenes/playa_piedras.jpg') no-repeat center center;
   background-size: cover;
-  color: white; 
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7); 
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
   padding: 60px 20px;
 }
+
 
 .seccion#productos { 
   background: #ffffff; /* Fondo para la sección de productos */
