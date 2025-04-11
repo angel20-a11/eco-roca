@@ -10,13 +10,8 @@ body {
 /* Header y Footer */
 header, footer { 
   text-align: center; 
-  background: #2e2e2e; 
   color: white; 
   padding: 1em 0; 
-}
-
-h1, h2, h3 { 
-  margin: 0.5em 0; 
 }
 
 /* Estilo del logo */
@@ -181,4 +176,20 @@ footer {
   cursor: pointer;
   font-size: 1em;
   transition: background 0.3s;
+}
+
+/* Implementación de la imagen de fondo en el header */
+header {
+  background-image: url('img/playa_piedras.jpg'); /* Ruta de la imagen */
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+  color: white; /* Texto blanco para que contraste con la imagen */
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+/* Opcional: Estilo para los elementos dentro del header */
+header h1, header h2, header p {
+  margin: 0;
+  padding: 0.5em 0;
 }
