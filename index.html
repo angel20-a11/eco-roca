@@ -236,6 +236,27 @@
       toggleMenu();
     }
   </script>
+  <script>
+  function enviarPedido(nombreProducto, precio20, precio40, id20, id40) {
+    const cantidad20 = parseInt(document.getElementById(id20).value) || 0;
+    const cantidad40 = parseInt(document.getElementById(id40).value) || 0;
+
+    if (cantidad20 === 0 && cantidad40 === 0) {
+      alert("Por favor, selecciona al menos una cantidad.");
+      return;
+    }
+
+    const total = (cantidad20 * precio20) + (cantidad40 * precio40);
+    const mensaje = `Hola, deseo realizar un pedido de ${nombreProducto}:\n` +
+                    `- ${cantidad20} bolsa(s) de 20 kg\n` +
+                    `- ${cantidad40} bolsa(s) de 40 kg\n` +
+                    `Total: S/ ${total}`;
+
+    const url = `https://wa.me/51917285203?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+  }
+</script>
+
 
 </body>
 </html>
