@@ -1,190 +1,232 @@
 /* General */
-body { 
-  font-family: 'Segoe UI', sans-serif; 
-  margin: 0; 
-  padding: 0; 
-  background: #f9f9f9; 
-  color: #333; 
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
 }
 
 /* Header y Footer */
-header, footer { 
-  text-align: center; 
-  background: #2e2e2e; 
-  color: white; 
-  padding: 1em 0; 
+header,
+footer {
+  text-align: center;
+  background: #1f1f1f;
+  color: #fff;
+  padding: 1.5em 0;
 }
 
-h1, h2, h3 { 
-  margin: 0.5em 0; 
+h1,
+h2,
+h3 {
+  margin: 0.5em 0;
 }
 
-/* Estilo del logo */
+/* Logo */
 .logo {
-  height: 170px; /* Tamaño ajustado del logo */
+  height: 150px;
   width: auto;
   margin-bottom: 10px;
 }
 
 /* Menú de navegación */
 nav {
-  background: #4CAF50; /* Color de fondo verde */
-  padding: 10px;
+  background: #388e3c;
+  padding: 12px 0;
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
   text-align: center;
 }
 
 nav ul li {
   display: inline-block;
-  margin-right: 20px;
+  margin: 0 15px;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #dcedc8;
 }
 
 /* Secciones */
-.seccion { 
-  padding: 40px 20px; 
+.seccion {
+  padding: 50px 20px;
 }
 
-.seccion#inicio { 
-  background: #e0f7fa; /* Fondo para la sección de inicio */
+.seccion#inicio {
+  background: #e8f5e9;
 }
 
-.seccion#productos { 
-  background: #ffffff; /* Fondo para la sección de productos */
+.seccion#productos {
+  background: #ffffff;
 }
 
-.seccion#contacto { 
-  background: #eeeeee; /* Fondo para la sección de contacto */
+.seccion#contacto {
+  background: #f1f8e9;
 }
 
 /* Presentación */
-.presentacion { 
-  margin-bottom: 20px; /* Espaciado entre secciones */
+.presentacion {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  font-size: 1.1em;
 }
 
 /* Tarjetas de productos */
-.tarjetas { 
-  display: flex; 
-  gap: 20px; 
-  justify-content: center; 
-  flex-wrap: wrap; 
+.tarjetas {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .tarjeta {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  width: 200px; /* Aumento el tamaño de las tarjetas */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 220px;
   text-align: center;
-  padding: 15px; /* Aumento el padding */
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.tarjeta:hover { 
-  transform: scale(1.05); /* Mejora el efecto de hover */
+.tarjeta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .tarjeta img {
   width: 100%;
-  height: 100px; /* Tamaño ajustado de las imágenes */
+  height: 120px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-/* Estilo de botones */
+/* Botones generales */
 button {
   margin-top: 10px;
-  padding: 10px;
-  background: #4CAF50;
+  padding: 10px 15px;
+  background: #43a047;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-/* Estilo de imágenes de producto */
+button:hover {
+  background: #2e7d32;
+}
+
+/* Imagen de piedra */
 .imagen-piedra {
-  width: 300px; /* Imágenes más pequeñas */
+  width: 300px;
   height: auto;
-  border-radius: 8px;
-  margin: 10px 0;
+  border-radius: 10px;
+  margin: 15px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo de pedido */
+/* Sección de pedido */
 .pedido {
-  margin-top: 30px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
+  margin-top: 40px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pedido label {
   display: block;
-  margin: 10px 0 5px;
+  margin: 12px 0 6px;
   font-weight: bold;
+  color: #333;
 }
 
 .pedido input[type="number"] {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   font-size: 1em;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 .pedido h4 {
-  margin-top: 15px;
-  color: #4CAF50;
-  font-size: 1.2em;
+  margin-top: 20px;
+  color: #388e3c;
+  font-size: 1.3em;
+  text-align: center;
 }
 
-/* Estilo para footer */
+/* Footer */
 footer {
-  padding: 10px;
-  background: #2e2e2e;
   font-size: 0.9em;
 }
 
-/* Estilo de inputs de número en productos */
+/* Inputs de número en productos */
 .producto input[type="number"] {
-  width: 60px;
-  padding: 5px;
-  margin: 5px 0;
+  width: 70px;
+  padding: 6px;
+  margin: 8px 0;
   font-size: 1em;
 }
 
-/* Estilo de botón de realizar pedido */
+/* Botón de pedido WhatsApp */
 .producto button {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #25D366; /* Color de WhatsApp */
+  background-color: #25D366;
   color: white;
   font-weight: bold;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
+  padding: 10px 16px;
   font-size: 1em;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 .producto button:hover {
-  background-color: #128C7E; /* Color de hover de WhatsApp */
+  background-color: #128C7E;
 }
 
+/* Responsive básico */
+@media (max-width: 768px) {
+  .tarjetas {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .logo {
+    height: 120px;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .pedido {
+    width: 90%;
+  }
+}
