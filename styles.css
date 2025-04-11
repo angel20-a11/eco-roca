@@ -58,14 +58,14 @@ nav ul li a {
 }
 
 /* Sección inicio */
-.seccion#inicio { 
-  background: url('https://github.com/angel20-a11/eco-roca/blob/main/img/playa_piedras.jpg') no-repeat center center; 
+.seccion#inicio header {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-image: url('img/playa_piedras.jpg');
   background-size: cover;
-  background-attachment: fixed; /* Fija la imagen de fondo al hacer scroll */
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo temporal para probar */
   color: white;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-  padding: 60px 20px;
-  min-height: 400px; /* Altura mínima para ver el fondo */
 }
 
 
