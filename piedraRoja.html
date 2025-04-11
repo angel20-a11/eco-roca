@@ -48,22 +48,34 @@
     <li>Venta por metro cúbico</li>
   </ul>
 
-   <!-- Selector de Tamaños y Pesos con Precio Actualizable -->
-<div class="selector-tamanos">
-  <label for="tamanoPiedra"><strong>Tamaño de piedra:</strong></label>
-  <select id="tamanoPiedra" onchange="actualizarPrecio()">
-    <option value="1/2">1/2 pulgada</option>
-    <option value="2/3">2/3 pulgada</option>
-    <option value="3/5">3/5 pulgada</option>
+<!-- Selector de Tamaños y Pesos con Precio Actualizable, Íconos y Pedido por WhatsApp -->
+<div class="selector-piedra" style="margin-top: 20px; padding: 15px; background: #f9f9f9; border-radius: 12px; max-width: 450px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+  <label for="tamanoPiedra" style="font-weight: bold; display: block; margin-bottom: 5px;">
+    🪨 Tamaño de la piedra:
+  </label>
+  <select id="tamanoPiedra" onchange="actualizarPrecio()" style="padding: 10px; width: 100%; border-radius: 8px; border: 1px solid #ccc;">
+    <option value="1/2">🔹 1/2 pulgada</option>
+    <option value="2/3">🔸 2/3 pulgada</option>
+    <option value="3/5">🔺 3/5 pulgada</option>
   </select>
 
-  <label for="pesoPiedra" style="margin-top: 10px;"><strong>Cantidad:</strong></label>
-  <select id="pesoPiedra" onchange="actualizarPrecio()">
-    <option value="20">20 kg</option>
-    <option value="40">40 kg</option>
+  <br><br>
+
+  <label for="pesoPiedra" style="font-weight: bold; display: block; margin-bottom: 5px;">
+    ⚖️ Peso:
+  </label>
+  <select id="pesoPiedra" onchange="actualizarPrecio()" style="padding: 10px; width: 100%; border-radius: 8px; border: 1px solid #ccc;">
+    <option value="20">🪵 20 kg</option>
+    <option value="40">🧱 40 kg</option>
   </select>
 
-  <p style="margin-top: 10px;"><strong>Precio total:</strong> <span id="precioActual">S/ 45</span></p>
+  <p style="margin-top: 15px; font-size: 1.1em;">
+    💰 <strong>Precio total:</strong> <span id="precioActual">S/ 45</span>
+  </p>
+
+  <button onclick="realizarPedido()" style="padding: 12px 15px; background-color: #25D366; color: white; border: none; border-radius: 8px; font-size: 1em; width: 100%; cursor: pointer; transition: background 0.3s;">
+    📦 Realizar pedido por WhatsApp
+  </button>
 </div>
 
 <script>
@@ -72,7 +84,6 @@
     const peso = document.getElementById("pesoPiedra").value;
     const precioSpan = document.getElementById("precioActual");
 
-    // Lista de precios según tamaño y peso
     const precios = {
       "1/2": { "20": 45, "40": 60 },
       "2/3": { "20": 30, "40": 50 },
@@ -82,67 +93,22 @@
     const precio = precios[tamano][peso];
     precioSpan.textContent = `S/ ${precio}`;
   }
+
+  function realizarPedido() {
+    const tamano = document.getElementById("tamanoPiedra").value;
+    const peso = document.getElementById("pesoPiedra").value;
+    const precios = {
+      "1/2": { "20": 45, "40": 60 },
+      "2/3": { "20": 30, "40": 50 },
+      "3/5": { "20": 15, "40": 30 }
+    };
+    const precio = precios[tamano][peso];
+
+    const mensaje = `Hola, quiero pedir piedra canto rodado de tamaño ${tamano} pulgada(s), cantidad: ${peso} kg. Precio: S/ ${precio}.`;
+    const url = `https://wa.me/51917285203?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+  }
+
+  // Ejecutar al cargar para mostrar precio inicial
+  window.addEventListener("DOMContentLoaded", actualizarPrecio);
 </script>
-
-
-
-  <p><em>Haz tu pedido hoy y transforma tu espacio con estilo y naturaleza.</em></p>
-</section>
-
-    <h3>Precios:</h3>
-    <ul>
-      <li>20 kg - S/ 30</li>
-      <li>40 kg - S/ 50</li>
-    </ul>
-
-    <h3>Haz tu pedido:</h3>
-    <label for="bolsas20">Bolsas de 20 kg:</label>
-    <input type="number" id="bolsas20" value="0" min="0"><br>
-
-    <label for="bolsas40">Bolsas de 40 kg:</label>
-    <input type="number" id="bolsas40" value="0" min="0"><br>
-
-    <p>Total: <strong id="totalPrecio">S/ 0</strong></p>
-
-    <button onclick="enviarPedido()">Realizar pedido por WhatsApp</button>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 EcoRoca</p>
-  </footer>
-
-  <script>
-    const precio20 = 30;
-    const precio40 = 50;
-    const bolsas20 = document.getElementById("bolsas20");
-    const bolsas40 = document.getElementById("bolsas40");
-    const total = document.getElementById("totalPrecio");
-
-    function actualizarTotal() {
-      const totalCalc = (parseInt(bolsas20.value) || 0) * precio20 + (parseInt(bolsas40.value) || 0) * precio40;
-      total.textContent = `S/ ${totalCalc}`;
-    }
-
-    function enviarPedido() {
-      const cantidad20 = parseInt(bolsas20.value) || 0;
-      const cantidad40 = parseInt(bolsas40.value) || 0;
-      const totalFinal = cantidad20 * precio20 + cantidad40 * precio40;
-
-      const mensaje = `Hola, quiero hacer un pedido de Piedra Canto Rodado Color Roja:
-- ${cantidad20} bolsa(s) de 20 kg
-- ${cantidad40} bolsa(s) de 40 kg
-Total: S/ ${totalFinal}
-
-¿Podrías confirmarme la disponibilidad?`;
-
-      const numero = "51917285203"; // Código de país +51 para Perú
-      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-
-      window.open(url, "_blank");
-    }
-
-    bolsas20.addEventListener("input", actualizarTotal);
-    bolsas40.addEventListener("input", actualizarTotal);
-  </script>
-</body>
-</html>
