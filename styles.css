@@ -16,14 +16,14 @@ header, footer {
 
 /* Estilo del logo */
 .logo {
-  height: 170px; /* Tamaño ajustado del logo */
+  height: 170px;
   width: auto;
   margin-bottom: 10px;
 }
 
 /* Menú de navegación */
 nav {
-  background: #4CAF50; /* Color de fondo verde */
+  background: #4CAF50;
   padding: 10px;
   position: sticky;
   top: 0;
@@ -53,20 +53,20 @@ nav ul li a {
 }
 
 .seccion#inicio { 
-  background: #e0f7fa; /* Fondo para la sección de inicio */
+  background: #e0f7fa;
 }
 
 .seccion#productos { 
-  background: #ffffff; /* Fondo para la sección de productos */
+  background: #ffffff;
 }
 
 .seccion#contacto { 
-  background: #eeeeee; /* Fondo para la sección de contacto */
+  background: #eeeeee;
 }
 
 /* Presentación */
 .presentacion { 
-  margin-bottom: 20px; /* Espaciado entre secciones */
+  margin-bottom: 20px;
 }
 
 /* Tarjetas de productos */
@@ -79,24 +79,86 @@ nav ul li a {
 
 .tarjeta {
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  width: 200px; /* Aumento el tamaño de las tarjetas */
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  width: 240px;
   text-align: center;
-  padding: 15px; /* Aumento el padding */
+  padding: 15px;
   cursor: pointer;
-  transition: 0.3s;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tarjeta:hover { 
-  transform: scale(1.05); /* Mejora el efecto de hover */
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 
 .tarjeta img {
   width: 100%;
-  height: 100px; /* Tamaño ajustado de las imágenes */
+  height: 150px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.tarjeta .precio {
+  color: #4CAF50;
+  font-size: 1.1em;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.tarjeta .boton-vermas {
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 15px;
+  font-size: 0.95em;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.tarjeta .boton-vermas:hover {
+  background-color: #1976D2;
+}
+
+.tarjeta .etiqueta {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #FF5252;
+  color: white;
+  font-size: 0.8em;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.etiqueta.nuevo {
+  background: #4CAF50;
+}
+
+.etiqueta.oferta {
+  background: #FFC107;
+  color: #333;
+}
+
+.etiqueta.popular {
+  background: #9C27B0;
+}
+
+/* Responsive tarjetas */
+@media (max-width: 600px) {
+  .tarjetas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta {
+    width: 90%;
+  }
 }
 
 /* Estilo de botones */
@@ -112,7 +174,7 @@ button {
 
 /* Estilo de imágenes de producto */
 .imagen-piedra {
-  width: 300px; /* Imágenes más pequeñas */
+  width: 300px;
   height: auto;
   border-radius: 8px;
   margin: 10px 0;
@@ -149,14 +211,7 @@ button {
   font-size: 1.2em;
 }
 
-/* Estilo para footer */
-footer {
-  padding: 10px;
-  background: #2e2e2e;
-  font-size: 0.9em;
-}
-
-/* Estilo de inputs de número en productos */
+/* Inputs de número en productos */
 .producto input[type="number"] {
   width: 60px;
   padding: 5px;
@@ -164,11 +219,11 @@ footer {
   font-size: 1em;
 }
 
-/* Estilo de botón de realizar pedido */
+/* Botón de realizar pedido */
 .producto button {
   margin-top: 10px;
   padding: 10px 15px;
-  background-color: #25D366; /* Color de WhatsApp */
+  background-color: #25D366;
   color: white;
   font-weight: bold;
   border: none;
@@ -178,18 +233,25 @@ footer {
   transition: background 0.3s;
 }
 
-/* Implementación de la imagen de fondo en el header */
+/* Imagen de fondo en header */
 header {
-  background-image: url('img/playa_piedras.jpg'); /* Ruta de la imagen */
-  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
-  background-position: center; /* Centra la imagen */
-  color: white; /* Texto blanco para que contraste con la imagen */
+  background-image: url('img/playa_piedras.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
   text-align: center;
   padding: 4rem 1rem;
 }
 
-/* Opcional: Estilo para los elementos dentro del header */
+/* Textos del header */
 header h1, header h2, header p {
   margin: 0;
   padding: 0.5em 0;
+}
+
+/* Footer */
+footer {
+  padding: 10px;
+  background: #2e2e2e;
+  font-size: 0.9em;
 }
