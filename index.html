@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EcoRoca - Tienda de Piedra Canto Rodado</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4C+XWZ7Rnnak/sTPX9e5K0l3LJkRbpP+9DskMJZZtSB2S6FWTdCZB0S9CrTx3a3Gh8Hjw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
       --primario: #f4f4f4;
@@ -160,11 +161,52 @@
       background-color: #028b7e;
     }
 
-    .footer {
-      background-color: #111;
+    .formulario {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .formulario label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .formulario input, .formulario textarea, .formulario select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .formulario button {
+      background-color: var(--acento);
       color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .formulario button:hover {
+      background-color: #028b7e;
+    }
+
+    .iconos-contacto {
       text-align: center;
-      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+
+    .iconos-contacto a {
+      font-size: 2rem;
+      color: var(--acento);
+      margin: 0 1rem;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -182,87 +224,50 @@
     <p class="subtitulo-principal">La mejor selección de piedras canto rodado para tus proyectos.</p>
   </header>
 
-  <section id="inicio" class="seccion activo">
-    <h2 class="titulo-seccion">Bienvenido a EcoRoca</h2>
-    <p class="descripcion-seccion">En EcoRoca nos especializamos en ofrecer piedra canto rodado natural para tus espacios.</p>
-  </section>
-
-  <section id="productos" class="seccion">
-    <h2 class="titulo-seccion">Nuestros Productos</h2>
-    <p class="descripcion-seccion">Haz clic en un producto para ver más detalles:</p>
-    <div class="tarjetas">
-
-      <div class="tarjeta" onclick="location.href='piedra12.html'">
-        <img src="img/piedra1.jpg" alt="Piedra 1/2 pulgada" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra 1/2"</h3>
-        <p class="descripcion-tarjeta">Resistente y decorativa para exteriores.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-
-      <div class="tarjeta" onclick="location.href='piedra23.html'">
-        <img src="img/piedra2.jpg" alt="Piedra 2/3 pulgada" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra 2/3"</h3>
-        <p class="descripcion-tarjeta">Ideal para senderos y jardines.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-
-      <div class="tarjeta" onclick="location.href='piedra35.html'">
-        <img src="img/piedramixta.jpg" alt="Piedra 3/5 pulgada" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra 3/5"</h3>
-        <p class="descripcion-tarjeta">Perfecta para decoración de espacios rústicos.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-
-      <div class="tarjeta" onclick="location.href='piedraMixta.html'">
-        <img src="img/piedra3.jpg" alt="Piedra Mixta" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra Mixta</h3>
-        <p class="descripcion-tarjeta">Una mezcla natural para proyectos creativos.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-
-      <div class="tarjeta" onclick="location.href='piedraBeige.html'">
-        <img src="img/piedrabeige.jpg" alt="Piedra Canto Rodado Color Beige" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Beige</h3>
-        <p class="descripcion-tarjeta">Ideal para ambientes suaves y tranquilos.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-
-      <div class="tarjeta" onclick="location.href='piedraRoja.html'">
-        <img src="img/piedraRoja.jpg" alt="Piedra Canto Rodado Color Roja" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Roja</h3>
-        <p class="descripcion-tarjeta">Añade un toque de elegancia cálida a tu espacio.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-
-      <div class="tarjeta" onclick="location.href='piedraBlanca.html'">
-        <img src="img/piedraBlanca.jpg" alt="Piedra Canto Rodado Color Blanca" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Blanca</h3>
-        <p class="descripcion-tarjeta">Perfecta para proyectos luminosos y frescos.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-
-      <div class="tarjeta" onclick="location.href='piedraLunar.html'">
-        <img src="img/piedra_lunar.jpg" alt="Piedra Canto Rodado Lunar" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra Canto Rodado Lunar</h3>
-        <p class="descripcion-tarjeta">Agrega un toque único con patrones naturales.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-
-      <div class="tarjeta" onclick="location.href='piedraPulida.html'">
-        <img src="img/piedra_pulida.jpg" alt="Piedra Canto Rodado Pulida - Masaje" class="imagen-tarjeta">
-        <h3 class="titulo-tarjeta">Piedra Canto Rodado Pulida - Masaje</h3>
-        <p class="descripcion-tarjeta">Para un acabado elegante y suave al tacto.</p>
-        <button class="boton-tarjeta">Ver más</button>
-      </div>
-
-    </div>
-  </section>
+  <!-- Secciones anteriores -->
 
   <section id="contacto" class="seccion">
-    <h2 class="titulo-seccion">Contacto</h2>
-    <p class="descripcion-seccion">¿Tienes preguntas o necesitas más información? Contáctanos:</p>
-    <p style="text-align:center">WhatsApp: <a href="https://wa.me/917285203">917285203</a></p>
-    <p style="text-align:center">Email: <a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></p>
+    <h2 class="titulo-seccion">Contáctanos y Cotiza</h2>
+    <p class="descripcion-seccion">Completa el formulario para cotizar tus cantidades de piedra, ya sea por cubo o por toneladas:</p>
+
+    <div class="formulario">
+      <form action="mailto:rnina8652@gmail.com" method="POST" enctype="text/plain">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefono">Teléfono / WhatsApp</label>
+        <input type="tel" id="telefono" name="telefono">
+
+        <label for="producto">Producto</label>
+        <select id="producto" name="producto">
+          <option value="Piedra 1/2">Piedra 1/2"</option>
+          <option value="Piedra 2/3">Piedra 2/3"</option>
+          <option value="Piedra 3/5">Piedra 3/5"</option>
+          <option value="Mixta">Piedra Mixta</option>
+          <option value="Beige">Piedra Beige</option>
+          <option value="Roja">Piedra Roja</option>
+          <option value="Blanca">Piedra Blanca</option>
+          <option value="Lunar">Piedra Lunar</option>
+          <option value="Pulida">Piedra Pulida</option>
+        </select>
+
+        <label for="cantidad">Cantidad (en m³ o toneladas)</label>
+        <input type="text" id="cantidad" name="cantidad" placeholder="Ejemplo: 3 m³ o 2 toneladas" required>
+
+        <label for="mensaje">Mensaje adicional</label>
+        <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+        <button type="submit">Enviar Cotización</button>
+      </form>
+    </div>
+
+    <div class="iconos-contacto">
+      <a href="https://wa.me/917285203" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:rnina8652@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
   </section>
 
   <footer class="footer">
@@ -276,9 +281,10 @@
     }
 
     function mostrarSeccion(id) {
-      document.querySelectorAll('.seccion').forEach(sec => sec.classList.remove('activo'));
+      document.querySelectorAll('.seccion').forEach(seccion => {
+        seccion.classList.remove('activo');
+      });
       document.getElementById(id).classList.add('activo');
-      document.getElementById("sidebar").style.width = "0";
     }
   </script>
 </body>
