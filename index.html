@@ -258,63 +258,84 @@
     </div>
   </section>
 
-<section id="contacto" style="padding: 2rem; background-color: #f9f9f9;">
-  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1.5rem;">Contáctanos</h2>
-  
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 900px; margin: 0 auto;">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoRoca - Contacto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Menú de navegación -->
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sección de Contacto (solo se muestra cuando se accede al enlace de contacto) -->
+  <section id="contacto" style="padding: 2rem; background-color: #f9f9f9;">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1.5rem;">Contáctanos</h2>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 900px; margin: 0 auto;">
     
-    <!-- ÍCONO WHATSAPP -->
-    <div style="flex: 1; min-width: 250px; background-color: white; padding: 1rem; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="60">
-      <h3>WhatsApp</h3>
-      <p>Haz clic y conversa con nosotros directamente.</p>
-      <a href="https://wa.me/51917285203?text=Hola%20EcoRoca%2C%20quiero%20hacer%20una%20consulta%20sobre%20las%20piedras" 
-         target="_blank" 
-         style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #25D366; color: white; text-decoration: none; border-radius: 8px;">
-        Enviar WhatsApp
-      </a>
+      <!-- ÍCONO WHATSAPP -->
+      <div style="flex: 1; min-width: 250px; background-color: white; padding: 1rem; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="60">
+        <h3>WhatsApp</h3>
+        <p>Haz clic y conversa con nosotros directamente.</p>
+        <a href="https://wa.me/51917285203?text=Hola%20EcoRoca%2C%20quiero%20hacer%20una%20consulta%20sobre%20las%20piedras" 
+           target="_blank" 
+           style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #25D366; color: white; text-decoration: none; border-radius: 8px;">
+          Enviar WhatsApp
+        </a>
+      </div>
+
+      <!-- ÍCONO EMAIL -->
+      <div style="flex: 1; min-width: 250px; background-color: white; padding: 1rem; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Correo" width="60">
+        <h3>Correo</h3>
+        <p>Escríbenos a nuestro email en cualquier momento.</p>
+        <a href="mailto:rnina8652@gmail.com" 
+           style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #4285F4; color: white; text-decoration: none; border-radius: 8px;">
+          Enviar Correo
+        </a>
+      </div>
+
+      <!-- ÍCONO FORMULARIO -->
+      <div style="flex: 1; min-width: 250px; background-color: white; padding: 1rem; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" alt="Formulario" width="60">
+        <h3>Formulario</h3>
+        <p>Déjanos tus datos y responderemos pronto.</p>
+        <form action="https://formsubmit.co/rnina8652@gmail.com" method="POST" class="formulario-contacto">
+          <!-- Oculta CAPTCHA de FormSubmit -->
+          <input type="hidden" name="_captcha" value="false">
+
+          <!-- Nombre -->
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="name" required>
+
+          <!-- Correo -->
+          <label for="correo">Correo electrónico:</label>
+          <input type="email" id="correo" name="email" required>
+
+          <!-- Mensaje -->
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="message" rows="5" required></textarea>
+
+          <!-- Botón -->
+          <button type="submit">Enviar mensaje</button>
+        </form>
+      </div>
     </div>
-    
-    <!-- ÍCONO EMAIL -->
-    <div style="flex: 1; min-width: 250px; background-color: white; padding: 1rem; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Correo" width="60">
-      <h3>Correo</h3>
-      <p>Escríbenos a nuestro email en cualquier momento.</p>
-      <a href="mailto:rnina8652@gmail.com" 
-         style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #4285F4; color: white; text-decoration: none; border-radius: 8px;">
-        Enviar Correo
-      </a>
-    </div>
-    
-    <!-- ÍCONO FORMULARIO -->
-    <div style="flex: 1; min-width: 250px; background-color: white; padding: 1rem; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
-      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" alt="Formulario" width="60">
-      <h3>Formulario</h3>
-      <p>Déjanos tus datos y responderemos pronto.</p>
-     <form action="https://formsubmit.co/rnina8652@gmail.com" method="POST" class="formulario-contacto">
-  <!-- Oculta CAPTCHA de FormSubmit -->
-  <input type="hidden" name="_captcha" value="false">
+  </section>
 
-  <!-- Nombre -->
-  <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="name" required>
-
-  <!-- Correo -->
-  <label for="correo">Correo electrónico:</label>
-  <input type="email" id="correo" name="email" required>
-
-  <!-- Mensaje -->
-  <label for="mensaje">Mensaje:</label>
-  <textarea id="mensaje" name="message" rows="5" required></textarea>
-
-  <!-- Botón -->
-  <button type="submit">Enviar mensaje</button>
-</form>
-
-    </div>
-    
-  </div>
-</section>
+</body>
+</html>
 
 
   <footer class="footer">
