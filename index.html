@@ -190,8 +190,71 @@
   <section id="productos" class="seccion">
     <h2 class="titulo-seccion">Nuestros Productos</h2>
     <p class="descripcion-seccion">Haz clic en un producto para ver más detalles:</p>
-    <div class="tarjetas" id="contenedor-productos">
-      <!-- Las tarjetas ya están incluidas en tu HTML original -->
+    <div class="tarjetas">
+
+      <div class="tarjeta" onclick="location.href='piedra12.html'">
+        <img src="img/piedra1.jpg" alt="Piedra 1/2 pulgada" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra 1/2"</h3>
+        <p class="descripcion-tarjeta">Resistente y decorativa para exteriores.</p>
+        <button class="boton-tarjeta">Ver más</button>
+      </div>
+
+      <div class="tarjeta" onclick="location.href='piedra23.html'">
+        <img src="img/piedra2.jpg" alt="Piedra 2/3 pulgada" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra 2/3"</h3>
+        <p class="descripcion-tarjeta">Ideal para senderos y jardines.</p>
+        <button class="boton-tarjeta">Ver más</button>
+      </div>
+
+      <div class="tarjeta" onclick="location.href='piedra35.html'">
+        <img src="img/piedramixta.jpg" alt="Piedra 3/5 pulgada" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra 3/5"</h3>
+        <p class="descripcion-tarjeta">Perfecta para decoración de espacios rústicos.</p>
+        <button class="boton-tarjeta">Ver más</button>
+      </div>
+
+      <div class="tarjeta" onclick="location.href='piedraMixta.html'">
+        <img src="img/piedra3.jpg" alt="Piedra Mixta" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra Mixta</h3>
+        <p class="descripcion-tarjeta">Una mezcla natural para proyectos creativos.</p>
+        <button class="boton-tarjeta">Ver más</button>
+      </div>
+
+      <div class="tarjeta" onclick="location.href='piedraBeige.html'">
+        <img src="img/piedrabeige.jpg" alt="Piedra Canto Rodado Color Beige" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Beige</h3>
+        <p class="descripcion-tarjeta">Ideal para ambientes suaves y tranquilos.</p>
+        <button class="boton-tarjeta">Ver más</button>
+      </div>
+
+      <div class="tarjeta" onclick="location.href='piedraRoja.html'">
+        <img src="img/piedraRoja.jpg" alt="Piedra Canto Rodado Color Roja" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Roja</h3>
+        <p class="descripcion-tarjeta">Añade un toque de elegancia cálida a tu espacio.</p>
+        <button class="boton-tarjeta">Ver más</button>
+      </div>
+
+      <div class="tarjeta" onclick="location.href='piedraBlanca.html'">
+        <img src="img/piedraBlanca.jpg" alt="Piedra Canto Rodado Color Blanca" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra Canto Rodado Color Blanca</h3>
+        <p class="descripcion-tarjeta">Perfecta para proyectos luminosos y frescos.</p>
+        <button class="boton-tarjeta">Ver más</button>
+      </div>
+
+      <div class="tarjeta" onclick="location.href='piedraLunar.html'">
+        <img src="img/piedra_lunar.jpg" alt="Piedra Canto Rodado Lunar" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra Canto Rodado Lunar</h3>
+        <p class="descripcion-tarjeta">Agrega un toque único con patrones naturales.</p>
+        <button class="boton-tarjeta">Ver más</button>
+      </div>
+
+      <div class="tarjeta" onclick="location.href='piedraPulida.html'">
+        <img src="img/piedra_pulida.jpg" alt="Piedra Canto Rodado Pulida - Masaje" class="imagen-tarjeta">
+        <h3 class="titulo-tarjeta">Piedra Canto Rodado Pulida - Masaje</h3>
+        <p class="descripcion-tarjeta">Para un acabado elegante y suave al tacto.</p>
+        <button class="boton-tarjeta">Ver más</button>
+      </div>
+
     </div>
   </section>
 
@@ -213,35 +276,10 @@
     }
 
     function mostrarSeccion(id) {
-      document.querySelectorAll('.seccion').forEach(seccion => {
-        seccion.classList.remove('activo');
-      });
+      document.querySelectorAll('.seccion').forEach(sec => sec.classList.remove('activo'));
       document.getElementById(id).classList.add('activo');
-      abrirMenu();
+      document.getElementById("sidebar").style.width = "0";
     }
-  </script>
-  
-<!-- CONTINÚA DESDE TU SCRIPT -->
-  <script>
-    function abrirMenu() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
-    }
-
-    function mostrarSeccion(id) {
-      const secciones = document.querySelectorAll(".seccion");
-      secciones.forEach(seccion => seccion.classList.remove("activo"));
-      document.getElementById(id).classList.add("activo");
-
-      // Cierra el menú lateral si está abierto
-      const sidebar = document.getElementById("sidebar");
-      sidebar.style.width = "0";
-    }
-
-    // Abre por defecto la sección "inicio" si recargan
-    document.addEventListener("DOMContentLoaded", () => {
-      mostrarSeccion("inicio");
-    });
   </script>
 </body>
 </html>
