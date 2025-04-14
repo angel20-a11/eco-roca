@@ -265,3 +265,63 @@ footer {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* cdoigo contacto nuevor */
+
+.contacto {
+  margin: 40px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.contacto-info {
+  background-color: #f2f2f2;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.contacto-info a {
+  color: #0072c6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contacto-info a:hover {
+  text-decoration: underline;
+}
+
+.botones-contacto {
+  margin-top: 20px;
+}
+
+.boton-whatsapp,
+.boton-email {
+  display: inline-block;
+  margin: 10px 10px 0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.boton-whatsapp {
+  background-color: #25D366;
+}
+
+.boton-email {
+  background-color: #0072c6;
+}
+
+.boton-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+.boton-email:hover {
+  background-color: #005a9e;
+}
+
+
