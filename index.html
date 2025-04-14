@@ -258,12 +258,50 @@
     </div>
   </section>
 
-  <section id="contacto" class="seccion">
-    <h2 class="titulo-seccion">Contacto</h2>
-    <p class="descripcion-seccion">¿Tienes preguntas o necesitas más información? Contáctanos:</p>
-    <p style="text-align:center">WhatsApp: <a href="https://wa.me/917285203">917285203</a></p>
-    <p style="text-align:center">Email: <a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></p>
-  </section>
+<section id="contacto" style="padding: 2rem; background-color: #f9f9f9;">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1.5rem;">Contáctanos</h2>
+  
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 900px; margin: 0 auto;">
+    
+    <!-- ÍCONO WHATSAPP -->
+    <div style="flex: 1; min-width: 250px; background-color: white; padding: 1rem; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="60">
+      <h3>WhatsApp</h3>
+      <p>Haz clic y conversa con nosotros directamente.</p>
+      <a href="https://wa.me/51917285203?text=Hola%20EcoRoca%2C%20quiero%20hacer%20una%20consulta%20sobre%20las%20piedras" 
+         target="_blank" 
+         style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #25D366; color: white; text-decoration: none; border-radius: 8px;">
+        Enviar WhatsApp
+      </a>
+    </div>
+    
+    <!-- ÍCONO EMAIL -->
+    <div style="flex: 1; min-width: 250px; background-color: white; padding: 1rem; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Correo" width="60">
+      <h3>Correo</h3>
+      <p>Escríbenos a nuestro email en cualquier momento.</p>
+      <a href="mailto:rnina8652@gmail.com" 
+         style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #4285F4; color: white; text-decoration: none; border-radius: 8px;">
+        Enviar Correo
+      </a>
+    </div>
+    
+    <!-- ÍCONO FORMULARIO -->
+    <div style="flex: 1; min-width: 250px; background-color: white; padding: 1rem; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" alt="Formulario" width="60">
+      <h3>Formulario</h3>
+      <p>Déjanos tus datos y responderemos pronto.</p>
+      <form action="mailto:rnina8652@gmail.com" method="post" enctype="text/plain" style="margin-top: 1rem; text-align: left;">
+        <label>Nombre:<br><input type="text" name="Nombre" required style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem;"></label><br>
+        <label>Email:<br><input type="email" name="Email" required style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem;"></label><br>
+        <label>Mensaje:<br><textarea name="Mensaje" rows="3" required style="width: 100%; padding: 0.5rem;"></textarea></label><br>
+        <button type="submit" style="margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #000; color: white; border: none; border-radius: 8px;">Enviar</button>
+      </form>
+    </div>
+    
+  </div>
+</section>
+
 
   <footer class="footer">
     <p>&copy; 2025 EcoRoca - Todos los derechos reservados.</p>
