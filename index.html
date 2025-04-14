@@ -269,17 +269,26 @@
     <p>&copy; 2025 EcoRoca - Todos los derechos reservados.</p>
   </footer>
 
-  <script>
-    function abrirMenu() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
+ <script>
+  function abrirMenu() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
+  }
+
+  function mostrarSeccion(id) {
+    // Oculta todas las secciones
+    document.querySelectorAll('.seccion').forEach(sec => sec.classList.remove('activo'));
+
+    // Muestra la sección seleccionada
+    const seccion = document.getElementById(id);
+    if (seccion) {
+      seccion.classList.add('activo');
     }
 
-    function mostrarSeccion(id) {
-      document.querySelectorAll('.seccion').forEach(sec => sec.classList.remove('activo'));
-      document.getElementById(id).classList.add('activo');
-      document.getElementById("sidebar").style.width = "0";
-    }
-  </script>
+    // Cierra el menú después de seleccionar
+    document.getElementById("sidebar").style.width = "0";
+  }
+</script>
+
 </body>
 </html>
