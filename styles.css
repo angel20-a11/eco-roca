@@ -255,3 +255,41 @@ footer {
   background: #2e2e2e;
   font-size: 0.9em;
 }
+
+/* ============================= */
+/* Estilos para formulario de contacto */
+/* ============================= */
+.formulario-contacto {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.formulario-contacto label {
+  font-weight: bold;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.formulario-contacto button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.formulario-contacto button:hover {
+  background-color: #45a049;
+}
