@@ -373,5 +373,34 @@
   });
 </script>
 
+  <script>
+  // Función para abrir y cerrar el menú
+  function abrirMenu() {
+    var sidebar = document.getElementById("sidebar");
+    if (sidebar.style.width === "250px") {
+      sidebar.style.width = "0";
+    } else {
+      sidebar.style.width = "250px";
+    }
+  }
+
+  // Función para mostrar la sección activa
+  function mostrarSeccion(seccionId) {
+    // Ocultar todas las secciones
+    var secciones = document.querySelectorAll(".seccion");
+    secciones.forEach(function(seccion) {
+      seccion.classList.remove("activo");
+    });
+
+    // Mostrar la sección seleccionada
+    var seccionActiva = document.getElementById(seccionId);
+    seccionActiva.classList.add("activo");
+
+    // Cerrar el menú después de hacer clic
+    document.getElementById("sidebar").style.width = "0";
+  }
+</script>
+
+
 </body>
 </html>
