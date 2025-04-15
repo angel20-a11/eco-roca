@@ -301,26 +301,39 @@
     </div>
   </section>
 
-  <section id="contacto" class="seccion">
-    <h2><i class="fas fa-comment"></i> Contáctanos</h2>
-    <p class="subtitulo">¿Tienes preguntas o deseas un pedido personalizado?</p>
+<section id="contacto" class="seccion">
+  <h2><i class="fas fa-comment"></i> Contáctanos</h2>
+  <p class="subtitulo">¿Tienes preguntas o deseas un pedido personalizado?</p>
 
-    <div class="contenedor-contacto">
-      <div class="info">
-        <p><i class="fas fa-phone"></i> <a href="https://wa.me/51917285203" target="_blank">+51 917 285 203</a></p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></p>
-        <p><i class="fas fa-map-marker-alt"></i> Lima, Perú</p>
-      </div>
-    
-  <form action="https://formsubmit.co/rnina8652@gmail.com" method="POST" />
-    <input class="form-input" type="text" name="name" placeholder="Tu nombre" required>
-  <input class="form-input" type="email" name="email" placeholder="Tu correo" required>
-  <textarea class="form-textarea" name="message" placeholder="Escribe tu mensaje" required></textarea>
-  <button class="form-button" type="submit">Enviar</button>
-</form>
-
+  <div class="contenedor-contacto">
+    <div class="info">
+      <p><i class="fas fa-phone"></i> <a href="https://wa.me/51917285203" target="_blank">+51 917 285 203</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> Lima, Perú</p>
     </div>
-  </section>
+
+    <div class="formulario-contacto" id="form-container">
+      <form id="contact-form" action="https://formsubmit.co/rnina8652@gmail.com" method="POST">
+        <input class="form-input" type="text" name="name" placeholder="Tu nombre completo" required>
+        <input class="form-input" type="email" name="email" placeholder="Tu correo electrónico" required>
+        <textarea class="form-textarea" name="message" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+        
+        <!-- Opcional: redireccionar después del envío para evitar abrir formsubmit.co -->
+        <input type="hidden" name="_next" value="https://tu-sitio-web.com/#contacto">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <button class="form-button" type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+
+    <div id="mensaje-exito" style="display: none; text-align: center;">
+      <h3>✅ ¡Gracias por tu mensaje!</h3>
+      <p>Nos pondremos en contacto contigo pronto.</p>
+      <a href="#inicio" class="btn-regreso">Volver al inicio</a>
+    </div>
+  </div>
+</section>
+
 
   <footer class="footer">
     <p>&copy; 2025 EcoRoca - Todos los derechos reservados.</p>
