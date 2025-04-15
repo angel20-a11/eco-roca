@@ -359,6 +359,19 @@
       document.getElementById("sidebar").style.width = "0";
     }
   </script>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    // Esperamos un momento para mostrar el mensaje antes de redirigir
+    e.preventDefault();
+
+    // Oculta formulario y muestra mensaje
+    document.getElementById('form-container').style.display = 'none';
+    document.getElementById('mensaje-exito').style.display = 'block';
+
+    // Envía el formulario real (usando FormSubmit)
+    this.submit();
+  });
+</script>
 
 </body>
 </html>
