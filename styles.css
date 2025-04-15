@@ -369,39 +369,6 @@ footer {
 }
 
 
-.form-contacto input,
-.form-contacto textarea {
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 12px;
-  color: #333;
-  font-size: 16px;
-  outline: none;
-  transition: border 0.3s ease;
-}
-
-.form-contacto input:focus,
-.form-contacto textarea:focus {
-  border-color: #4CAF50;
-}
-
-.form-contacto button {
-  background: linear-gradient(45deg, #4CAF50, #81C784);
-  color: white;
-  border: none;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.form-contacto button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(45deg, #43A047, #66BB6A);
-}
-
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .contenedor-contacto {
