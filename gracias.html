@@ -2,51 +2,40 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mensaje enviado</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Redirige después de 6 segundos -->
   <meta http-equiv="refresh" content="6;url=index.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensaje enviado</title>
   <style>
     body {
-      background-color: #f0f8ff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .gracias {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
       text-align: center;
-      padding: 80px 20px;
     }
-    h1 {
+    .gracias h1 {
       color: #1e90ff;
-      font-size: 2em;
+      margin-bottom: 20px;
     }
-    p {
+    .gracias p {
       font-size: 18px;
-      color: #333;
-      margin-top: 10px;
-    }
-    .loader {
-      margin: 40px auto;
-      width: 50px;
-      height: 50px;
-      border: 6px solid #f3f3f3;
-      border-top: 6px solid #1e90ff;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    small {
-      display: block;
-      margin-top: 20px;
-      color: #777;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <h1>¡Gracias por contactarnos!</h1>
-  <p>Te responderemos lo más pronto posible.</p>
-  <div class="loader"></div>
-  <p>Serás redirigido a la página principal en unos segundos...</p>
-  <small>Si no eres redirigido automáticamente, <a href="index.html">haz clic aquí</a>.</small>
+  <div class="gracias">
+    <h1>¡Gracias por contactarnos!</h1>
+    <p>Te responderemos lo más pronto posible.<br>Serás redirigido en unos segundos...</p>
+  </div>
 </body>
 </html>
