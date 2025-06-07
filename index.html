@@ -301,22 +301,31 @@
     </div>
   </section>
 
-<section id="contacto" class="seccion">
-  <h2><i class="fas fa-comment"></i> Contáctanos</h2>
-  <p class="subtitulo">¿Tienes preguntas o deseas un pedido personalizado?</p>
-
-  <div class="contenedor-contacto">
-    <div class="info">
-      <p><i class="fas fa-phone"></i> <a href="https://wa.me/51917285203" target="_blank">+51 917 285 203</a></p>
-      <p><i class="fas fa-envelope"></i> <a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></p>
-      <p><i class="fas fa-map-marker-alt"></i> Lima, Perú</p>
+<section id="contacto" style="padding: 60px 20px; background-color: #f9f9f9; font-family: Arial, sans-serif;">
+  <div style="max-width: 1100px; margin: auto; background: #fff; border-radius: 16px; display: flex; flex-wrap: wrap; box-shadow: 0 0 20px rgba(0,0,0,0.1); overflow: hidden;">
+    
+    <!-- Formulario -->
+    <div style="flex: 1 1 500px; padding: 40px;">
+      <h2 style="margin-bottom: 25px; font-size: 28px; color: #333;">Contáctanos</h2>
+      <form action="https://formsubmit.co/rnina8652@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 16px;">
+        <input type="text" name="nombre" placeholder="Nombre completo" required style="padding: 14px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px;">
+        <input type="email" name="email" placeholder="Correo electrónico" required style="padding: 14px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px;">
+        <input type="tel" name="telefono" placeholder="Número de teléfono" style="padding: 14px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px;">
+        <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required style="padding: 14px; height: 120px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; resize: vertical;"></textarea>
+        <button type="submit" style="padding: 14px; background-color: #1e90ff; color: white; font-size: 16px; border: none; border-radius: 8px; cursor: pointer;">Enviar mensaje</button>
+      </form>
     </div>
 
-    <div class="formulario-contacto" id="form-container">
-      <form id="contact-form" action="https://formsubmit.co/rnina8652@gmail.com" method="POST">
-        <input class="form-input" type="text" name="name" placeholder="Tu nombre completo" required>
-        <input class="form-input" type="email" name="email" placeholder="Tu correo electrónico" required>
-        <textarea class="form-textarea" name="message" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+    <!-- Información de contacto -->
+    <div style="flex: 1 1 400px; background-color: #1e90ff; color: white; padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+      <h3 style="margin-bottom: 25px; font-size: 24px;">Información de contacto</h3>
+      <p style="margin: 10px 0;"><strong>📞 WhatsApp:</strong> <a href="https://wa.me/51917285203" target="_blank" style="color: #fff; text-decoration: underline;">917 285 203</a></p>
+      <p style="margin: 10px 0;"><strong>📧 Email:</strong> <a href="mailto:rnina8652@gmail.com" style="color: #fff; text-decoration: underline;">rnina8652@gmail.com</a></p>
+      <p style="margin: 10px 0;"><strong>📍 Dirección:</strong> Lima, Perú</p>
+    </div>
+  </div>
+</section>
+
         
         <!-- Opcional: redireccionar después del envío para evitar abrir formsubmit.co -->
 
