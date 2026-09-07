@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eco-roca.netlify.app/sitemap.xml

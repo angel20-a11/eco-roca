@@ -11,6 +11,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <meta name="robots" content="index,follow">
+  <meta name="geo.region" content="PE-ARE">
+  <meta name="geo.placename" content="Camaná, Arequipa">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Eco Roca",
+    "description":"Comercialización de piedra canto rodado natural para decoración, paisajismo, construcción y pedidos por volumen.",
+    "areaServed":["Perú","Arequipa","Camaná"],
+    "email":"rnina8652@gmail.com",
+    "telephone":"+51913374782"
+  }
+  </script>
 </head>
 <body>
   <header class="site-header" id="inicio">
@@ -26,6 +40,7 @@
         <a href="#cotizador">Cotizador</a>
         <a href="#pedido">Mi pedido <span class="cart-count" id="navCartCount">0</span></a>
         <a href="#mayoristas">Venta por volumen</a>
+        <a href="#exportacion">Exportación</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
       </nav>
@@ -166,6 +181,57 @@
           <label>Transporte<select id="bulkTransport"><option>Necesito transporte</option><option>Retiro / transporte propio</option><option>Por confirmar</option></select></label>
           <button class="btn bulk-btn" id="bulkWhatsApp" type="button">Consultar por WhatsApp</button>
           <p>El precio mayorista se cotiza según producto, cantidad, disponibilidad, destino y modalidad de despacho.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section export-section" id="exportacion">
+      <div class="container">
+        <div class="section-heading export-heading">
+          <div><span class="eyebrow dark">Venta nacional e internacional</span><h2>Eco Roca para proyectos de mayor escala</h2></div>
+          <p>Atendemos consultas comerciales para distribución, paisajismo, construcción y pedidos por volumen. Para operaciones internacionales, evaluamos cada solicitud según producto, calibre, cantidad, destino y modalidad logística.</p>
+        </div>
+        <div class="export-grid">
+          <article class="export-card">
+            <span class="export-number">01</span><h3>Elige el producto</h3>
+            <p>Selecciona el tipo de piedra y calibre requerido entre nuestro catálogo disponible.</p>
+          </article>
+          <article class="export-card">
+            <span class="export-number">02</span><h3>Indica el volumen</h3>
+            <p>Cuéntanos la cantidad estimada en kilogramos, toneladas o requerimiento de carga.</p>
+          </article>
+          <article class="export-card">
+            <span class="export-number">03</span><h3>Define el destino</h3>
+            <p>Indica ciudad, país y punto de entrega para revisar las alternativas de despacho.</p>
+          </article>
+          <article class="export-card">
+            <span class="export-number">04</span><h3>Recibe una cotización</h3>
+            <p>Confirmamos disponibilidad, presentación, precio del producto y condiciones comerciales aplicables.</p>
+          </article>
+        </div>
+
+        <div class="export-quote">
+          <div class="export-copy">
+            <span class="eyebrow">Consulta comercial</span>
+            <h3>Solicita una cotización nacional o internacional</h3>
+            <p>Completa los datos principales y generaremos un resumen listo para enviarnos por WhatsApp.</p>
+            <div class="export-tags"><span>Pedidos por tonelada</span><span>Distribuidores</span><span>Proyectos</span><span>Consultas de exportación</span></div>
+          </div>
+          <div class="export-form">
+            <label>Tipo de operación<select id="exportType"><option>Venta nacional por volumen</option><option>Consulta de distribución</option><option>Consulta de exportación</option></select></label>
+            <label>Producto<select id="exportProduct"></select></label>
+            <div class="form-row">
+              <label>Calibre<select id="exportSize"></select></label>
+              <label>Cantidad aproximada<input id="exportAmount" type="text" placeholder="Ej. 5 toneladas"></label>
+            </div>
+            <div class="form-row">
+              <label>País<input id="exportCountry" type="text" placeholder="Ej. Perú, Chile, EE. UU."></label>
+              <label>Ciudad / destino<input id="exportDestination" type="text" placeholder="Ciudad o punto de entrega"></label>
+            </div>
+            <label>Presentación o requerimiento<textarea id="exportNotes" placeholder="Ej. bolsas de 40 kg, carga a granel, requerimientos del proyecto..."></textarea></label>
+            <button class="btn" id="exportWhatsApp" type="button">Enviar consulta por WhatsApp</button>
+            <small>Las condiciones de exportación, transporte, documentación y costos logísticos se confirman caso por caso. Esta solicitud no constituye una oferta final.</small>
+          </div>
         </div>
       </div>
     </section>

@@ -97,3 +97,17 @@ function renderCart(){const box=document.getElementById('cartItems'),empty=docum
 document.getElementById('quoteAddCart')?.addEventListener('click',(e)=>{const d=quoteData(),key=qp.value,ex=quoteCart.find(i=>i.key===key&&i.size===d.size&&i.weight===d.weight);if(ex){ex.qty+=d.qty;ex.kg=ex.qty*ex.weight;ex.total=ex.qty*ex.unit;}else quoteCart.push({key,name:d.product.name,image:d.product.image,size:d.size,weight:d.weight,qty:d.qty,unit:d.unit,kg:d.kg,total:d.total});saveCart();const old=e.currentTarget.textContent;e.currentTarget.textContent='Agregado ✓';setTimeout(()=>e.currentTarget.textContent=old,1200);});
 document.getElementById('cartClear')?.addEventListener('click',()=>{if(quoteCart.length&&confirm('¿Vaciar todos los productos del pedido?')){quoteCart=[];saveCart();}});
 document.getElementById('cartWhatsApp')?.addEventListener('click',()=>{if(!quoteCart.length){alert('Agrega al menos un producto al pedido.');return;}const t=cartTotals(),dest=document.getElementById('cartDestination')?.value.trim()||'Por confirmar',transport=document.getElementById('cartTransport')?.value||'Por confirmar',lines=quoteCart.map((i,n)=>`${n+1}. ${i.name} | calibre ${i.size}" | ${i.weight} kg | ${i.qty} bolsa(s) | ${money(i.total)}`),msg=`Hola Eco Roca, quisiera cotizar este pedido combinado:\n\n${lines.join('\n')}\n\nTotal de bolsas: ${t.bags}\nPeso total: ${t.kg} kg\nSubtotal productos: ${money(t.total)}\nDestino: ${dest}\nTransporte: ${transport}\n\n¿Me confirman disponibilidad, transporte y costo final?`;window.open(`https://wa.me/51917285203?text=${encodeURIComponent(msg)}`,'_blank','noopener');});renderCart();
+
+// Eco Roca v3.0 — consulta comercial / exportación
+const ep=document.getElementById('exportProduct'), es=document.getElementById('exportSize');
+if(ep){fillProductSelect(ep,'mixta');fillSizeSelect(ep.value,es);ep.addEventListener('change',()=>fillSizeSelect(ep.value,es));}
+document.getElementById('exportWhatsApp')?.addEventListener('click',()=>{
+  const type=document.getElementById('exportType').value;
+  const product=PRODUCTS[ep.value],size=es.value;
+  const amount=document.getElementById('exportAmount').value.trim()||'Por confirmar';
+  const country=document.getElementById('exportCountry').value.trim()||'Por confirmar';
+  const dest=document.getElementById('exportDestination').value.trim()||'Por confirmar';
+  const notes=document.getElementById('exportNotes').value.trim()||'Sin observaciones adicionales';
+  const msg=`Hola Eco Roca, quisiera realizar una consulta comercial.\n\nTipo: ${type}\nProducto: ${product.name}\nCalibre: ${size}"\nCantidad aproximada: ${amount}\nPaís: ${country}\nCiudad / destino: ${dest}\nPresentación o requerimiento: ${notes}\n\nQuisiera conocer disponibilidad, precio y condiciones aplicables.`;
+  window.open(`https://wa.me/51917285203?text=${encodeURIComponent(msg)}`,'_blank','noopener');
+});
