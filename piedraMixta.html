@@ -3,112 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piedra Canto Rodado Color Mixta - EcoRoca</title>
+  <meta name="description" content="Piedra Canto Rodado Mixta de Eco Roca, Camaná. Consulta presentaciones, precios y cotización por WhatsApp.">
+  <meta name="theme-color" content="#18382b">
+  <title>Piedra Canto Rodado Mixta | Eco Roca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="product-styles.css">
 </head>
-<body>
-  <nav>
-    <ul>
-      <li><a href="index.html#inicio">Inicio</a></li>
-      <li><a href="index.html#productos">Productos</a></li>
-      <li><a href="index.html#contacto">Contacto</a></li>
-    </ul>
-  </nav>
-
- <section class="seccion" id="piedra-mixta">
-  <h2 class="titulo-seccion">🌈 Piedra Canto Rodado Mixta</h2>
-
-    <img src="img/piedra3.jpg" alt="Piedra mixta " class="imagen-piedra">
-   
-  <p class="descripcion-seccion">
-    La piedra canto rodado mixta es una explosión de color natural que mezcla tonalidades grises, marrones, rojizas y blancas. Su versatilidad estética la convierte en una excelente opción para proyectos que buscan un toque rústico, natural y acogedor sin perder elegancia.
-  </p>
-
-  <h3>Usos recomendados:</h3>
-  <ul>
-    <li>🎨 <strong>Diseños artísticos y jardines decorativos:</strong> Ideal para crear patrones y combinaciones visuales llamativas.</li>
-    <li>🏡 <strong>Entradas y caminos de casas:</strong> Aporta un acabado natural, orgánico y colorido.</li>
-    <li>💧 <strong>Fuentes y cascadas decorativas:</strong> Realza el movimiento del agua con sus colores variados.</li>
-    <li>🪵 <strong>Complemento de madera natural:</strong> Ideal para paisajismo en terrazas o zonas de descanso con elementos rústicos.</li>
-    <li>🏖️ <strong>Espacios temáticos:</strong> Funciona muy bien en decoraciones inspiradas en la playa o la montaña.</li>
-  </ul>
-
-  <h3>Beneficios:</h3>
-  <ul>
-    <li>Combinación de colores naturales para mayor versatilidad.</li>
-    <li>No requiere mantenimiento ni pintura.</li>
-    <li>Resistente a cambios climáticos y desgaste.</li>
-    <li>Visualmente atractiva en cualquier tipo de superficie.</li>
-  </ul>
-
-  <h3>Presentaciones disponibles:</h3>
-  <ul>
-    <li>Bolsa de 20 kg</li>
-    <li>Bolsa de 40 kg</li>
-    <li>Venta por metro cúbico</li>
-  </ul>
-
-<!-- Selector de Tamaños y Pesos con Precio Actualizable, Íconos y Pedido por WhatsApp -->
-<div class="selector-piedra" style="margin-top: 20px; padding: 15px; background: #f9f9f9; border-radius: 12px; max-width: 450px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-  <label for="tamanoPiedra" style="font-weight: bold; display: block; margin-bottom: 5px;">
-    🪨 Tamaño de la piedra:
-  </label>
-  <select id="tamanoPiedra" onchange="actualizarPrecio()" style="padding: 10px; width: 100%; border-radius: 8px; border: 1px solid #ccc;">
-    <option value="1/2">🔹 1/2 pulgada</option>
-    <option value="2/3">🔸 2/3 pulgada</option>
-    <option value="3/5">🔺 3/5 pulgada</option>
-  </select>
-
-  <br><br>
-
-  <label for="pesoPiedra" style="font-weight: bold; display: block; margin-bottom: 5px;">
-    ⚖️ Peso:
-  </label>
-  <select id="pesoPiedra" onchange="actualizarPrecio()" style="padding: 10px; width: 100%; border-radius: 8px; border: 1px solid #ccc;">
-    <option value="20">🪵 20 kg</option>
-    <option value="40">🧱 40 kg</option>
-  </select>
-
-  <p style="margin-top: 15px; font-size: 1.1em;">
-    💰 <strong>Precio total:</strong> <span id="precioActual">S/ 45</span>
-  </p>
-
-  <button onclick="realizarPedido()" style="padding: 12px 15px; background-color: #25D366; color: white; border: none; border-radius: 8px; font-size: 1em; width: 100%; cursor: pointer; transition: background 0.3s;">
-    📦 Realizar pedido por WhatsApp
-  </button>
-</div>
-
-<script>
-  function actualizarPrecio() {
-    const tamano = document.getElementById("tamanoPiedra").value;
-    const peso = document.getElementById("pesoPiedra").value;
-    const precioSpan = document.getElementById("precioActual");
-
-    const precios = {
-      "1/2": { "20": 25, "40": 44 },
-      "2/3": { "20": 18, "40": 32 },
-      "3/5": { "20": 12, "40": 9 }
-    };
-
-    const precio = precios[tamano][peso];
-    precioSpan.textContent = `S/ ${precio}`;
-  }
-
-  function realizarPedido() {
-    const tamano = document.getElementById("tamanoPiedra").value;
-    const peso = document.getElementById("pesoPiedra").value;
-    const precios = {
-      "1/2": { "20": 25, "40": 44 },
-      "2/3": { "20": 18, "40": 32 },
-      "3/5": { "20": 12, "40": 9 }
-    };
-    const precio = precios[tamano][peso];
-
-    const mensaje = `Hola, quiero pedir piedra canto rodado de tamaño ${tamano} pulgada(s), cantidad: ${peso} kg. Precio: S/ ${precio}.`;
-    const url = `https://wa.me/51917285203?text=${encodeURIComponent(mensaje)}`;
-    window.open(url, '_blank');
-  }
-
-  // Ejecutar al cargar para mostrar precio inicial
-  window.addEventListener("DOMContentLoaded", actualizarPrecio);
-</script>
+<body data-product="Piedra Mixta" data-prices='{"1/2": {"20": 25, "40": 44}, "2/3": {"20": 18, "40": 32}, "3/5": {"20": 12, "40": 9}}'>
+<header class="site-header">
+  <div class="nav-wrap container">
+    <a class="brand" href="index.html"><img src="img/logo_ecoroca.jpg" alt="Logo Eco Roca"><div><strong>Eco Roca</strong><span>Piedra natural</span></div></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="main-nav"><a href="index.html">Inicio</a><a href="index.html#productos">Productos</a><a href="index.html#mayoristas">Venta por volumen</a><a href="index.html#nosotros">Nosotros</a><a href="index.html#contacto">Contacto</a></nav>
+    <a class="btn btn-small nav-cta" href="https://wa.me/51917285203?text=Hola%20Eco%20Roca,%20quiero%20solicitar%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener">Cotizar</a>
+  </div>
+</header>
+<main>
+  <div class="container breadcrumb"><a href="index.html">Inicio</a><span>›</span><a href="index.html#productos">Productos</a><span>›</span><strong>Piedra Mixta</strong></div>
+  <section class="product-hero container">
+    <div class="product-gallery"><div class="main-image"><img src="img/piedra3.jpg" alt="Piedra Canto Rodado Mixta"><span>Tonos naturales</span></div><div class="image-note"><strong>Piedra natural seleccionada</strong><p>La apariencia, tono y forma pueden variar ligeramente por tratarse de un material natural.</p></div></div>
+    <div class="product-info">
+      <span class="eyebrow">Eco Roca · Camaná</span>
+      <h1>Piedra Canto Rodado Mixta</h1>
+      <p class="lead">Combinación natural de tonos y matices que aporta variedad visual y un aspecto orgánico a jardines, senderos y composiciones decorativas.</p>
+      <div class="feature-pills"><span>Natural</span><span>20 kg y 40 kg</span><span>Cotización por volumen</span></div>
+      <div class="quote-card">
+        <div class="quote-head"><div><span>Configura tu pedido</span><h2>Precio referencial</h2></div><strong id="price">S/ 0</strong></div>
+        <div class="config-grid"><label>Calibre<span class="field-note">Selecciona el tamaño</span><select id="size"><option value="1/2">1/2&quot;</option><option value="2/3">2/3&quot;</option><option value="3/5">3/5&quot;</option></select></label><label>Presentación<span class="field-note">Peso por bolsa</span><select id="weight"><option value="20">20 kg</option><option value="40">40 kg</option></select></label><label>Cantidad<span class="field-note">Número de bolsas</span><input id="qty" type="number" min="1" value="1" inputmode="numeric"></label></div>
+        <div class="total-row"><span>Total estimado</span><strong id="total">S/ 0</strong></div>
+        <button class="btn whatsapp-btn" id="orderButton" type="button">Cotizar este pedido por WhatsApp</button>
+        <p class="quote-note">El precio mostrado corresponde a la configuración seleccionada. Para cantidades mayores, transporte o condiciones especiales, solicita una cotización.</p>
+      </div>
+      <a class="volume-link" href="https://wa.me/51917285203?text=Hola Eco Roca, necesito cotizar Piedra Mixta por volumen. Cantidad aproximada:  Destino: " target="_blank" rel="noopener"><span>↗</span><div><strong>¿Necesitas una cantidad mayor?</strong><small>Consulta por volumen, proyecto o destino.</small></div></a>
+    </div>
+  </section>
+  <section class="product-details"><div class="container detail-grid"><div><span class="eyebrow dark">Aplicaciones</span><h2>Usos recomendados</h2><p>Una piedra versátil para incorporar textura natural en distintos tipos de espacios y proyectos.</p></div><div class="uses-grid"><div><span>✓</span><strong>Jardines</strong></div><div><span>✓</span><strong>Senderos</strong></div><div><span>✓</span><strong>Paisajismo</strong></div><div><span>✓</span><strong>Decoración natural</strong></div></div></div></section>
+  <section class="volume-section"><div class="container volume-grid"><div><span class="eyebrow">Venta por volumen</span><h2>También atendemos proyectos de mayor escala</h2><p>Indícanos el producto, cantidad aproximada y lugar de entrega. Evaluamos cada solicitud según disponibilidad y características del pedido.</p></div><div class="volume-box"><h3>Para una cotización más precisa</h3><ul><li>Producto y calibre</li><li>Cantidad aproximada</li><li>Ciudad o punto de entrega</li><li>Presentación requerida</li></ul><a class="btn light-btn" href="https://wa.me/51917285203?text=Hola Eco Roca, deseo una cotización por volumen de Piedra Mixta. Cantidad:  Destino: " target="_blank" rel="noopener">Consultar por volumen</a></div></div></section>
+  <section class="related section"><div class="container"><div class="section-title"><div><span class="eyebrow dark">Catálogo</span><h2>También te puede interesar</h2></div><a href="index.html#productos">Ver todo el catálogo →</a></div><div class="related-grid"><article class="related-card"><a href="piedraBeige.html"><img src="img/piedrabeige.jpg" alt="Canto Rodado Beige" loading="lazy"><div><span>Tono cálido</span><h3>Canto Rodado Beige</h3><strong>Ver producto →</strong></div></a></article>
+<article class="related-card"><a href="piedraRoja.html"><img src="img/piedraRoja.jpg" alt="Canto Rodado Rojo" loading="lazy"><div><span>Color intenso</span><h3>Canto Rodado Rojo</h3><strong>Ver producto →</strong></div></a></article>
+<article class="related-card"><a href="piedralunar.html"><img src="img/piedra_lunar.jpg" alt="Canto Rodado Lunar" loading="lazy"><div><span>Variedad especial</span><h3>Canto Rodado Lunar</h3><strong>Ver producto →</strong></div></a></article></div></div></section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><strong>Eco Roca</strong><p>Piedra canto rodado natural para decoración, paisajismo, construcción y proyectos por volumen.</p></div><div class="footer-links"><a href="index.html">Inicio</a><a href="index.html#productos">Productos</a><a href="index.html#mayoristas">Venta por volumen</a></div><div class="footer-contact"><a href="https://wa.me/51917285203" target="_blank" rel="noopener">WhatsApp 917 285 203</a><a href="tel:+51913374782">Teléfono 913 374 782</a><a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></div></div><div class="container copyright">© <span id="year"></span> Eco Roca. Todos los derechos reservados.</div></footer>
+<a class="whatsapp-float" href="https://wa.me/51917285203?text=Hola%20Eco%20Roca,%20quisiera%20informaci%C3%B3n%20sobre%20sus%20productos." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WA</a>
+<script src="product-script.js"></script>
+</body></html>
