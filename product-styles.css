@@ -1,0 +1,495 @@
+/* General */
+body { 
+  font-family: 'Segoe UI', sans-serif; 
+  margin: 0; 
+  padding: 0; 
+  background: #f9f9f9; 
+  color: #333; 
+}
+
+/* Header y Footer */
+header, footer { 
+  text-align: center; 
+  color: white; 
+  padding: 1em 0; 
+}
+
+/* Estilo del logo */
+.logo {
+  height: 170px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+/* Menú de navegación */
+nav {
+  background: #4CAF50;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+/* Secciones */
+.seccion { 
+  padding: 40px 20px; 
+}
+
+.seccion#inicio { 
+  background: #e0f7fa;
+}
+
+.seccion#productos { 
+  background: #ffffff;
+}
+
+.seccion#contacto { 
+  background: #eeeeee;
+}
+
+/* Presentación */
+.presentacion { 
+  margin-bottom: 20px;
+}
+
+/* Tarjetas de productos */
+.tarjetas { 
+  display: flex; 
+  gap: 20px; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+}
+
+.tarjeta {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  width: 240px;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover { 
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.tarjeta .precio {
+  color: #4CAF50;
+  font-size: 1.1em;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.tarjeta .boton-vermas {
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 15px;
+  font-size: 0.95em;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.tarjeta .boton-vermas:hover {
+  background-color: #1976D2;
+}
+
+.tarjeta .etiqueta {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #FF5252;
+  color: white;
+  font-size: 0.8em;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.etiqueta.nuevo {
+  background: #4CAF50;
+}
+
+.etiqueta.oferta {
+  background: #FFC107;
+  color: #333;
+}
+
+.etiqueta.popular {
+  background: #9C27B0;
+}
+
+/* Responsive tarjetas */
+@media (max-width: 600px) {
+  .tarjetas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta {
+    width: 90%;
+  }
+}
+
+/* Estilo de botones */
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+/* Estilo de imágenes de producto */
+.imagen-piedra {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de pedido */
+.pedido {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.pedido label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.pedido input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.pedido h4 {
+  margin-top: 15px;
+  color: #4CAF50;
+  font-size: 1.2em;
+}
+
+/* Inputs de número en productos */
+.producto input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+/* Botón de realizar pedido */
+.producto button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #25D366;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+
+/* Imagen de fondo en header */
+header {
+  background-image: url('img/playa_piedras.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+/* Textos del header */
+header h1, header h2, header p {
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+/* Footer */
+footer {
+  padding: 10px;
+  background: #2e2e2e;
+  font-size: 0.9em;
+}
+
+/* SECCIÓN CONTACTO MODERNA Y UNIFICADA */
+#contacto {
+  background-color: #f0f4f8;
+  padding: 60px 20px;
+  color: #333;
+  text-align: center;
+}
+
+#contacto h2 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  color: #4CAF50;
+}
+
+#contacto .subtitulo {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.contenedor-contacto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* INFO DE CONTACTO */
+.info {
+  flex: 1 1 300px;
+  text-align: left;
+  font-size: 1em;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.info i {
+  color: #4CAF50;
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.info a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.info a:hover {
+  text-decoration: underline;
+}
+
+/* FORMULARIO */
+.contenedor-contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.info {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.info a {
+  color: var(--acento);
+  text-decoration: none;
+}
+
+.info a:hover {
+  text-decoration: underline;
+}
+
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Outfit', sans-serif;
+}
+
+.form-contacto button {
+  background-color: var(--acento);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-contacto button:hover {
+  background-color: #028b7e;
+}
+
+
+-------formulario estetica-------
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-input,
+.form-textarea {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #0e7490;
+  box-shadow: 0 0 5px rgba(14, 116, 144, 0.3);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-button {
+  padding: 12px 20px;
+  background-color: #0e7490;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #155e75;
+}
+
+
+
+-----------------------------
+
+
+.formulario-contacto {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus, .form-textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.form-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+#mensaje-exito {
+  background: #e6ffee;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: #155724;
+  max-width: 500px;
+  margin: auto;
+}
+
+.btn-regreso {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-regreso:hover {
+  background-color: #0056b3;
+}
+
+--------------------------
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contenedor-contacto {
+    flex-direction: column;
+    align-items: center;
+  }
+}
