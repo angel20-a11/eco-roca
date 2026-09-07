@@ -23,6 +23,7 @@
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a>
         <a href="#productos">Productos</a>
+        <a href="#cotizador">Cotizador</a>
         <a href="#mayoristas">Venta por volumen</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
@@ -78,6 +79,43 @@
       </div>
     </section>
 
+    <section class="section quote-section" id="cotizador">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow dark">Cotizador rápido</span><h2>Arma tu pedido antes de escribirnos</h2></div>
+          <p>Selecciona producto, calibre, presentación y cantidad. El precio mostrado es referencial para bolsas; transporte y pedidos grandes se cotizan aparte.</p>
+        </div>
+        <div class="quote-grid">
+          <div class="quote-card">
+            <div class="form-row">
+              <label>Producto<select id="quoteProduct"><option value="mixta">Piedra Mixta</option></select></label>
+              <label>Calibre<select id="quoteSize"><option value="1/2">1/2&quot;</option><option value="2/3">2/3&quot;</option><option value="3/5">3/5&quot;</option></select></label>
+            </div>
+            <div class="form-row">
+              <label>Presentación<select id="quoteWeight"><option value="20">20 kg</option><option value="40">40 kg</option></select></label>
+              <label>Cantidad de bolsas<input id="quoteQty" type="number" min="1" value="1"></label>
+            </div>
+            <div class="form-row">
+              <label>Lugar de entrega<input id="quoteDestination" type="text" placeholder="Ej. Camaná, Arequipa"></label>
+              <label>¿Necesitas transporte?<select id="quoteTransport"><option value="Sí">Sí</option><option value="No">No</option><option value="Por confirmar">Por confirmar</option></select></label>
+            </div>
+            <div class="quote-summary"><div><span>Precio por bolsa</span><strong id="quoteUnit">S/ 25</strong></div><div><span>Peso total</span><strong id="quoteKg">20 kg</strong></div><div><span>Total referencial</span><strong id="quoteTotal">S/ 25</strong></div></div>
+            <button class="btn quote-btn" id="quoteWhatsApp" type="button">Enviar cotización por WhatsApp</button>
+            <small class="quote-note">* Los precios publicados corresponden a las opciones configuradas actualmente. El transporte, disponibilidad y condiciones finales se confirman por WhatsApp.</small>
+          </div>
+          <aside class="coverage-card">
+            <span class="eyebrow dark">Calculadora de proyecto</span><h3>¿Cuánta piedra podrías necesitar?</h3>
+            <p>Ingresa el área y un consumo estimado en kg por m². Puedes cambiar el consumo según las características reales de tu proyecto.</p>
+            <label>Área a cubrir (m²)<input id="areaM2" type="number" min="0" step="0.1" value="10"></label>
+            <label>Consumo estimado (kg/m²)<input id="kgM2" type="number" min="1" step="1" value="50"></label>
+            <label>Presentación para calcular bolsas<select id="coverageWeight"><option value="20">20 kg</option><option value="40">40 kg</option></select></label>
+            <div class="coverage-result"><span>Estimación</span><strong id="coverageKg">500 kg</strong><small id="coverageBags">≈ 25 bolsas de 20 kg</small></div>
+            <p class="calculator-warning">Esta herramienta es orientativa. La cantidad real depende del espesor, compactación, base y forma de colocación.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-dark" id="mayoristas">
       <div class="container wholesale-grid">
         <div>
@@ -91,14 +129,13 @@
         </div>
         <div class="volume-card">
           <span class="volume-icon">↗</span>
-          <h3>Cotización según proyecto</h3>
-          <ul>
-            <li>Tipo y calibre de piedra</li>
-            <li>Cantidad requerida</li>
-            <li>Ciudad o punto de entrega</li>
-            <li>Presentación o despacho requerido</li>
-          </ul>
-          <p>Para consultas de distribución o exportación, comunícate directamente con nosotros para evaluar disponibilidad y condiciones.</p>
+          <h3>Pedido mayorista</h3>
+          <label>Cantidad aproximada<select id="bulkAmount"><option>500 kg</option><option>1 tonelada</option><option>5 toneladas</option><option>10 toneladas</option><option>Más de 10 toneladas</option></select></label>
+          <label>Producto / calibre<input id="bulkProduct" type="text" placeholder='Ej. Piedra Mixta 3/5&quot;'></label>
+          <label>Destino<input id="bulkDestination" type="text" placeholder="Ciudad o punto de entrega"></label>
+          <label>Transporte<select id="bulkTransport"><option>Necesito transporte</option><option>Retiro / transporte propio</option><option>Por confirmar</option></select></label>
+          <button class="btn bulk-btn" id="bulkWhatsApp" type="button">Consultar por WhatsApp</button>
+          <p>El precio mayorista se cotiza según producto, cantidad, disponibilidad, destino y modalidad de despacho.</p>
         </div>
       </div>
     </section>
