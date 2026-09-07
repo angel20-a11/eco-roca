@@ -24,6 +24,7 @@
         <a href="#inicio">Inicio</a>
         <a href="#productos">Productos</a>
         <a href="#cotizador">Cotizador</a>
+        <a href="#pedido">Mi pedido <span class="cart-count" id="navCartCount">0</span></a>
         <a href="#mayoristas">Venta por volumen</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
@@ -104,7 +105,8 @@
               <label>¿Necesitas transporte?<select id="quoteTransport"><option value="Sí">Sí</option><option value="No">No</option><option value="Por confirmar">Por confirmar</option></select></label>
             </div>
             <div class="quote-summary"><div><span>Precio por bolsa</span><strong id="quoteUnit">S/ 0</strong></div><div><span>Peso total</span><strong id="quoteKg">0 kg</strong></div><div><span>Total productos</span><strong id="quoteTotal">S/ 0</strong></div></div>
-            <div class="quote-actions"><button class="btn quote-btn" id="quoteWhatsApp" type="button">Enviar cotización por WhatsApp</button><button class="btn btn-secondary" id="quoteCopy" type="button">Copiar resumen</button></div>
+            <div class="quote-actions"><button class="btn quote-btn" id="quoteWhatsApp" type="button">Enviar cotización por WhatsApp</button>
+              <button class="btn btn-secondary" id="quoteAddCart" type="button">+ Agregar al pedido</button><button class="btn btn-secondary" id="quoteCopy" type="button">Copiar resumen</button></div>
             <small class="quote-note">* Total de productos según precios publicados. Transporte, disponibilidad y condiciones finales se confirman por WhatsApp.</small>
           </div>
           <aside class="coverage-card">
@@ -115,6 +117,29 @@
             <label>Presentación para calcular bolsas<select id="coverageWeight"><option value="20">20 kg</option><option value="40">40 kg</option></select></label>
             <div class="coverage-result"><span>Estimación</span><strong id="coverageKg">500 kg</strong><small id="coverageBags">≈ 25 bolsas de 20 kg</small></div>
             <p class="calculator-warning">Esta herramienta es orientativa. La cantidad real depende del espesor, compactación, base y forma de colocación.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cart-section" id="pedido">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow dark">Cotización combinada</span><h2>Arma un pedido con varios productos</h2></div>
+          <p>Agrega distintas piedras, calibres y presentaciones. Calculamos todo en un solo pedido para enviarlo completo por WhatsApp.</p>
+        </div>
+        <div class="cart-layout">
+          <div class="cart-panel"><div class="cart-empty" id="cartEmpty"><strong>Tu pedido todavía está vacío.</strong><span>Usa el cotizador y pulsa “Agregar al pedido”.</span></div><div class="cart-items" id="cartItems"></div></div>
+          <aside class="cart-summary">
+            <span class="eyebrow dark">Resumen del pedido</span>
+            <div class="summary-row"><span>Cantidad</span><strong id="cartUnits">0 bolsas</strong></div>
+            <div class="summary-row"><span>Peso</span><strong id="cartKg">0 kg</strong></div>
+            <div class="summary-row total"><span>Subtotal</span><strong id="cartTotal">S/ 0</strong></div>
+            <label>Lugar de entrega<input id="cartDestination" type="text" placeholder="Ej. Camaná, Arequipa, Lima"></label>
+            <label>Transporte<select id="cartTransport"><option>Necesito cotizar transporte</option><option>Retiro / transporte propio</option><option>Por confirmar</option></select></label>
+            <button class="btn cart-whatsapp" id="cartWhatsApp" type="button">Enviar pedido por WhatsApp</button>
+            <button class="btn btn-secondary cart-clear" id="cartClear" type="button">Vaciar pedido</button>
+            <small>El subtotal usa los precios publicados. Transporte y disponibilidad se confirman al cotizar.</small>
           </aside>
         </div>
       </div>
