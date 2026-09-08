@@ -1,4 +1,4 @@
-Eco Roca v5.1 - Panel de administración conectado a Supabase
-Project URL configurado.
-Publishable key configurada.
-Pendiente: ejecutar supabase-setup.sql y registrar el UUID del administrador.
+Eco Roca v5.2 - Panel administrador simplificado
+Tienda pública: /
+Panel privado: /admin.html
+No se usa carpeta /admin para evitar errores al subir desde GitHub web.

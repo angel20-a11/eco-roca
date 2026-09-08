@@ -8,6 +8,10 @@
 6. Completa `supabase-config.js` con esos dos valores.
 7. Nunca pongas la contraseña ni la service_role key dentro de la web.
 8. Sube todos los archivos a Netlify/GitHub.
-9. El panel quedará en `/admin/`.
+9. El panel quedará en `/admin.html`.
 
 La tienda actual sigue funcionando aunque Supabase todavía no esté configurado.
+
+
+## Acceso al panel
+Abre: `https://eco-roca.netlify.app/admin.html`
