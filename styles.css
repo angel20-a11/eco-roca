@@ -45,3 +45,19 @@
 .export-form textarea{min-height:90px;resize:vertical}.export-form small{display:block;margin-top:1rem;color:#6b746e;line-height:1.45}
 @media(max-width:900px){.export-grid{grid-template-columns:repeat(2,1fr)}.export-quote{grid-template-columns:1fr}}
 @media(max-width:560px){.export-grid{grid-template-columns:1fr}.export-copy,.export-form{padding:1.35rem}}
+
+/* Eco Roca v3.1 — galería, confianza y FAQ */
+.gallery-section{background:#fff}.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:1rem}
+.gallery-item{position:relative;overflow:hidden;border-radius:20px;background:#243b30;color:#fff}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}.gallery-item:hover img{transform:scale(1.045)}
+.gallery-item:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(12,26,19,.82))}
+.gallery-item span{position:absolute;z-index:2;left:1.2rem;right:1.2rem;bottom:1.1rem;display:grid;gap:.18rem}.gallery-item strong{font-size:1.08rem}.gallery-item small{color:#e2ebe5}
+.gallery-large{grid-column:span 2;grid-row:span 2}.gallery-wide{grid-column:span 2}
+.trust-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(31,62,46,.12);border:1px solid rgba(31,62,46,.12);border-radius:18px;overflow:hidden;margin-top:2rem}
+.trust-strip div{background:#f7f7f2;padding:1.25rem}.trust-strip strong,.trust-strip span{display:block}.trust-strip strong{color:#214432;margin-bottom:.35rem}.trust-strip span{font-size:.88rem;color:#687269;line-height:1.45}
+.faq-section{background:#f5f2ea}.faq-layout{display:grid;grid-template-columns:.65fr 1.35fr;gap:3rem}.faq-layout h2{font-size:clamp(2rem,4vw,3.3rem);margin:.5rem 0}.faq-list{display:grid;gap:.7rem}
+.faq-list details{background:#fff;border:1px solid rgba(28,49,39,.1);border-radius:14px;padding:0 1.1rem}.faq-list summary{cursor:pointer;font-weight:800;padding:1.05rem 2rem 1.05rem 0;position:relative;list-style:none}
+.faq-list summary::-webkit-details-marker{display:none}.faq-list summary:after{content:"+";position:absolute;right:.2rem;font-size:1.35rem;color:#2f6b4f}.faq-list details[open] summary:after{content:"−"}
+.faq-list p{margin:0;padding:0 1.5rem 1.1rem 0;color:#667169;line-height:1.6}
+@media(max-width:850px){.gallery-grid{grid-template-columns:repeat(2,1fr)}.trust-strip{grid-template-columns:repeat(2,1fr)}.faq-layout{grid-template-columns:1fr;gap:1.2rem}}
+@media(max-width:520px){.gallery-grid{grid-template-columns:1fr;grid-auto-rows:240px}.gallery-large,.gallery-wide{grid-column:auto;grid-row:auto}.trust-strip{grid-template-columns:1fr}}
