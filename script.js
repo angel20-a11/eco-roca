@@ -19,7 +19,7 @@ const PRODUCTS = {
   gris: {
     name: 'Piedra Gris',
     image: 'img/piedra1.jpg',
-    page: 'piedra12.html',
+    page: 'piedraGris.html',
     prices: {
       '1–2': {'20':45,'40':60},
       '2–3': {'20':30,'40':50},
