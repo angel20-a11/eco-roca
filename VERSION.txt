@@ -1,3 +1,4 @@
-Eco Roca v5.3 - Diagnóstico de inicio de sesión
+Eco Roca v5.4 - Recuperación de contraseña
 Panel: /admin.html
-Mejora: muestra el error real o interpretado de Supabase al iniciar sesión.
+Recuperación: /restablecer-clave.html
+El botón 'Olvidé mi contraseña' envía el correo con redirect a la página de recuperación.

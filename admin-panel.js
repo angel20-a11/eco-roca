@@ -44,3 +44,17 @@ function render(p){const n=$('#tpl').content.cloneNode(true),card=n.querySelecto
  q('.save').addEventListener('click',async()=>{const num=s=>Number(q(s).value||0),prices={'1–2':{'20':num('.a'),'40':num('.b')},'2–3':{'20':num('.c'),'40':num('.d')},'3–5':{'20':num('.e'),'40':num('.f')}};const vals=Object.values(prices).flatMap(Object.values).filter(x=>x>0);const b=q('.save');b.textContent='Guardando…';const {error}=await db.from('products').update({name:q('.name').value.trim(),description:q('.description').value.trim(),available:q('.available').checked,prices,from_price:vals.length?Math.min(...vals):null,updated_at:new Date().toISOString()}).eq('id',p.id);b.textContent=error?'Error':'Guardado ✓';setTimeout(()=>b.textContent='Guardar cambios',1600)});
  $('#list').appendChild(n)}
 enter();
+
+const forgotBtn=document.querySelector('#forgotBtn');
+if(forgotBtn)forgotBtn.addEventListener('click',async()=>{
+ const msg=$('#msg');
+ if(!db){msg.textContent='No hay conexión con Supabase.';return}
+ const email=$('#email').value.trim();
+ if(!email){msg.textContent='Escribe primero tu correo en el campo Correo.';return}
+ forgotBtn.disabled=true;forgotBtn.textContent='Enviando…';
+ const redirectTo=new URL('restablecer-clave.html',window.location.href).href;
+ const {error}=await db.auth.resetPasswordForEmail(email,{redirectTo});
+ forgotBtn.disabled=false;forgotBtn.textContent='Olvidé mi contraseña';
+ if(error){msg.textContent='Supabase respondió: '+(error.message||'No se pudo enviar el correo.');return}
+ msg.textContent='Revisa tu correo. Te enviamos un enlace para crear una contraseña nueva.';
+});
