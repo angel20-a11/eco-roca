@@ -1,3 +1,121 @@
+const PRODUCTS = {
+  gris: {name:'Piedra Gris',image:'img/piedra1.jpg',page:'piedraGris.html',prices:{'1–2':{'20':45,'40':60},'2–3':{'20':30,'40':50},'3–5':{'20':15,'40':30}}},
+  mixta:{name:'Piedra Mixta',image:'img/piedra3.jpg',page:'piedraMixta.html',prices:{'1–2':{'20':25,'40':44},'2–3':{'20':18,'40':32},'3–5':{'20':12,'40':20}}},
+  beige:{name:'Piedra Beige',image:'img/piedrabeige.jpg',page:'piedraBeige.html',prices:{'1–2':{'20':32,'40':54},'2–3':{'20':20,'40':34},'3–5':{'20':15,'40':25}}},
+  roja:{name:'Piedra Roja',image:'img/piedraRoja.jpg',page:'piedraRoja.html',prices:{'1–2':{'20':35,'40':60},'2–3':{'20':25,'40':40},'3–5':{'20':19,'40':33}}},
+  blanca:{name:'Piedra Blanca',image:'img/piedraBlanca.jpg',page:'piedraBlanca.html',prices:{'1–2':{'20':40,'40':72},'2–3':{'20':30,'40':52},'3–5':{'20':22,'40':37}}},
+  lunar:{name:'Piedra Lunar',image:'img/piedra_lunar.jpg',page:'piedralunar.html',prices:{'1–2':{'20':32,'40':59},'2–3':{'20':24,'40':40},'3–5':{'20':18,'40':30}}},
+  pulida:{name:'Piedra Pulida',image:'img/piedra_pulida.jpg',page:'piedraPulida.html',prices:{'1–2':{'20':45,'40':60},'2–3':{'20':30,'40':50},'3–5':{'20':15,'40':30}}}
+};
+
+
+function fillProductOptions(selectEl) {
+  if (!selectEl) return;
+  selectEl.innerHTML = '';
+  Object.entries(PRODUCTS).forEach(([key, product]) => {
+    const option = document.createElement('option');
+    option.value = key;
+    option.textContent = product.name;
+    selectEl.appendChild(option);
+  });
+}
+
+function fillCalibreOptions(productKey, selectEl) {
+  if (!selectEl) return;
+  selectEl.innerHTML = '';
+  const product = PRODUCTS[productKey];
+  if (!product) return;
+  Object.keys(product.prices).forEach(calibre => {
+    const option = document.createElement('option');
+    option.value = calibre;
+    option.textContent = calibre + '"';
+    selectEl.appendChild(option);
+  });
+}
+
+function initProjectCalculator() {
+  const productEl = document.getElementById('projectProduct');
+  const sizeEl = document.getElementById('projectSize');
+  const areaEl = document.getElementById('projectArea');
+  const depthEl = document.getElementById('projectDepth');
+  const bagEl = document.getElementById('projectBag');
+
+  if (!productEl || !sizeEl || !areaEl || !depthEl || !bagEl) return;
+
+  fillProductOptions(productEl);
+
+  function calculate() {
+    const product = PRODUCTS[productEl.value];
+    if (!product) return;
+
+    const calibre = sizeEl.value || Object.keys(product.prices)[0];
+    const area = Math.max(0, Number(areaEl.value) || 0);
+    const depthCm = Number(depthEl.value) || 4;
+    const bagKg = Number(bagEl.value) || 40;
+
+    const densityKgM3 = 1600;
+    const estimatedKg = Math.ceil(area * (depthCm / 100) * densityKgM3);
+    const bags = estimatedKg ? Math.ceil(estimatedKg / bagKg) : 0;
+    const purchasedKg = bags * bagKg;
+    const unitPrice = product.prices[calibre]?.[String(bagKg)];
+    const subtotal = unitPrice == null ? null : bags * unitPrice;
+
+    const set=(id,val)=>{const el=document.getElementById(id); if(el) el.textContent=val;};
+    set('projectBags', bags);
+    set('projectKg', estimatedKg.toLocaleString('es-PE') + ' kg');
+    set('projectBagLabel', bagKg + ' kg');
+    set('projectPrice', subtotal == null ? 'Consultar' : 'S/ ' + subtotal.toFixed(2));
+    set('projectExplanation',
+      area.toLocaleString('es-PE') + ' m² de ' + product.name +
+      ' calibre ' + calibre + '" con una capa aproximada de ' + depthCm +
+      ' cm requieren cerca de ' + estimatedKg.toLocaleString('es-PE') +
+      ' kg. Redondeando a sacos completos: ' + bags + ' sacos (' +
+      purchasedKg.toLocaleString('es-PE') + ' kg comprados).'
+    );
+
+    const btn=document.getElementById('projectWhatsApp');
+    if(btn){
+      btn.onclick=()=>{
+        const text=[
+          'Hola Eco Roca, quisiera consultar este proyecto:',
+          'Producto: '+product.name,
+          'Calibre: '+calibre+'"',
+          'Área: '+area+' m²',
+          'Espesor aproximado: '+depthCm+' cm',
+          'Presentación: '+bagKg+' kg',
+          'Estimación: '+bags+' sacos / '+purchasedKg+' kg',
+          subtotal == null ? 'Precio: consultar' : 'Subtotal estimado: S/ '+subtotal.toFixed(2),
+          'Quisiera confirmar cantidad, disponibilidad y transporte.'
+        ].join('\n');
+        window.open('https://wa.me/51917285203?text='+encodeURIComponent(text),'_blank','noopener');
+      };
+    }
+  }
+
+  function refreshCalibres() {
+    fillCalibreOptions(productEl.value, sizeEl);
+    calculate();
+  }
+
+  productEl.addEventListener('change', refreshCalibres);
+  sizeEl.addEventListener('change', calculate);
+  areaEl.addEventListener('input', calculate);
+  depthEl.addEventListener('change', calculate);
+  bagEl.addEventListener('change', calculate);
+
+  refreshCalibres();
+}
+
+function initEcoRoca() {
+  try { initProjectCalculator(); } catch (e) { console.error('Calculadora Eco Roca:', e); }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initEcoRoca);
+} else {
+  initEcoRoca();
+}
+
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 if (toggle && nav) {
@@ -15,78 +133,7 @@ if (toggle && nav) {
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
-const PRODUCTS = {
-  gris: {
-    name: 'Piedra Gris',
-    image: 'img/piedra1.jpg',
-    page: 'piedraGris.html',
-    prices: {
-      '1–2': {'20':45,'40':60},
-      '2–3': {'20':30,'40':50},
-      '3–5': {'20':15,'40':30}
-    }
-  },
-  mixta: {
-    name: 'Piedra Mixta',
-    image: 'img/piedra3.jpg',
-    page: 'piedraMixta.html',
-    prices: {
-      '1–2': {'20':25,'40':44},
-      '2–3': {'20':18,'40':32},
-      '3–5': {'20':12,'40':20}
-    }
-  },
-  beige: {
-    name: 'Piedra Beige',
-    image: 'img/piedrabeige.jpg',
-    page: 'piedraBeige.html',
-    prices: {
-      '1–2': {'20':32,'40':54},
-      '2–3': {'20':20,'40':34},
-      '3–5': {'20':15,'40':25}
-    }
-  },
-  roja: {
-    name: 'Piedra Roja',
-    image: 'img/piedraRoja.jpg',
-    page: 'piedraRoja.html',
-    prices: {
-      '1–2': {'20':35,'40':60},
-      '2–3': {'20':25,'40':40},
-      '3–5': {'20':19,'40':33}
-    }
-  },
-  blanca: {
-    name: 'Piedra Blanca',
-    image: 'img/piedraBlanca.jpg',
-    page: 'piedraBlanca.html',
-    prices: {
-      '1–2': {'20':40,'40':72},
-      '2–3': {'20':30,'40':52},
-      '3–5': {'20':22,'40':37}
-    }
-  },
-  lunar: {
-    name: 'Piedra Lunar',
-    image: 'img/piedra_lunar.jpg',
-    page: 'piedralunar.html',
-    prices: {
-      '1–2': {'20':32,'40':59},
-      '2–3': {'20':24,'40':40},
-      '3–5': {'20':18,'40':30}
-    }
-  },
-  pulida: {
-    name: 'Piedra Pulida',
-    image: 'img/piedra_pulida.jpg',
-    page: 'piedraPulida.html',
-    prices: {
-      '1–2': {'20':45,'40':60},
-      '2–3': {'20':30,'40':50},
-      '3–5': {'20':15,'40':30}
-    }
-  }
-};
+
 
 const productEntries = Object.entries(PRODUCTS);
 const qp=document.getElementById('quoteProduct'), qs=document.getElementById('quoteSize'), qw=document.getElementById('quoteWeight'), qq=document.getElementById('quoteQty');
@@ -175,99 +222,3 @@ document.getElementById('exportWhatsApp')?.addEventListener('click',()=>{
 
 
 
-/* Eco Roca v3.6 - Calculadora de proyecto */
-function initProjectCalculator() {
-  const productEl = document.getElementById('projectProduct');
-  const sizeEl = document.getElementById('projectSize');
-  const areaEl = document.getElementById('projectArea');
-  const depthEl = document.getElementById('projectDepth');
-  const bagEl = document.getElementById('projectBag');
-  if (!productEl || !sizeEl || !areaEl || !depthEl || !bagEl) return;
-
-  const densityKgM3 = 1600;
-
-  productEl.innerHTML = '';
-  Object.entries(PRODUCTS).forEach(([key,p]) => {
-    const option = document.createElement('option');
-    option.value = key;
-    option.textContent = p.name;
-    productEl.appendChild(option);
-  });
-
-  function fillSizes() {
-    const product = PRODUCTS[productEl.value];
-    sizeEl.innerHTML = '';
-    if (!product) return;
-
-    Object.keys(product.prices).forEach(size => {
-      const option = document.createElement('option');
-      option.value = size;
-      option.textContent = size + '"';
-      sizeEl.appendChild(option);
-    });
-    calculate();
-  }
-
-  function money(n) {
-    return 'S/ ' + Number(n).toFixed(2);
-  }
-
-  function calculate() {
-    const product = PRODUCTS[productEl.value];
-    if (!product) return;
-
-    const size = sizeEl.value || Object.keys(product.prices)[0];
-    const area = Math.max(0, Number(areaEl.value) || 0);
-    const depthCm = Number(depthEl.value) || 4;
-    const bagKg = Number(bagEl.value) || 40;
-
-    const kg = Math.ceil(area * (depthCm / 100) * densityKgM3);
-    const bags = kg ? Math.ceil(kg / bagKg) : 0;
-    const purchasedKg = bags * bagKg;
-    const unitPrice = product.prices[size]?.[String(bagKg)];
-    const subtotal = unitPrice != null ? bags * unitPrice : null;
-
-    document.getElementById('projectBags').textContent = bags;
-    document.getElementById('projectKg').textContent = kg.toLocaleString('es-PE') + ' kg';
-    document.getElementById('projectBagLabel').textContent = bagKg + ' kg';
-    document.getElementById('projectPrice').textContent = subtotal == null ? 'Consultar' : money(subtotal);
-    document.getElementById('projectExplanation').textContent =
-      area.toLocaleString('es-PE') + ' m² de ' + product.name +
-      ' calibre ' + size + '" con una capa aproximada de ' + depthCm +
-      ' cm requieren cerca de ' + kg.toLocaleString('es-PE') +
-      ' kg. Redondeando a sacos completos: ' + bags +
-      ' sacos (' + purchasedKg.toLocaleString('es-PE') + ' kg comprados).';
-
-    const btn = document.getElementById('projectWhatsApp');
-    if (btn) {
-      btn.onclick = () => {
-        const text = [
-          'Hola Eco Roca, quisiera consultar este proyecto:',
-          'Producto: ' + product.name,
-          'Calibre: ' + size + '"',
-          'Área: ' + area + ' m²',
-          'Espesor aproximado: ' + depthCm + ' cm',
-          'Presentación: ' + bagKg + ' kg',
-          'Estimación: ' + bags + ' sacos / ' + purchasedKg + ' kg',
-          subtotal != null ? 'Subtotal estimado del producto: ' + money(subtotal) : 'Precio: consultar',
-          'Quisiera confirmar cantidad, disponibilidad y transporte.'
-        ].join('\n');
-        window.open('https://wa.me/51917285203?text=' + encodeURIComponent(text), '_blank', 'noopener');
-      };
-    }
-  }
-
-  productEl.addEventListener('change', fillSizes);
-  sizeEl.addEventListener('change', calculate);
-  areaEl.addEventListener('input', calculate);
-  depthEl.addEventListener('change', calculate);
-  bagEl.addEventListener('change', calculate);
-
-  fillSizes();
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initProjectCalculator);
-} else {
-  initProjectCalculator();
-}
