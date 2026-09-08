@@ -1,4 +1,3 @@
-Eco Roca v5.2 - Panel administrador simplificado
-Tienda pública: /
-Panel privado: /admin.html
-No se usa carpeta /admin para evitar errores al subir desde GitHub web.
+Eco Roca v5.3 - Diagnóstico de inicio de sesión
+Panel: /admin.html
+Mejora: muestra el error real o interpretado de Supabase al iniciar sesión.

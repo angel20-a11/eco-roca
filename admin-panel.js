@@ -9,7 +9,32 @@ async function enter(){
  if(!a){await db.auth.signOut();$('#msg').textContent='Cuenta sin permiso de administrador.';return loginView()}
  $('#login').classList.add('hide');$('#dashboard').classList.remove('hide');load();
 }
-$('#loginForm').addEventListener('submit',async e=>{e.preventDefault();if(!db)return $('#msg').textContent='Primero conecta Supabase.';const {error}=await db.auth.signInWithPassword({email:$('#email').value.trim(),password:$('#password').value});if(error)return $('#msg').textContent='Correo o contraseña incorrectos.';$('#msg').textContent='';enter()});
+$('#loginForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ const msg=$('#msg');
+ if(!db){msg.textContent='Primero conecta Supabase.';return}
+ msg.textContent='Verificando acceso…';
+ const email=$('#email').value.trim();
+ const password=$('#password').value;
+ const {error}=await db.auth.signInWithPassword({email,password});
+ if(error){
+   const raw=(error.message||'Error desconocido').trim();
+   const text=raw.toLowerCase();
+   if(text.includes('email not confirmed')){
+     msg.textContent='Tu correo todavía no está confirmado en Supabase. En Authentication > Users revisa que el usuario figure como confirmado.';
+   }else if(text.includes('invalid login credentials')){
+     msg.textContent='Supabase rechazó el acceso: correo o contraseña incorrectos. Revisa el correo exacto del usuario y, si hace falta, cambia su contraseña en Authentication > Users.';
+   }else if(text.includes('user not found')){
+     msg.textContent='Supabase no encuentra ese usuario. Revisa el correo exacto en Authentication > Users.';
+   }else{
+     msg.textContent='Supabase respondió: '+raw;
+   }
+   console.error('Eco Roca login error:',error);
+   return;
+ }
+ msg.textContent='';
+ enter();
+});
 $('#logout').addEventListener('click',async()=>{await db.auth.signOut();loginView()});
 async function load(){const {data,error}=await db.from('products').select('*').order('sort_order');if(error)return $('#list').innerHTML='<p>Error cargando productos.</p>';$('#list').innerHTML='';data.forEach(render)}
 function render(p){const n=$('#tpl').content.cloneNode(true),card=n.querySelector('.product'),q=s=>card.querySelector(s),pr=p.prices||{};
