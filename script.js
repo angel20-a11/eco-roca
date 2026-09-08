@@ -9,112 +9,15 @@ const PRODUCTS = {
 };
 
 
-function fillProductOptions(selectEl) {
-  if (!selectEl) return;
-  selectEl.innerHTML = '';
-  Object.entries(PRODUCTS).forEach(([key, product]) => {
-    const option = document.createElement('option');
-    option.value = key;
-    option.textContent = product.name;
-    selectEl.appendChild(option);
-  });
-}
 
-function fillCalibreOptions(productKey, selectEl) {
-  if (!selectEl) return;
-  selectEl.innerHTML = '';
-  const product = PRODUCTS[productKey];
-  if (!product) return;
-  Object.keys(product.prices).forEach(calibre => {
-    const option = document.createElement('option');
-    option.value = calibre;
-    option.textContent = calibre + '"';
-    selectEl.appendChild(option);
-  });
-}
 
-function initProjectCalculator() {
-  const productEl = document.getElementById('projectProduct');
-  const sizeEl = document.getElementById('projectSize');
-  const areaEl = document.getElementById('projectArea');
-  const depthEl = document.getElementById('projectDepth');
-  const bagEl = document.getElementById('projectBag');
 
-  if (!productEl || !sizeEl || !areaEl || !depthEl || !bagEl) return;
 
-  fillProductOptions(productEl);
 
-  function calculate() {
-    const product = PRODUCTS[productEl.value];
-    if (!product) return;
 
-    const calibre = sizeEl.value || Object.keys(product.prices)[0];
-    const area = Math.max(0, Number(areaEl.value) || 0);
-    const depthCm = Number(depthEl.value) || 4;
-    const bagKg = Number(bagEl.value) || 40;
 
-    const densityKgM3 = 1600;
-    const estimatedKg = Math.ceil(area * (depthCm / 100) * densityKgM3);
-    const bags = estimatedKg ? Math.ceil(estimatedKg / bagKg) : 0;
-    const purchasedKg = bags * bagKg;
-    const unitPrice = product.prices[calibre]?.[String(bagKg)];
-    const subtotal = unitPrice == null ? null : bags * unitPrice;
 
-    const set=(id,val)=>{const el=document.getElementById(id); if(el) el.textContent=val;};
-    set('projectBags', bags);
-    set('projectKg', estimatedKg.toLocaleString('es-PE') + ' kg');
-    set('projectBagLabel', bagKg + ' kg');
-    set('projectPrice', subtotal == null ? 'Consultar' : 'S/ ' + subtotal.toFixed(2));
-    set('projectExplanation',
-      area.toLocaleString('es-PE') + ' m² de ' + product.name +
-      ' calibre ' + calibre + '" con una capa aproximada de ' + depthCm +
-      ' cm requieren cerca de ' + estimatedKg.toLocaleString('es-PE') +
-      ' kg. Redondeando a sacos completos: ' + bags + ' sacos (' +
-      purchasedKg.toLocaleString('es-PE') + ' kg comprados).'
-    );
 
-    const btn=document.getElementById('projectWhatsApp');
-    if(btn){
-      btn.onclick=()=>{
-        const text=[
-          'Hola Eco Roca, quisiera consultar este proyecto:',
-          'Producto: '+product.name,
-          'Calibre: '+calibre+'"',
-          'Área: '+area+' m²',
-          'Espesor aproximado: '+depthCm+' cm',
-          'Presentación: '+bagKg+' kg',
-          'Estimación: '+bags+' sacos / '+purchasedKg+' kg',
-          subtotal == null ? 'Precio: consultar' : 'Subtotal estimado: S/ '+subtotal.toFixed(2),
-          'Quisiera confirmar cantidad, disponibilidad y transporte.'
-        ].join('\n');
-        window.open('https://wa.me/51917285203?text='+encodeURIComponent(text),'_blank','noopener');
-      };
-    }
-  }
-
-  function refreshCalibres() {
-    fillCalibreOptions(productEl.value, sizeEl);
-    calculate();
-  }
-
-  productEl.addEventListener('change', refreshCalibres);
-  sizeEl.addEventListener('change', calculate);
-  areaEl.addEventListener('input', calculate);
-  depthEl.addEventListener('change', calculate);
-  bagEl.addEventListener('change', calculate);
-
-  refreshCalibres();
-}
-
-function initEcoRoca() {
-  try { initProjectCalculator(); } catch (e) { console.error('Calculadora Eco Roca:', e); }
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initEcoRoca);
-} else {
-  initEcoRoca();
-}
 
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
