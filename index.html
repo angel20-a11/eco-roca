@@ -37,14 +37,10 @@
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="./">Inicio</a>
         <a href="#productos">Productos</a>
-        <a href="#pedido">Cotizar</a>
-        <a href="#pedido">Mi pedido <span class="cart-count" id="navCartCount">0</span></a>
-        <a href="#mayoristas">Venta por volumen</a>
         <a href="#galeria">Galería</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <a class="btn btn-small nav-cta" href="#pedido" target="_blank" rel="noopener">Cotizar</a>
     </div>
   </header>
 
@@ -124,74 +120,6 @@
         </div>
       </div>
     </section>
-
-<section class="section cart-section" id="pedido">
-      <div class="container">
-        <div class="section-heading">
-          <div><span class="eyebrow dark">Cotización combinada</span><h2>Arma un pedido con varios productos</h2></div>
-          <p>Agrega distintas piedras, calibres y presentaciones. Calculamos todo en un solo pedido para enviarlo completo por WhatsApp.</p>
-        </div>
-        <div class="cart-layout">
-          <div class="cart-panel"><div class="cart-empty" id="cartEmpty"><strong>Tu pedido todavía está vacío.</strong><span>Usa el cotizador y pulsa “Agregar al pedido”.</span></div><div class="cart-items" id="cartItems"></div></div>
-          <aside class="cart-summary">
-            <span class="eyebrow dark">Resumen del pedido</span>
-            <div class="summary-row"><span>Cantidad</span><strong id="cartUnits">0 bolsas</strong></div>
-            <div class="summary-row"><span>Peso</span><strong id="cartKg">0 kg</strong></div>
-            <div class="summary-row total"><span>Subtotal</span><strong id="cartTotal">S/ 0</strong></div>
-            <label>Lugar de entrega<input id="cartDestination" type="text" placeholder="Ej. Camaná, Arequipa, Lima"></label>
-            <label>Transporte<select id="cartTransport"><option>Necesito cotizar transporte</option><option>Retiro / transporte propio</option><option>Por confirmar</option></select></label>
-            <button class="btn cart-whatsapp" id="cartWhatsApp" type="button">Enviar pedido por WhatsApp</button>
-            <button class="btn btn-secondary cart-clear" id="cartClear" type="button">Vaciar pedido</button>
-            <small>El subtotal usa los precios publicados. Transporte y disponibilidad se confirman al cotizar.</small>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="section volume-section" id="mayoristas">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow dark">Pedidos por volumen</span>
-            <h2>¿Necesitas una cantidad mayor?</h2>
-          </div>
-          <p>Usa este formulario únicamente para pedidos grandes, distribución o destinos especiales. Para una compra regular, utiliza el cotizador y tu pedido.</p>
-        </div>
-
-        <div class="volume-card">
-          <form id="exportForm" class="export-form" onsubmit="return false;">
-            <label>Tipo de consulta
-              <select id="exportType">
-                <option value="Venta nacional por volumen">Pedido nacional por volumen</option>
-                <option value="Consulta de distribución">Distribución</option>
-                <option value="Consulta de exportación">Consulta internacional / exportación</option>
-              </select>
-            </label>
-            <label>Tipo de piedra
-              <select id="exportProduct"></select>
-            </label>
-            <label>Calibre
-              <select id="exportSize"></select>
-            </label>
-            <label>Cantidad aproximada
-              <input id="exportQty" type="text" placeholder="Ej. 1 tonelada">
-            </label>
-            <label>País
-              <input id="exportCountry" type="text" value="Perú">
-            </label>
-            <label>Ciudad / destino
-              <input id="exportCity" type="text" placeholder="Ej. Arequipa">
-            </label>
-            <label class="full">Detalle adicional
-              <textarea id="exportNotes" rows="3" placeholder="Transporte, presentación u otra necesidad"></textarea>
-            </label>
-            <button class="btn full" type="button" id="exportWhatsApp">Consultar por WhatsApp</button>
-          </form>
-          <p class="form-note">Disponibilidad, transporte, documentación y condiciones se confirman según cada solicitud.</p>
-        </div>
-      </div>
-    </section>
-
 <section class="section gallery-section" id="galeria">
       <div class="container">
         <div class="section-heading">
@@ -277,7 +205,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div><strong>Eco Roca</strong><p>Piedra canto rodado natural desde Camaná, Arequipa.</p></div>
-      <div class="footer-links"><a href="#productos">Productos</a><a href="#mayoristas">Venta por volumen</a><a href="#contacto">Contacto</a></div>
+      <div class="footer-links"><a href="#productos">Productos</a><a href="#contacto">Contacto</a></div>
       <div class="footer-contact"><a href="https://wa.me/51917285203" target="_blank" rel="noopener">WhatsApp 917 285 203</a><a href="mailto:rnina8652@gmail.com">rnina8652@gmail.com</a></div>
     </div>
     <div class="container copyright">© <span id="year"></span> Eco Roca. Todos los derechos reservados.</div>
